@@ -1,6 +1,9 @@
 package com.lucas.minecraft_monitor.controller;
 
 import com.lucas.minecraft_monitor.dto.MinecraftServerStatusDTO;
+import com.lucas.minecraft_monitor.dto.MinecraftServerCreateRequest;
+import com.lucas.minecraft_monitor.dto.MinecraftServerResponse;
+import com.lucas.minecraft_monitor.dto.MinecraftServerUpdateRequest;
 import com.lucas.minecraft_monitor.model.MinecraftServer;
 import com.lucas.minecraft_monitor.service.MinecraftServerMonitorService;
 import com.lucas.minecraft_monitor.service.MinecraftServerService;
@@ -27,40 +30,54 @@ public class MinecraftServerController {
 
     // CREATE
     @PostMapping
-    public ResponseEntity<MinecraftServer> create(
-            @Valid @RequestBody MinecraftServer server
+    public ResponseEntity<MinecraftServerResponse> create(
+            @Valid @RequestBody MinecraftServerCreateRequest request
     ) {
         return ResponseEntity.ok(
-                service.create(server)
+                MinecraftServerResponse.fromEntity(
+                        service.create(new MinecraftServer(
+                                request.name(),
+                                request.host(),
+                                request.port()
+                        ))
+                )
         );
     }
 
     // FIND ALL
     @GetMapping
-    public ResponseEntity<List<MinecraftServer>> findAll() {
+    public ResponseEntity<List<MinecraftServerResponse>> findAll() {
         return ResponseEntity.ok(
-                service.findAll()
+                service.findAll().stream()
+                        .map(MinecraftServerResponse::fromEntity)
+                        .toList()
         );
     }
 
     // FIND BY ID
     @GetMapping("/{id}")
-    public ResponseEntity<MinecraftServer> findById(
+    public ResponseEntity<MinecraftServerResponse> findById(
             @PathVariable Long id
     ) {
         return ResponseEntity.ok(
-                service.findById(id)
+                MinecraftServerResponse.fromEntity(service.findById(id))
         );
     }
 
     // UPDATE
     @PutMapping("/{id}")
-    public ResponseEntity<MinecraftServer> update(
+    public ResponseEntity<MinecraftServerResponse> update(
             @PathVariable Long id,
-            @Valid @RequestBody MinecraftServer server
+            @Valid @RequestBody MinecraftServerUpdateRequest request
     ) {
         return ResponseEntity.ok(
-                service.update(id, server)
+                MinecraftServerResponse.fromEntity(
+                        service.update(id, new MinecraftServer(
+                                request.name(),
+                                request.host(),
+                                request.port()
+                        ))
+                )
         );
     }
 
