@@ -123,7 +123,7 @@ Critérios de aceite:
 
 ## T007 — Revisar segurança do frontend
 
-Status: TODO
+Status: DONE
 Dependências: T006
 
 Critérios de aceite:

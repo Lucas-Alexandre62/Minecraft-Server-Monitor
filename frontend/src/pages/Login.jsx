@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setToken } from "../api";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -40,7 +41,7 @@ function Login() {
         );
       }
 
-      sessionStorage.setItem("token", data.token);
+      setToken(data.token);
 
       navigate("/", { replace: true });
     } catch (error) {
