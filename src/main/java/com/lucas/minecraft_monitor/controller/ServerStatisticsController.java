@@ -1,5 +1,6 @@
 package com.lucas.minecraft_monitor.controller;
 
+import com.lucas.minecraft_monitor.dto.AggregateStatisticsDTO;
 import com.lucas.minecraft_monitor.dto.ServerStatisticsDTO;
 import com.lucas.minecraft_monitor.service.ServerStatisticsService;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,21 @@ public class ServerStatisticsController {
             ServerStatisticsService statisticsService
     ) {
         this.statisticsService = statisticsService;
+    }
+
+    @GetMapping("/statistics")
+    public ResponseEntity<AggregateStatisticsDTO> getAggregateStatistics(
+            @RequestParam(defaultValue = "24") int hours
+    ) {
+        if (hours <= 0) {
+            throw new IllegalArgumentException(
+                    "O número de horas deve ser maior que zero."
+            );
+        }
+
+        return ResponseEntity.ok(
+                statisticsService.calculateAggregate(hours)
+        );
     }
 
     @GetMapping("/{serverId}/statistics")

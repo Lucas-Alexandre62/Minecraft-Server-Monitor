@@ -1,21 +1,33 @@
 package com.lucas.minecraft_monitor.service;
 
+import com.lucas.minecraft_monitor.dto.AggregateStatisticsDTO;
 import com.lucas.minecraft_monitor.dto.ServerStatisticsDTO;
+import com.lucas.minecraft_monitor.model.MinecraftServer;
 import com.lucas.minecraft_monitor.model.ServerStatusHistory;
+import com.lucas.minecraft_monitor.repository.MinecraftServerRepository;
+import com.lucas.minecraft_monitor.repository.ServerStatusHistoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ServerStatisticsService {
 
     private final ServerStatusHistoryService historyService;
+    private final ServerStatusHistoryRepository historyRepository;
+    private final MinecraftServerRepository serverRepository;
 
     public ServerStatisticsService(
-            ServerStatusHistoryService historyService
+            ServerStatusHistoryService historyService,
+            ServerStatusHistoryRepository historyRepository,
+            MinecraftServerRepository serverRepository
     ) {
         this.historyService = historyService;
+        this.historyRepository = historyRepository;
+        this.serverRepository = serverRepository;
     }
 
     public ServerStatisticsDTO calculate(
@@ -82,6 +94,58 @@ public class ServerStatisticsService {
                 averagePlayers,
                 peakPlayers,
                 averageLatency
+        );
+    }
+
+    public AggregateStatisticsDTO calculateAggregate(
+            int hours
+    ) {
+        LocalDateTime since =
+                LocalDateTime.now().minusHours(hours);
+
+        List<MinecraftServer> servers =
+                serverRepository.findAll();
+
+        List<ServerStatusHistory> allHistory =
+                historyRepository.findAllSince(since);
+
+        Map<Long, List<ServerStatusHistory>> byServer =
+                allHistory.stream()
+                        .collect(Collectors.groupingBy(
+                                h -> h.getServer().getId()
+                        ));
+
+        long onlineServers = servers.stream()
+                .filter(server -> {
+                    List<ServerStatusHistory> serverHistory =
+                            byServer.getOrDefault(
+                                    server.getId(),
+                                    List.of()
+                            );
+                    return serverHistory.stream()
+                            .findFirst()
+                            .map(ServerStatusHistory::isOnline)
+                            .orElse(false);
+                })
+                .count();
+
+        long offlineServers = servers.size() - onlineServers;
+
+        long totalChecks = allHistory.size();
+        long onlineChecks = allHistory.stream()
+                .filter(ServerStatusHistory::isOnline)
+                .count();
+
+        double uptimePercentage =
+                totalChecks == 0
+                        ? 0.0
+                        : (onlineChecks * 100.0) / totalChecks;
+
+        return new AggregateStatisticsDTO(
+                servers.size(),
+                onlineServers,
+                offlineServers,
+                uptimePercentage
         );
     }
 }

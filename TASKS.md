@@ -249,7 +249,7 @@ Critérios de aceite:
 
 ## T018 — Overview avançado
 
-Status: TODO
+Status: DONE
 Dependências: T017
 
 Critérios de aceite:

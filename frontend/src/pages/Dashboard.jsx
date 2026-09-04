@@ -6,6 +6,7 @@ import { apiFetch } from "../api";
 function Dashboard() {
   const [servers, setServers] = useState([]);
   const [statuses, setStatuses] = useState({});
+  const [aggregateStats, setAggregateStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -15,15 +16,22 @@ function Dashboard() {
     try {
       setError("");
 
-      const response = await apiFetch(`/servers`);
+      const [serversResponse, statsResponse] = await Promise.all([
+        apiFetch(`/servers`),
+        apiFetch(`/servers/statistics?hours=24`),
+      ]);
 
-      if (!response.ok) {
+      if (!serversResponse.ok) {
         throw new Error("Não foi possível carregar os servidores.");
       }
 
-      const data = await response.json();
-
+      const data = await serversResponse.json();
       setServers(data);
+
+      if (statsResponse.ok) {
+        const statsData = await statsResponse.json();
+        setAggregateStats(statsData);
+      }
 
       await loadStatuses(data);
     } catch (error) {
@@ -187,6 +195,22 @@ function Dashboard() {
 
             <span className="overview-description">
               servidores online
+            </span>
+          </div>
+
+          <div className="overview-card">
+            <span className="overview-label">
+              Disponibilidade
+            </span>
+
+            <strong>
+              {aggregateStats
+                ? `${aggregateStats.uptimePercentage.toFixed(1)}%`
+                : "--"}
+            </strong>
+
+            <span className="overview-description">
+              últimas 24h
             </span>
           </div>
         </section>
