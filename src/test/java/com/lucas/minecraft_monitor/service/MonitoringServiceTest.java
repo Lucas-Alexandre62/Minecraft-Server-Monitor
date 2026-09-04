@@ -251,4 +251,85 @@ class MonitoringServiceTest {
 
         verify(serverEventRepository, never()).save(any());
     }
+
+    @Test
+    void threeDownEventsCreatesInstabilityEvent() {
+        MinecraftServer server = createServer();
+
+        ServerEvent previous = new ServerEvent(
+                server,
+                ServerEvent.EventType.SERVER_UP
+        );
+
+        when(serverEventRepository
+                .findTopStateEventByServer(server))
+                .thenReturn(Optional.of(previous));
+
+        when(serverEventRepository
+                .findTopByServerOrderByCreatedAtDesc(server))
+                .thenReturn(Optional.of(previous));
+
+        when(serverEventRepository
+                .countDownEventsSince(
+                        eq(server),
+                        any(java.time.LocalDateTime.class)
+                ))
+                .thenReturn(3L);
+
+        monitoringService.processStatus(server, false, 0);
+
+        ArgumentCaptor<ServerEvent> captor =
+                ArgumentCaptor.forClass(ServerEvent.class);
+
+        verify(serverEventRepository, times(2))
+                .save(captor.capture());
+
+        assertEquals(
+                ServerEvent.EventType.INSTABILITY,
+                captor.getAllValues().get(1).getType()
+        );
+    }
+
+    @Test
+    void instabilitySpamPreventedByLastEventCheck() {
+        MinecraftServer server = createServer();
+
+        ServerEvent previousState = new ServerEvent(
+                server,
+                ServerEvent.EventType.SERVER_UP
+        );
+
+        ServerEvent lastInstability = new ServerEvent(
+                server,
+                ServerEvent.EventType.INSTABILITY
+        );
+
+        when(serverEventRepository
+                .findTopStateEventByServer(server))
+                .thenReturn(Optional.of(previousState));
+
+        when(serverEventRepository
+                .findTopByServerOrderByCreatedAtDesc(server))
+                .thenReturn(Optional.of(lastInstability));
+
+        when(serverEventRepository
+                .countDownEventsSince(
+                        eq(server),
+                        any(java.time.LocalDateTime.class)
+                ))
+                .thenReturn(5L);
+
+        monitoringService.processStatus(server, false, 0);
+
+        ArgumentCaptor<ServerEvent> captor =
+                ArgumentCaptor.forClass(ServerEvent.class);
+
+        verify(serverEventRepository, times(1))
+                .save(captor.capture());
+
+        assertEquals(
+                ServerEvent.EventType.SERVER_DOWN,
+                captor.getValue().getType()
+        );
+    }
 }

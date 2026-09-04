@@ -480,6 +480,10 @@ tr:last-child td {
   background-color: #d29922;
 }
 
+.event-indicator.instability {
+  background-color: #f85149;
+}
+
 .period-select {
   background: #151922;
   color: #f5f7fa;

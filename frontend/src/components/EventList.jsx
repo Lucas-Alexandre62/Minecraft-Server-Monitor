@@ -23,6 +23,8 @@ function EventList({
         return "Servidor offline";
       case "HIGH_LATENCY":
         return "Latência elevada";
+      case "INSTABILITY":
+        return "Instabilidade detectada";
       default:
         return type;
     }
@@ -36,6 +38,8 @@ function EventList({
         return "event-indicator down";
       case "HIGH_LATENCY":
         return "event-indicator latency";
+      case "INSTABILITY":
+        return "event-indicator instability";
       default:
         return "event-indicator";
     }
@@ -70,6 +74,13 @@ function EventList({
           onClick={() => onFilterChange("HIGH_LATENCY")}
         >
           Latência
+        </button>
+
+        <button
+          className={`filter-button ${filter === "INSTABILITY" ? "active" : ""}`}
+          onClick={() => onFilterChange("INSTABILITY")}
+        >
+          Instabilidade
         </button>
       </div>
 

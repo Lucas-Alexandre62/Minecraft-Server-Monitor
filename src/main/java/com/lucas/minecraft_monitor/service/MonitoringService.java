@@ -6,6 +6,8 @@ import com.lucas.minecraft_monitor.repository.ServerEventRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class MonitoringService {
 
@@ -14,6 +16,9 @@ public class MonitoringService {
 
     @Value("${alert.latency.threshold:500}")
     private long latencyThreshold;
+
+    private static final int INSTABILITY_WINDOW_MINUTES = 10;
+    private static final int INSTABILITY_THRESHOLD = 3;
 
     public MonitoringService(
             ServerEventRepository serverEventRepository,
@@ -65,6 +70,8 @@ public class MonitoringService {
                         ServerEvent.EventType.SERVER_DOWN
                 );
                 alertService.serverDown(server);
+
+                checkInstability(server);
             } else {
                 createEvent(
                         server,
@@ -85,6 +92,25 @@ public class MonitoringService {
         }
     }
 
+    private void checkInstability(MinecraftServer server) {
+        LocalDateTime since =
+                LocalDateTime.now()
+                        .minusMinutes(INSTABILITY_WINDOW_MINUTES);
+
+        long downCount =
+                serverEventRepository
+                        .countDownEventsSince(server, since);
+
+        if (downCount >= INSTABILITY_THRESHOLD) {
+            if (!isLastEventInstability(server)) {
+                createEvent(
+                        server,
+                        ServerEvent.EventType.INSTABILITY
+                );
+            }
+        }
+    }
+
     private boolean isLastEventHighLatency(
             MinecraftServer server
     ) {
@@ -93,6 +119,18 @@ public class MonitoringService {
                 .map(event ->
                         event.getType()
                                 == ServerEvent.EventType.HIGH_LATENCY
+                )
+                .orElse(false);
+    }
+
+    private boolean isLastEventInstability(
+            MinecraftServer server
+    ) {
+        return serverEventRepository
+                .findTopByServerOrderByCreatedAtDesc(server)
+                .map(event ->
+                        event.getType()
+                                == ServerEvent.EventType.INSTABILITY
                 )
                 .orElse(false);
     }

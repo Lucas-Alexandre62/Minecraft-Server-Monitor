@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,5 +48,16 @@ public interface ServerEventRepository
             MinecraftServer server,
             ServerEvent.EventType type,
             Pageable pageable
+    );
+
+    @Query(
+        "SELECT COUNT(e) FROM ServerEvent e " +
+        "WHERE e.server = :server " +
+        "AND e.type = com.lucas.minecraft_monitor.model.ServerEvent$EventType.SERVER_DOWN " +
+        "AND e.createdAt >= :since"
+    )
+    long countDownEventsSince(
+            @Param("server") MinecraftServer server,
+            @Param("since") LocalDateTime since
     );
 }

@@ -169,7 +169,7 @@ Critérios de aceite:
 
 ## T010 — Detectar instabilidade
 
-Status: TODO
+Status: DONE
 Dependências: T009
 
 Critérios de aceite:
