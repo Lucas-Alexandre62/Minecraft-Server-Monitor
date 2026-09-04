@@ -385,7 +385,7 @@ Dependências: T029
 
 ## T032 — Docker
 
-Status: TODO
+Status: DONE
 Dependências: T030
 
 Critérios de aceite:

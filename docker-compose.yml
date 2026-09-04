@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-minecraft}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-minecraft}
+      POSTGRES_DB: ${POSTGRES_DB:-minecraft_monitor}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-minecraft}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-minecraft_monitor}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-minecraft}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-minecraft}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      RCON_PASSWORD: ${RCON_PASSWORD:-}
+      ALERT_WEBHOOK_URL: ${ALERT_WEBHOOK_URL:-}
+      ALERT_EMAIL_HOST: ${ALERT_EMAIL_HOST:-}
+      ALERT_EMAIL_PORT: ${ALERT_EMAIL_PORT:-587}
+      ALERT_EMAIL_FROM: ${ALERT_EMAIL_FROM:-}
+      ALERT_EMAIL_TO: ${ALERT_EMAIL_TO:-}
+      ALERT_LATENCY_THRESHOLD: ${ALERT_LATENCY_THRESHOLD:-500}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
