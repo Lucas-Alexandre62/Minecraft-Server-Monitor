@@ -376,7 +376,7 @@ Critérios de aceite:
 
 ## T031 — Testes do frontend
 
-Status: TODO
+Status: DONE
 Dependências: T029
 
 ---
