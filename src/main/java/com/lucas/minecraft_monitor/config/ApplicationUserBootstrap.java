@@ -34,19 +34,17 @@ public class ApplicationUserBootstrap implements CommandLineRunner {
             return;
         }
 
-        if (userRepository.findByUsername(username).isPresent()) {
-            return;
-        }
-
         String passwordHash = passwordEncoder.encode(password);
 
         ApplicationUser user =
-                new ApplicationUser(
-                        username,
-                        passwordHash,
-                        ApplicationUser.Role.ADMIN
-                );
+                userRepository.findByUsername(username)
+                        .orElseGet(() -> new ApplicationUser(
+                                username,
+                                passwordHash,
+                                ApplicationUser.Role.ADMIN
+                        ));
 
+        user.setPasswordHash(passwordHash);
         userRepository.save(user);
     }
 }

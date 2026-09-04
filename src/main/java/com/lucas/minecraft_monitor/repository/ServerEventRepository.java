@@ -20,11 +20,13 @@ public interface ServerEventRepository
     );
 
     @Query(
-        "SELECT e FROM ServerEvent e " +
-        "WHERE e.server = :server " +
-        "AND e.type IN (com.lucas.minecraft_monitor.model.ServerEvent$EventType.SERVER_UP, " +
-        "com.lucas.minecraft_monitor.model.ServerEvent$EventType.SERVER_DOWN) " +
-        "ORDER BY e.createdAt DESC"
+            "SELECT e FROM ServerEvent e " +
+                    "WHERE e.server = :server " +
+                    "AND e.type IN (" +
+                    "com.lucas.minecraft_monitor.model.ServerEvent$EventType.SERVER_UP, " +
+                    "com.lucas.minecraft_monitor.model.ServerEvent$EventType.SERVER_DOWN" +
+                    ") " +
+                    "ORDER BY e.createdAt DESC"
     )
     Optional<ServerEvent> findTopStateEventByServer(
             @Param("server") MinecraftServer server
