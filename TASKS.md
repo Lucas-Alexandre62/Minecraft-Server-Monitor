@@ -80,6 +80,18 @@ Critérios de aceite:
 
 # Fase 2 — Segurança
 
+## T036 — Remover credencial de banco versionada
+
+Status: DONE
+Dependências: nenhuma
+
+Critérios de aceite:
+
+* Credencial migrada para variável de ambiente
+* Arquivos locais de ambiente ignorados pelo Git
+* Variáveis documentadas
+* Histórico Git auditado
+
 ## T005 — Finalizar JWT
 
 Status: TODO
