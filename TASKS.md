@@ -109,7 +109,7 @@ Critérios de aceite:
 
 ## T006 — Melhorar autenticação
 
-Status: TODO
+Status: DONE
 Dependências: T005
 
 Critérios de aceite:

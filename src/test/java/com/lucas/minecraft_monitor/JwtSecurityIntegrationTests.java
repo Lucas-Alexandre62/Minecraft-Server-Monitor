@@ -10,6 +10,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import com.lucas.minecraft_monitor.repository.ApplicationUserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.UUID;
 
@@ -26,17 +28,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class JwtSecurityIntegrationTests {
 
-    private static final String TEST_USERNAME = "jwt-test-user";
+    private static final String TEST_USERNAME = "jwt-test-" + UUID.randomUUID();
     private static final String TEST_PASSWORD = UUID.randomUUID().toString();
     private static final String TEST_JWT_SECRET = UUID.randomUUID() + "-" + UUID.randomUUID();
 
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private ApplicationUserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @DynamicPropertySource
     static void securityProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.security.user.name", () -> TEST_USERNAME);
-        registry.add("spring.security.user.password", () -> TEST_PASSWORD);
+        registry.add("app.bootstrap.username", () -> TEST_USERNAME);
+        registry.add("app.bootstrap.password", () -> TEST_PASSWORD);
         registry.add("jwt.secret", () -> TEST_JWT_SECRET);
     }
 
@@ -77,6 +85,19 @@ class JwtSecurityIntegrationTests {
                         HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,
                         "http://localhost:5173"
                 ));
+    }
+
+    @Test
+    void bootstrapUserIsPersistedWithPasswordHash() {
+        var user = userRepository.findByUsername(TEST_USERNAME).orElseThrow();
+
+        org.junit.jupiter.api.Assertions.assertNotEquals(
+                TEST_PASSWORD,
+                user.getPasswordHash()
+        );
+        org.junit.jupiter.api.Assertions.assertTrue(
+                passwordEncoder.matches(TEST_PASSWORD, user.getPasswordHash())
+        );
     }
 
     private String login() throws Exception {

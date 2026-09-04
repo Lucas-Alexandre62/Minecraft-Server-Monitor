@@ -5,10 +5,8 @@ import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.*;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import java.time.Instant;
-import java.util.Base64;
+import java.util.Collection;
 
 @Service
 public class JwtService {
@@ -22,7 +20,7 @@ public class JwtService {
         this.jwtEncoder = jwtEncoder;
     }
 
-    public String generateToken(String username) {
+    public String generateToken(String username, Collection<String> roles) {
 
         Instant now = Instant.now();
         Instant expiresAt = now.plusSeconds(expiration);
@@ -30,6 +28,7 @@ public class JwtService {
         JwtClaimsSet claims =
                 JwtClaimsSet.builder()
                         .subject(username)
+                        .claim("roles", roles)
                         .issuedAt(now)
                         .expiresAt(expiresAt)
                         .build();

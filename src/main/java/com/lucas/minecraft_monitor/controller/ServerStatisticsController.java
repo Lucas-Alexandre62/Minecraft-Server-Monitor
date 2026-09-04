@@ -22,7 +22,6 @@ public class ServerStatisticsController {
             @PathVariable Long serverId,
             @RequestParam(defaultValue = "24") int hours
     ) {
-
         if (hours <= 0) {
             throw new IllegalArgumentException(
                     "O número de horas deve ser maior que zero."
