@@ -348,7 +348,7 @@ Dependências: T025
 
 ## T028 — Testes unitários dos Services
 
-Status: TODO
+Status: DONE
 Dependências: T003
 
 ---
