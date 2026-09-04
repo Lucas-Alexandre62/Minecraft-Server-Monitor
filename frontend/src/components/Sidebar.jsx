@@ -43,6 +43,16 @@ function Sidebar() {
           <span>◉</span>
           Servidores
         </NavLink>
+
+        <NavLink
+          to="/alerts"
+          className={({ isActive }) =>
+            isActive ? "nav-item active" : "nav-item"
+          }
+        >
+          <span>⚑</span>
+          Alertas
+        </NavLink>
       </nav>
 
       <div className="sidebar-footer">

@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Servers from "./pages/Servers";
 import ServerDetails from "./pages/ServerDetails";
+import Alerts from "./pages/Alerts";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
@@ -40,6 +41,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ServerDetails />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/alerts"
+              element={
+                <ProtectedRoute>
+                  <Alerts />
                 </ProtectedRoute>
               }
             />

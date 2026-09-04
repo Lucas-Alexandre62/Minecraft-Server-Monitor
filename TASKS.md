@@ -315,7 +315,7 @@ Dependências: T022
 
 ## T024 — Interface de alertas
 
-Status: TODO
+Status: DONE
 Dependências: T008
 
 ---

@@ -11,14 +11,21 @@ import java.util.List;
 public class MinecraftServerService {
 
     private final MinecraftServerRepository repository;
+    private final AlertConfigService alertConfigService;
 
-    public MinecraftServerService(MinecraftServerRepository repository) {
+    public MinecraftServerService(
+            MinecraftServerRepository repository,
+            AlertConfigService alertConfigService
+    ) {
         this.repository = repository;
+        this.alertConfigService = alertConfigService;
     }
 
     // CREATE
     public MinecraftServer create(MinecraftServer server) {
-        return repository.save(server);
+        MinecraftServer saved = repository.save(server);
+        alertConfigService.initializeDefaults(saved.getId());
+        return saved;
     }
 
     // FIND ALL
