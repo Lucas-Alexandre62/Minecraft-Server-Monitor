@@ -411,7 +411,7 @@ Critérios de aceite:
 
 ## T034 — Deploy
 
-Status: TODO
+Status: DONE
 Dependências: T033
 
 ---
