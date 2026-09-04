@@ -50,7 +50,7 @@ Critérios de aceite:
 
 ## T003 — Padronizar tratamento de exceções
 
-Status: TODO
+Status: DONE
 Dependências: T002
 
 Critérios de aceite:
