@@ -339,7 +339,7 @@ Motivo:
 
 ## T027 — E-mail
 
-Status: TODO
+Status: DONE
 Dependências: T025
 
 ---

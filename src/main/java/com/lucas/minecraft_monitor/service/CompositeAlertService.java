@@ -14,15 +14,18 @@ public class CompositeAlertService implements AlertService {
     private final AlertConfigRepository alertConfigRepository;
     private final LogAlertService logAlertService;
     private final WebhookAlertService webhookAlertService;
+    private final EmailAlertService emailAlertService;
 
     public CompositeAlertService(
             AlertConfigRepository alertConfigRepository,
             LogAlertService logAlertService,
-            WebhookAlertService webhookAlertService
+            WebhookAlertService webhookAlertService,
+            EmailAlertService emailAlertService
     ) {
         this.alertConfigRepository = alertConfigRepository;
         this.logAlertService = logAlertService;
         this.webhookAlertService = webhookAlertService;
+        this.emailAlertService = emailAlertService;
     }
 
     @Override
@@ -34,7 +37,7 @@ public class CompositeAlertService implements AlertService {
             switch (config.getChannel()) {
                 case LOG -> logAlertService.serverDown(server);
                 case WEBHOOK -> webhookAlertService.serverDown(server);
-                case EMAIL -> {}
+                case EMAIL -> emailAlertService.serverDown(server);
             }
         }
     }
@@ -48,7 +51,7 @@ public class CompositeAlertService implements AlertService {
             switch (config.getChannel()) {
                 case LOG -> logAlertService.serverUp(server);
                 case WEBHOOK -> webhookAlertService.serverUp(server);
-                case EMAIL -> {}
+                case EMAIL -> emailAlertService.serverUp(server);
             }
         }
     }
