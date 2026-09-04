@@ -34,4 +34,16 @@ public interface ServerStatusHistoryRepository
             @Param("serverId") Long serverId,
             @Param("startTime") LocalDateTime startTime
     );
+
+    @Query("""
+            SELECT h
+            FROM ServerStatusHistory h
+            WHERE h.server.id = :serverId
+              AND h.checkedAt >= :startTime
+            ORDER BY h.checkedAt ASC
+            """)
+    List<ServerStatusHistory> findMetricsByServerId(
+            @Param("serverId") Long serverId,
+            @Param("startTime") LocalDateTime startTime
+    );
 }

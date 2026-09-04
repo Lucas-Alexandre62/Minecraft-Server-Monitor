@@ -67,4 +67,22 @@ public class ServerStatusHistoryService {
                 startTime
         );
     }
+
+    public List<ServerStatusHistory> findMetrics(
+            Long serverId,
+            LocalDateTime startTime
+    ) {
+
+        serverRepository.findById(serverId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Servidor não encontrado"
+                        )
+                );
+
+        return historyRepository.findMetricsByServerId(
+                serverId,
+                startTime
+        );
+    }
 }

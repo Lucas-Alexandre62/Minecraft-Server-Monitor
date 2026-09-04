@@ -66,7 +66,7 @@ Critérios de aceite:
 
 ## T004 — Melhorar endpoint de métricas
 
-Status: TODO
+Status: DONE
 Dependências: T003
 
 Critérios de aceite:
