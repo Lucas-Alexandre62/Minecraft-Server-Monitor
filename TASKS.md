@@ -219,7 +219,7 @@ Dependências: T013
 
 ## T016 — Histórico paginado no dashboard
 
-Status: TODO
+Status: DONE
 Dependências: T004
 
 Critérios de aceite:

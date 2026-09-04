@@ -13,6 +13,7 @@ function ServerDetails() {
   const [status, setStatus] = useState(null);
   const [statistics, setStatistics] = useState(null);
   const [history, setHistory] = useState(null);
+  const [historyPage, setHistoryPage] = useState(0);
   const [events, setEvents] = useState(null);
   const [eventPage, setEventPage] = useState(0);
   const [eventFilter, setEventFilter] = useState("");
@@ -22,6 +23,24 @@ function ServerDetails() {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  async function loadHistory(page) {
+    try {
+      const response = await apiFetch(
+        `/servers/${serverId}/history?page=${page}&size=10`
+      );
+
+      if (!response.ok) {
+        throw new Error("Erro ao carregar histórico.");
+      }
+
+      const data = await response.json();
+      setHistory(data);
+    } catch (error) {
+      console.error(error);
+      setHistory(null);
+    }
+  }
 
   async function loadEvents(page, filter) {
     try {
@@ -53,15 +72,11 @@ function ServerDetails() {
         serverResponse,
         statusResponse,
         statisticsResponse,
-        historyResponse,
       ] = await Promise.all([
         apiFetch(`/servers/${serverId}`),
         apiFetch(`/servers/${serverId}/status`),
         apiFetch(
           `/servers/${serverId}/statistics?hours=24`
-        ),
-        apiFetch(
-          `/servers/${serverId}/history?page=0&size=20`
         ),
       ]);
 
@@ -71,8 +86,7 @@ function ServerDetails() {
 
       if (
         !statusResponse.ok ||
-        !statisticsResponse.ok ||
-        !historyResponse.ok
+        !statisticsResponse.ok
       ) {
         throw new Error(
           "Erro ao carregar informações do servidor."
@@ -83,19 +97,17 @@ function ServerDetails() {
         serverData,
         statusData,
         statisticsData,
-        historyData,
       ] = await Promise.all([
         serverResponse.json(),
         statusResponse.json(),
         statisticsResponse.json(),
-        historyResponse.json(),
       ]);
 
       setServer(serverData);
       setStatus(statusData);
       setStatistics(statisticsData);
-      setHistory(historyData);
 
+      await loadHistory(0);
       await loadEvents(0, "");
     } catch (error) {
       console.error(error);
@@ -139,6 +151,10 @@ function ServerDetails() {
   useEffect(() => {
     loadEvents(eventPage, eventFilter);
   }, [serverId, eventPage, eventFilter]);
+
+  useEffect(() => {
+    loadHistory(historyPage);
+  }, [serverId, historyPage]);
 
   useEffect(() => {
     loadMetrics();
@@ -402,59 +418,88 @@ function ServerDetails() {
           )}
 
           {history?.content?.length > 0 && (
-            <div className="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Data</th>
-                    <th>Status</th>
-                    <th>Jogadores</th>
-                    <th>Latência</th>
-                    <th>Versão</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {history.content.map((entry) => (
-                    <tr key={entry.id}>
-                      <td>
-                        {new Date(
-                          entry.checkedAt
-                        ).toLocaleString()}
-                      </td>
-
-                      <td>
-                        <span
-                          className={
-                            entry.online
-                              ? "table-status online-text"
-                              : "table-status offline-text"
-                          }
-                        >
-                          {entry.online
-                            ? "ONLINE"
-                            : "OFFLINE"}
-                        </span>
-                      </td>
-
-                      <td>
-                        {entry.playersOnline}/
-                        {entry.maxPlayers}
-                      </td>
-
-                      <td>
-                        {entry.online
-                          ? `${entry.latency} ms`
-                          : "--"}
-                      </td>
-
-                      <td>
-                        {entry.version ?? "--"}
-                      </td>
+            <div>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Status</th>
+                      <th>Jogadores</th>
+                      <th>Latência</th>
+                      <th>Versão</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+
+                  <tbody>
+                    {history.content.map((entry) => (
+                      <tr key={entry.id}>
+                        <td>
+                          {new Date(
+                            entry.checkedAt
+                          ).toLocaleString()}
+                        </td>
+
+                        <td>
+                          <span
+                            className={
+                              entry.online
+                                ? "table-status online-text"
+                                : "table-status offline-text"
+                            }
+                          >
+                            {entry.online
+                              ? "ONLINE"
+                              : "OFFLINE"}
+                          </span>
+                        </td>
+
+                        <td>
+                          {entry.playersOnline}/
+                          {entry.maxPlayers}
+                        </td>
+
+                        <td>
+                          {entry.online
+                            ? `${entry.latency} ms`
+                            : "--"}
+                        </td>
+
+                        <td>
+                          {entry.version ?? "--"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {history.totalPages > 1 && (
+                <div className="events-pagination">
+                  <button
+                    className="pagination-button"
+                    disabled={historyPage === 0}
+                    onClick={() => setHistoryPage(historyPage - 1)}
+                  >
+                    ← Anterior
+                  </button>
+
+                  <span className="pagination-info">
+                    Página {historyPage + 1} de {history.totalPages}
+                    {history.totalElements > 0 && (
+                      <> — {history.totalElements} registro{history.totalElements !== 1 ? "s" : ""}</>
+                    )}
+                  </span>
+
+                  <button
+                    className="pagination-button"
+                    disabled={historyPage >= history.totalPages - 1}
+                    onClick={() => setHistoryPage(historyPage + 1)}
+                  >
+                    Próxima →
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </section>
