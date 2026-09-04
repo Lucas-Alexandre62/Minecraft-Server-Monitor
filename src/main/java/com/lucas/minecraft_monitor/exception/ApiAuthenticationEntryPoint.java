@@ -11,22 +11,23 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Component
 public class ApiAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper()
+            .findAndRegisterModules();
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
                          AuthenticationException exception) throws IOException {
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        objectMapper.writeValue(response.getOutputStream(),
-                new GlobalExceptionHandler.ErrorResponse(
-                        HttpStatus.UNAUTHORIZED.value(),
-                        "Autenticação necessária",
-                        LocalDateTime.now()
-                ));
+        objectMapper.writeValue(response.getOutputStream(), Map.of(
+                "status", HttpStatus.UNAUTHORIZED.value(),
+                "message", "Autenticação necessária",
+                "timestamp", LocalDateTime.now().toString()
+        ));
     }
 }

@@ -22,6 +22,7 @@ import org.springframework.security.authentication.ProviderManager;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.time.Duration;
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import com.lucas.minecraft_monitor.exception.ApiAccessDeniedHandler;
@@ -98,11 +99,14 @@ public class SecurityConfig {
     public JwtDecoder jwtDecoder(
             SecretKey jwtSecretKey
     ) {
-
-        return NimbusJwtDecoder
+        NimbusJwtDecoder decoder = NimbusJwtDecoder
                 .withSecretKey(jwtSecretKey)
                 .macAlgorithm(MacAlgorithm.HS256)
                 .build();
+
+        decoder.setJwtValidator(new JwtTimestampValidator(Duration.ZERO));
+
+        return decoder;
     }
 
     @Bean

@@ -94,7 +94,7 @@ Critérios de aceite:
 
 ## T005 — Finalizar JWT
 
-Status: TODO
+Status: DONE
 Dependências: T003
 
 Critérios de aceite:

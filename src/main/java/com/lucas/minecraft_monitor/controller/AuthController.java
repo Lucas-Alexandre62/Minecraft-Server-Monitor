@@ -1,0 +1,56 @@
+package com.lucas.minecraft_monitor.controller;
+
+import com.lucas.minecraft_monitor.dto.AuthRequest;
+import com.lucas.minecraft_monitor.dto.AuthResponse;
+import com.lucas.minecraft_monitor.service.JwtService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    private final AuthenticationManager authenticationManager;
+    private final JwtService jwtService;
+
+    @Value("${jwt.expiration:3600}")
+    private long expiration;
+
+    public AuthController(
+            AuthenticationManager authenticationManager,
+            JwtService jwtService
+    ) {
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(
+            @Valid @RequestBody AuthRequest request
+    ) {
+
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.username(),
+                        request.password()
+                )
+        );
+
+        String token =
+                jwtService.generateToken(
+                        request.username()
+                );
+
+        return ResponseEntity.ok(
+                new AuthResponse(
+                        token,
+                        "Bearer",
+                        expiration
+                )
+        );
+    }
+}
