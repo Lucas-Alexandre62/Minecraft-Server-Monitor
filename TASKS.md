@@ -418,7 +418,7 @@ Dependências: T033
 
 ## T035 — Documentação final
 
-Status: TODO
+Status: DONE
 Dependências: T034
 
 Critérios de aceite:
