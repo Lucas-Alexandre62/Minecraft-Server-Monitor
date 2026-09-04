@@ -264,7 +264,7 @@ Critérios de aceite:
 
 ## T019 — Melhorar UX
 
-Status: TODO
+Status: DONE
 Dependências: T018
 
 Critérios de aceite:

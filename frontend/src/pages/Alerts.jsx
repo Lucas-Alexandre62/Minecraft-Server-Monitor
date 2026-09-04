@@ -18,11 +18,14 @@ function Alerts() {
   const [selectedServer, setSelectedServer] = useState("");
   const [configs, setConfigs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [saving, setSaving] = useState(null);
   const [webhookUrl, setWebhookUrl] = useState("");
 
   async function loadServers() {
     try {
+      setError("");
+
       const response = await apiFetch("/servers");
 
       if (!response.ok) {
@@ -37,6 +40,7 @@ function Alerts() {
       }
     } catch (error) {
       console.error(error);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -199,11 +203,17 @@ function Alerts() {
         </div>
       </header>
 
-      {servers.length === 0 ? (
+      {error && (
+        <div className="message error">{error}</div>
+      )}
+
+      {!error && servers.length === 0 && (
         <div className="message">
           Nenhum servidor cadastrado.
         </div>
-      ) : (
+      )}
+
+      {!error && servers.length > 0 && (
         <>
           <div className="alerts-server-select">
             <label>Servidor:</label>

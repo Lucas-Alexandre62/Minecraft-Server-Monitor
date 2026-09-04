@@ -53,6 +53,19 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route
+              path="*"
+              element={
+                <ProtectedRoute>
+                  <div className="page">
+                    <div className="message">
+                      Página não encontrada.
+                    </div>
+                  </div>
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </div>
