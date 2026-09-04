@@ -355,7 +355,7 @@ Dependências: T003
 
 ## T029 — Testes dos Controllers
 
-Status: TODO
+Status: DONE
 Dependências: T028
 
 ---
