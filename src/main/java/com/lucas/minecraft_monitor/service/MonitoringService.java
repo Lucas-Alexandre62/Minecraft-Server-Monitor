@@ -36,7 +36,13 @@ public class MonitoringService {
 
         ServerEvent previousStateEvent =
                 serverEventRepository
-                        .findTopStateEventByServer(server)
+                        .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                                server,
+                                java.util.List.of(
+                                        ServerEvent.EventType.SERVER_UP,
+                                        ServerEvent.EventType.SERVER_DOWN
+                                )
+                        )
                         .orElse(null);
 
         boolean previousOnline =

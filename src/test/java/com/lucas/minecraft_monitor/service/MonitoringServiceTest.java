@@ -51,7 +51,9 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.empty());
 
         monitoringService.processStatus(server, true, 50);
@@ -74,7 +76,9 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.empty());
 
         monitoringService.processStatus(server, false, 0);
@@ -95,7 +99,9 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.empty());
 
         monitoringService.processStatus(server, true, 50);
@@ -113,7 +119,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         monitoringService.processStatus(server, true, 50);
@@ -132,7 +140,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         monitoringService.processStatus(server, false, 0);
@@ -151,7 +161,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         monitoringService.processStatus(server, false, 0);
@@ -178,7 +190,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         monitoringService.processStatus(server, true, 50);
@@ -205,7 +219,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         when(serverEventRepository
@@ -240,7 +256,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previousState));
 
         when(serverEventRepository
@@ -262,7 +280,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previous));
 
         when(serverEventRepository
@@ -305,7 +325,9 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopStateEventByServer(server))
+                .findTop1ByServerAndTypeInOrderByCreatedAtDesc(
+                        eq(server),
+                        any()))
                 .thenReturn(Optional.of(previousState));
 
         when(serverEventRepository
