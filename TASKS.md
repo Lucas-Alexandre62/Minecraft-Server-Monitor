@@ -140,7 +140,7 @@ Critérios de aceite:
 
 ## T008 — Melhorar eventos
 
-Status: TODO
+Status: DONE
 Dependências: T004
 
 Critérios de aceite:

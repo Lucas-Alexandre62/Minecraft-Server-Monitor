@@ -387,6 +387,68 @@ tr:last-child td {
   border-radius: 12px;
 }
 
+.events-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-button {
+  background: #1d222d;
+  color: #9199a8;
+  border: 1px solid #323846;
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.filter-button:hover {
+  background: #262c38;
+  color: #f5f7fa;
+}
+
+.filter-button.active {
+  background: #262c38;
+  color: #f5f7fa;
+  border-color: #555f70;
+}
+
+.events-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.pagination-button {
+  background: #1d222d;
+  color: #f5f7fa;
+  border: 1px solid #323846;
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: #262c38;
+  border-color: #555f70;
+}
+
+.pagination-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  color: #9199a8;
+  font-size: 13px;
+}
+
 .event-item {
   display: flex;
   align-items: center;

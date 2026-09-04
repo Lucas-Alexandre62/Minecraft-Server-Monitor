@@ -14,12 +14,36 @@ function ServerDetails() {
   const [statistics, setStatistics] = useState(null);
   const [history, setHistory] = useState(null);
   const [events, setEvents] = useState(null);
+  const [eventPage, setEventPage] = useState(0);
+  const [eventFilter, setEventFilter] = useState("");
 
   const [metrics, setMetrics] = useState(null);
   const [metricsPeriod, setMetricsPeriod] = useState("1h");
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  async function loadEvents(page, filter) {
+    try {
+      let url = `/servers/${serverId}/events?page=${page}&size=10`;
+
+      if (filter) {
+        url += `&type=${filter}`;
+      }
+
+      const response = await apiFetch(url);
+
+      if (!response.ok) {
+        throw new Error("Erro ao carregar eventos.");
+      }
+
+      const data = await response.json();
+      setEvents(data);
+    } catch (error) {
+      console.error(error);
+      setEvents(null);
+    }
+  }
 
   async function loadDetails() {
     try {
@@ -30,8 +54,6 @@ function ServerDetails() {
         statusResponse,
         statisticsResponse,
         historyResponse,
-        eventsResponse,
-
       ] = await Promise.all([
         apiFetch(`/servers/${serverId}`),
         apiFetch(`/servers/${serverId}/status`),
@@ -40,9 +62,6 @@ function ServerDetails() {
         ),
         apiFetch(
           `/servers/${serverId}/history?page=0&size=20`
-        ),
-        apiFetch(
-          `/servers/${serverId}/events?page=0&size=20`
         ),
       ]);
 
@@ -53,8 +72,7 @@ function ServerDetails() {
       if (
         !statusResponse.ok ||
         !statisticsResponse.ok ||
-        !historyResponse.ok ||
-        !eventsResponse.ok
+        !historyResponse.ok
       ) {
         throw new Error(
           "Erro ao carregar informações do servidor."
@@ -66,20 +84,19 @@ function ServerDetails() {
         statusData,
         statisticsData,
         historyData,
-        eventsData,
       ] = await Promise.all([
         serverResponse.json(),
         statusResponse.json(),
         statisticsResponse.json(),
         historyResponse.json(),
-        eventsResponse.json(),
       ]);
 
       setServer(serverData);
       setStatus(statusData);
       setStatistics(statisticsData);
       setHistory(historyData);
-      setEvents(eventsData);
+
+      await loadEvents(0, "");
     } catch (error) {
       console.error(error);
       setError(error.message);
@@ -118,6 +135,10 @@ function ServerDetails() {
   useEffect(() => {
     loadDetails();
   }, [serverId]);
+
+  useEffect(() => {
+    loadEvents(eventPage, eventFilter);
+  }, [serverId, eventPage, eventFilter]);
 
   useEffect(() => {
     loadMetrics();
@@ -443,15 +464,18 @@ function ServerDetails() {
             <h2>Eventos</h2>
           </div>
 
-          {events?.content?.length === 0 && (
-            <div className="message">
-              Nenhum evento registrado.
-            </div>
-          )}
-
-          {events?.content?.length > 0 && (
-              <EventList events={events} />
-          )}
+          <EventList
+            events={events?.content ?? []}
+            page={events?.number ?? 0}
+            totalPages={events?.totalPages ?? 0}
+            totalElements={events?.totalElements ?? 0}
+            onPageChange={setEventPage}
+            filter={eventFilter}
+            onFilterChange={(value) => {
+              setEventFilter(value);
+              setEventPage(0);
+            }}
+          />
         </section>
       </main>
     </div>
