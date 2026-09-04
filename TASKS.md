@@ -398,7 +398,7 @@ Critérios de aceite:
 
 ## T033 — Configuração por ambiente
 
-Status: TODO
+Status: DONE
 Dependências: T032
 
 Critérios de aceite:

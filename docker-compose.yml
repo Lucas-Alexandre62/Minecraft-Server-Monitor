@@ -20,6 +20,7 @@ services:
   backend:
     build: .
     environment:
+      SPRING_PROFILES_ACTIVE: prod
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-minecraft_monitor}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-minecraft}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-minecraft}
