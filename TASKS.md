@@ -32,7 +32,7 @@ Critérios de aceite:
 
 ## T002 — Melhorar validação da API
 
-Status: TODO
+Status: DONE
 Dependências: T001
 
 Critérios de aceite:
