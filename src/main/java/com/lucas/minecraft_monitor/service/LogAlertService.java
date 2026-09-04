@@ -3,15 +3,14 @@ package com.lucas.minecraft_monitor.service;
 import com.lucas.minecraft_monitor.model.MinecraftServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
-public class LogAlertService implements AlertService {
+@Component
+public class LogAlertService {
 
     private static final Logger logger =
             LoggerFactory.getLogger(LogAlertService.class);
 
-    @Override
     public void serverDown(MinecraftServer server) {
         logger.warn("Servidor OFFLINE: {} ({}:{})",
                 server.getName(),
@@ -19,7 +18,6 @@ public class LogAlertService implements AlertService {
                 server.getPort());
     }
 
-    @Override
     public void serverUp(MinecraftServer server) {
         logger.info("Servidor ONLINE novamente: {} ({}:{})",
                 server.getName(),

@@ -21,6 +21,9 @@ public class AlertConfig {
     @Column(nullable = false)
     private boolean enabled;
 
+    @Column(length = 500)
+    private String url;
+
     public AlertConfig() {
     }
 
@@ -32,6 +35,18 @@ public class AlertConfig {
         this.server = server;
         this.channel = channel;
         this.enabled = enabled;
+    }
+
+    public AlertConfig(
+            MinecraftServer server,
+            AlertChannel channel,
+            boolean enabled,
+            String url
+    ) {
+        this.server = server;
+        this.channel = channel;
+        this.enabled = enabled;
+        this.url = url;
     }
 
     public Long getId() {
@@ -60,5 +75,13 @@ public class AlertConfig {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

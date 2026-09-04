@@ -7,12 +7,19 @@ const CHANNEL_LABELS = {
   EMAIL: "E-mail",
 };
 
+const CHANNEL_DESCRIPTIONS = {
+  LOG: "Registra alertas no log do servidor",
+  WEBHOOK: "Envia notificações via HTTP POST",
+  EMAIL: "Envia alertas por e-mail (em breve)",
+};
+
 function Alerts() {
   const [servers, setServers] = useState([]);
   const [selectedServer, setSelectedServer] = useState("");
   const [configs, setConfigs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(null);
+  const [webhookUrl, setWebhookUrl] = useState("");
 
   async function loadServers() {
     try {
@@ -38,6 +45,7 @@ function Alerts() {
   async function loadConfigs(serverId) {
     if (!serverId) {
       setConfigs([]);
+      setWebhookUrl("");
       return;
     }
 
@@ -52,9 +60,15 @@ function Alerts() {
 
       const data = await response.json();
       setConfigs(data);
+
+      const webhookConfig = data.find(
+        (c) => c.channel === "WEBHOOK"
+      );
+      setWebhookUrl(webhookConfig?.url ?? "");
     } catch (error) {
       console.error(error);
       setConfigs([]);
+      setWebhookUrl("");
     }
   }
 
@@ -66,12 +80,18 @@ function Alerts() {
     try {
       setSaving(channel);
 
+      const body = { channel, enabled };
+
+      if (channel === "WEBHOOK") {
+        body.url = webhookUrl;
+      }
+
       const response = await apiFetch(
         `/servers/${selectedServer}/alerts`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ channel, enabled }),
+          body: JSON.stringify(body),
         }
       );
 
@@ -84,6 +104,59 @@ function Alerts() {
       setConfigs((current) => {
         const index = current.findIndex(
           (c) => c.channel === channel
+        );
+
+        if (index >= 0) {
+          const next = [...current];
+          next[index] = updated;
+          return next;
+        }
+
+        return [...current, updated];
+      });
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setSaving(null);
+    }
+  }
+
+  async function saveWebhookUrl() {
+    if (!selectedServer) {
+      return;
+    }
+
+    try {
+      setSaving("WEBHOOK_URL");
+
+      const webhookConfig = configs.find(
+        (c) => c.channel === "WEBHOOK"
+      );
+
+      const body = {
+        channel: "WEBHOOK",
+        enabled: webhookConfig?.enabled ?? false,
+        url: webhookUrl,
+      };
+
+      const response = await apiFetch(
+        `/servers/${selectedServer}/alerts`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Erro ao salvar URL.");
+      }
+
+      const updated = await response.json();
+
+      setConfigs((current) => {
+        const index = current.findIndex(
+          (c) => c.channel === "WEBHOOK"
         );
 
         if (index >= 0) {
@@ -161,14 +234,46 @@ function Alerts() {
                     className="alerts-config-item"
                     key={channel}
                   >
-                    <div>
+                    <div className="alerts-config-info">
                       <strong>{label}</strong>
-                      <span>{channel}</span>
+                      <span>
+                        {CHANNEL_DESCRIPTIONS[channel]}
+                      </span>
+
+                      {channel === "WEBHOOK" && (
+                        <div className="webhook-url-row">
+                          <input
+                            type="url"
+                            className="webhook-url-input"
+                            placeholder="https://exemplo.com/webhook"
+                            value={webhookUrl}
+                            onChange={(e) =>
+                              setWebhookUrl(e.target.value)
+                            }
+                          />
+
+                          <button
+                            className="secondary-button"
+                            disabled={
+                              saving === "WEBHOOK_URL"
+                            }
+                            onClick={saveWebhookUrl}
+                          >
+                            {saving === "WEBHOOK_URL"
+                              ? "Salvando..."
+                              : "Salvar URL"}
+                          </button>
+                        </div>
+                      )}
                     </div>
 
                     <button
                       className={`toggle-button ${enabled ? "active" : ""}`}
-                      disabled={isSaving}
+                      disabled={
+                        isSaving ||
+                        (channel === "WEBHOOK" &&
+                          !webhookUrl.trim())
+                      }
                       onClick={() =>
                         toggleChannel(channel, !enabled)
                       }

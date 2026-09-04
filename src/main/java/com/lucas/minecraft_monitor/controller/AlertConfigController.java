@@ -44,7 +44,8 @@ public class AlertConfigController {
         AlertConfig config = alertConfigService.upsert(
                 serverId,
                 channel,
-                request.enabled()
+                request.enabled(),
+                request.url()
         );
 
         return AlertConfigDTO.fromEntity(config);
@@ -52,7 +53,8 @@ public class AlertConfigController {
 
     public record AlertConfigRequest(
             String channel,
-            boolean enabled
+            boolean enabled,
+            String url
     ) {
     }
 }

@@ -42,6 +42,16 @@ public class AlertConfigService {
             AlertChannel channel,
             boolean enabled
     ) {
+        return upsert(serverId, channel, enabled, null);
+    }
+
+    @Transactional
+    public AlertConfig upsert(
+            Long serverId,
+            AlertChannel channel,
+            boolean enabled,
+            String url
+    ) {
         MinecraftServer server = serverRepository
                 .findById(serverId)
                 .orElseThrow(() -> new ResourceNotFoundException(
@@ -53,6 +63,10 @@ public class AlertConfigService {
                 .orElse(new AlertConfig(server, channel, enabled));
 
         config.setEnabled(enabled);
+
+        if (url != null) {
+            config.setUrl(url);
+        }
 
         return alertConfigRepository.save(config);
     }

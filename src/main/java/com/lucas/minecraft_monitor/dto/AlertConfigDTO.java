@@ -6,14 +6,16 @@ public record AlertConfigDTO(
         Long id,
         Long serverId,
         String channel,
-        boolean enabled
+        boolean enabled,
+        String url
 ) {
     public static AlertConfigDTO fromEntity(AlertConfig config) {
         return new AlertConfigDTO(
                 config.getId(),
                 config.getServer().getId(),
                 config.getChannel().name(),
-                config.isEnabled()
+                config.isEnabled(),
+                config.getUrl()
         );
     }
 }

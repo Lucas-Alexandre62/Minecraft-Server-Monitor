@@ -1135,3 +1135,36 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.alerts-config-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.webhook-url-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.webhook-url-input {
+  background: #0f1117;
+  color: #f5f7fa;
+  border: 1px solid #323846;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  flex: 1;
+  min-width: 0;
+}
+
+.webhook-url-input:focus {
+  outline: none;
+  border-color: #555f70;
+}
+
+.webhook-url-input::placeholder {
+  color: #555f70;
+}
