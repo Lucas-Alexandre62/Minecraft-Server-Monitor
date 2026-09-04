@@ -76,7 +76,8 @@ public class MinecraftServerMonitoringScheduler {
 
             monitoringService.processStatus(
                     server,
-                    status.online()
+                    status.online(),
+                    status.latency()
             );
         }
     }

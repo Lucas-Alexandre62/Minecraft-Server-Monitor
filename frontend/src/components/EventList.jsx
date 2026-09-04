@@ -15,6 +15,32 @@ function EventList({
     );
   }
 
+  function getEventLabel(type) {
+    switch (type) {
+      case "SERVER_UP":
+        return "Servidor online";
+      case "SERVER_DOWN":
+        return "Servidor offline";
+      case "HIGH_LATENCY":
+        return "Latência elevada";
+      default:
+        return type;
+    }
+  }
+
+  function getIndicatorClass(type) {
+    switch (type) {
+      case "SERVER_UP":
+        return "event-indicator up";
+      case "SERVER_DOWN":
+        return "event-indicator down";
+      case "HIGH_LATENCY":
+        return "event-indicator latency";
+      default:
+        return "event-indicator";
+    }
+  }
+
   return (
     <div>
       <div className="events-filter">
@@ -38,41 +64,38 @@ function EventList({
         >
           Offline
         </button>
+
+        <button
+          className={`filter-button ${filter === "HIGH_LATENCY" ? "active" : ""}`}
+          onClick={() => onFilterChange("HIGH_LATENCY")}
+        >
+          Latência
+        </button>
       </div>
 
       <div className="events-list">
-        {events.map((event) => {
-          const isUp = event.type === "SERVER_UP";
+        {events.map((event) => (
+          <div
+            className="event-item"
+            key={event.id}
+          >
+            <span
+              className={getIndicatorClass(event.type)}
+            />
 
-          return (
-            <div
-              className="event-item"
-              key={event.id}
-            >
-              <span
-                className={
-                  isUp
-                    ? "event-indicator up"
-                    : "event-indicator down"
-                }
-              />
+            <div>
+              <strong>
+                {getEventLabel(event.type)}
+              </strong>
 
-              <div>
-                <strong>
-                  {isUp
-                    ? "Servidor online"
-                    : "Servidor offline"}
-                </strong>
-
-                <span>
-                  {new Date(
-                    event.createdAt
-                  ).toLocaleString()}
-                </span>
-              </div>
+              <span>
+                {new Date(
+                  event.createdAt
+                ).toLocaleString()}
+              </span>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       {totalPages > 1 && (

@@ -155,7 +155,7 @@ Critérios de aceite:
 
 ## T009 — Detectar latência elevada
 
-Status: TODO
+Status: DONE
 Dependências: T008
 
 Critérios de aceite:

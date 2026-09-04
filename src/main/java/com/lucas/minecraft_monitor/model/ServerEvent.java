@@ -25,7 +25,8 @@ public class ServerEvent {
 
     public enum EventType {
         SERVER_DOWN,
-        SERVER_UP
+        SERVER_UP,
+        HIGH_LATENCY
     }
 
     public ServerEvent() {

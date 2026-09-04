@@ -473,7 +473,11 @@ tr:last-child td {
 }
 
 .event-indicator.down {
-  background: #ff7b72;
+  background-color: #ff7b72;
+}
+
+.event-indicator.latency {
+  background-color: #d29922;
 }
 
 .period-select {

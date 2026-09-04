@@ -3,6 +3,7 @@ package com.lucas.minecraft_monitor.service;
 import com.lucas.minecraft_monitor.model.MinecraftServer;
 import com.lucas.minecraft_monitor.model.ServerEvent;
 import com.lucas.minecraft_monitor.repository.ServerEventRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -29,6 +30,13 @@ class MonitoringServiceTest {
     @InjectMocks
     private MonitoringService monitoringService;
 
+    @BeforeEach
+    void setUp() {
+        ReflectionTestUtils.setField(
+                monitoringService, "latencyThreshold", 500L
+        );
+    }
+
     private MinecraftServer createServer() {
         MinecraftServer server = new MinecraftServer();
         ReflectionTestUtils.setField(server, "id", 1L);
@@ -43,10 +51,10 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.empty());
 
-        monitoringService.processStatus(server, true);
+        monitoringService.processStatus(server, true, 50);
 
         ArgumentCaptor<ServerEvent> captor =
                 ArgumentCaptor.forClass(ServerEvent.class);
@@ -66,10 +74,10 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.empty());
 
-        monitoringService.processStatus(server, false);
+        monitoringService.processStatus(server, false, 0);
 
         ArgumentCaptor<ServerEvent> captor =
                 ArgumentCaptor.forClass(ServerEvent.class);
@@ -87,16 +95,16 @@ class MonitoringServiceTest {
         MinecraftServer server = createServer();
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.empty());
 
-        monitoringService.processStatus(server, true);
+        monitoringService.processStatus(server, true, 50);
 
         verifyNoInteractions(alertService);
     }
 
     @Test
-    void onlineToOnlineDoesNotCreateEvent() {
+    void onlineToOnlineWithLowLatencyDoesNotCreateEvent() {
         MinecraftServer server = createServer();
 
         ServerEvent previous = new ServerEvent(
@@ -105,10 +113,10 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.of(previous));
 
-        monitoringService.processStatus(server, true);
+        monitoringService.processStatus(server, true, 50);
 
         verify(serverEventRepository, never()).save(any());
         verifyNoInteractions(alertService);
@@ -124,10 +132,10 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.of(previous));
 
-        monitoringService.processStatus(server, false);
+        monitoringService.processStatus(server, false, 0);
 
         verify(serverEventRepository, never()).save(any());
         verifyNoInteractions(alertService);
@@ -143,10 +151,10 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.of(previous));
 
-        monitoringService.processStatus(server, false);
+        monitoringService.processStatus(server, false, 0);
 
         ArgumentCaptor<ServerEvent> captor =
                 ArgumentCaptor.forClass(ServerEvent.class);
@@ -170,10 +178,10 @@ class MonitoringServiceTest {
         );
 
         when(serverEventRepository
-                .findTopByServerOrderByCreatedAtDesc(server))
+                .findTopStateEventByServer(server))
                 .thenReturn(Optional.of(previous));
 
-        monitoringService.processStatus(server, true);
+        monitoringService.processStatus(server, true, 50);
 
         ArgumentCaptor<ServerEvent> captor =
                 ArgumentCaptor.forClass(ServerEvent.class);
@@ -185,5 +193,62 @@ class MonitoringServiceTest {
                 captor.getValue().getType()
         );
         verify(alertService).serverUp(server);
+    }
+
+    @Test
+    void highLatencyCreatesHighLatencyEvent() {
+        MinecraftServer server = createServer();
+
+        ServerEvent previous = new ServerEvent(
+                server,
+                ServerEvent.EventType.SERVER_UP
+        );
+
+        when(serverEventRepository
+                .findTopStateEventByServer(server))
+                .thenReturn(Optional.of(previous));
+
+        when(serverEventRepository
+                .findTopByServerOrderByCreatedAtDesc(server))
+                .thenReturn(Optional.of(previous));
+
+        monitoringService.processStatus(server, true, 1000);
+
+        ArgumentCaptor<ServerEvent> captor =
+                ArgumentCaptor.forClass(ServerEvent.class);
+
+        verify(serverEventRepository).save(captor.capture());
+
+        assertEquals(
+                ServerEvent.EventType.HIGH_LATENCY,
+                captor.getValue().getType()
+        );
+    }
+
+    @Test
+    void highLatencySpamPreventedByLastEventCheck() {
+        MinecraftServer server = createServer();
+
+        ServerEvent previousState = new ServerEvent(
+                server,
+                ServerEvent.EventType.SERVER_UP
+        );
+
+        ServerEvent lastHighLatency = new ServerEvent(
+                server,
+                ServerEvent.EventType.HIGH_LATENCY
+        );
+
+        when(serverEventRepository
+                .findTopStateEventByServer(server))
+                .thenReturn(Optional.of(previousState));
+
+        when(serverEventRepository
+                .findTopByServerOrderByCreatedAtDesc(server))
+                .thenReturn(Optional.of(lastHighLatency));
+
+        monitoringService.processStatus(server, true, 1000);
+
+        verify(serverEventRepository, never()).save(any());
     }
 }
