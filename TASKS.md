@@ -233,7 +233,7 @@ Critérios de aceite:
 
 ## T017 — Gráficos por período
 
-Status: TODO
+Status: DONE
 Dependências: T004
 
 Critérios de aceite:
