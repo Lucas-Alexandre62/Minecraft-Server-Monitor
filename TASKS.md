@@ -362,7 +362,7 @@ Dependências: T028
 
 ## T030 — Testes do monitoramento
 
-Status: TODO
+Status: DONE
 Dependências: T029
 
 Critérios de aceite:
