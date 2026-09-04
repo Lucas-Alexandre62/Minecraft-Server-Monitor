@@ -63,7 +63,7 @@ button {
 
 .overview {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -1175,4 +1175,38 @@ button:disabled {
 
 .webhook-url-input::placeholder {
   color: #555f70;
+}
+
+.logout-button {
+  background: transparent;
+  color: #9199a8;
+  border: 1px solid #323846;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  color: #ff7b72;
+  border-color: #ff7b72;
+  background: rgba(255, 123, 114, 0.1);
+}
+
+.login-layout {
+  flex: 1;
+  display: flex;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

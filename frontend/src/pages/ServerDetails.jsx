@@ -223,7 +223,7 @@ function ServerDetails() {
 
           <button
             className="refresh-button"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/servers")}
           >
             Voltar
           </button>
@@ -238,7 +238,7 @@ function ServerDetails() {
         <div>
           <button
             className="back-button"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/servers")}
           >
             ← Voltar
           </button>
@@ -337,7 +337,7 @@ function ServerDetails() {
 
               <MetricCard
                 label="Média de jogadores"
-                value={statistics.averagePlayers.toFixed(1)}
+                value={statistics.averagePlayers?.toFixed(1) ?? "--"}
               />
 
               <MetricCard
@@ -347,7 +347,7 @@ function ServerDetails() {
 
               <MetricCard
                 label="Latência média"
-                value={`${statistics.averageLatency.toFixed(0)} ms`}
+                value={statistics.averageLatency?.toFixed(0) != null ? `${statistics.averageLatency.toFixed(0)} ms` : "--"}
               />
             </div>
           </section>

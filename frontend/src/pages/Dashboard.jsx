@@ -204,7 +204,7 @@ function Dashboard() {
             </span>
 
             <strong>
-              {aggregateStats
+              {aggregateStats?.uptimePercentage != null
                 ? `${aggregateStats.uptimePercentage.toFixed(1)}%`
                 : "--"}
             </strong>

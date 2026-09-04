@@ -10,7 +10,7 @@ const CHANNEL_LABELS = {
 const CHANNEL_DESCRIPTIONS = {
   LOG: "Registra alertas no log do servidor",
   WEBHOOK: "Envia notificações via HTTP POST",
-  EMAIL: "Envia alertas por e-mail (em breve)",
+  EMAIL: "Envia alertas por e-mail",
 };
 
 function Alerts() {
@@ -252,7 +252,11 @@ function Alerts() {
 
                       {channel === "WEBHOOK" && (
                         <div className="webhook-url-row">
+                          <label htmlFor={`webhook-url-${channel}`} className="sr-only">
+                            URL do Webhook
+                          </label>
                           <input
+                            id={`webhook-url-${channel}`}
                             type="url"
                             className="webhook-url-input"
                             placeholder="https://exemplo.com/webhook"
