@@ -1025,12 +1025,10 @@ button:disabled {
 
 /* Login styles */
 .login-page {
-  min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 100%;
   padding: 20px;
 }
 
@@ -1197,6 +1195,8 @@ button:disabled {
 .login-layout {
   flex: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sr-only {
