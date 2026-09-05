@@ -14,13 +14,22 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">M</div>
+        <div className="sidebar-logo-icon">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="none">
+            <rect x="2" y="1" width="3" height="12" rx="0.5" fill="currentColor" opacity="0.85"/>
+            <rect x="5" y="1" width="3" height="12" rx="0.5" fill="currentColor"/>
+            <rect x="8" y="2" width="6" height="2" rx="0.5" fill="currentColor" opacity="0.7"/>
+            <rect x="11" y="1" width="3" height="6" rx="0.5" fill="currentColor" opacity="0.6"/>
+          </svg>
+        </div>
 
         <div>
           <strong>Minecraft</strong>
           <span>Monitor</span>
         </div>
       </div>
+
+      <div className="pixel-separator" />
 
       <nav className="sidebar-nav">
         <NavLink
@@ -30,7 +39,14 @@ function Sidebar() {
             isActive ? "nav-item active" : "nav-item"
           }
         >
-          <span>◼</span>
+          <span className="nav-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="2" width="5" height="5" rx="1"/>
+              <rect x="9" y="2" width="5" height="5" rx="1"/>
+              <rect x="2" y="9" width="5" height="5" rx="1"/>
+              <rect x="9" y="9" width="5" height="5" rx="1"/>
+            </svg>
+          </span>
           Dashboard
         </NavLink>
 
@@ -40,7 +56,14 @@ function Sidebar() {
             isActive ? "nav-item active" : "nav-item"
           }
         >
-          <span>◉</span>
+          <span className="nav-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="2" width="10" height="4" rx="1"/>
+              <circle cx="5.5" cy="4" r="0.7" fill="currentColor"/>
+              <rect x="3" y="10" width="10" height="4" rx="1"/>
+              <circle cx="5.5" cy="12" r="0.7" fill="currentColor"/>
+            </svg>
+          </span>
           Servidores
         </NavLink>
 
@@ -50,15 +73,20 @@ function Sidebar() {
             isActive ? "nav-item active" : "nav-item"
           }
         >
-          <span>⚑</span>
+          <span className="nav-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M4 6.5C4 4.01 5.79 2 8 2s4 2.01 4 4.5V10l1.5 1.5H2.5L4 10V6.5z"/>
+              <path d="M6.5 12.5a1.5 1.5 0 003 0"/>
+            </svg>
+          </span>
           Alertas
         </NavLink>
       </nav>
 
       <div className="sidebar-footer">
-        <span>Monitoramento Minecraft</span>
+        <span>Monitoramento</span>
         <small>v0.1.0</small>
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 12 }}>
           <button
             className="logout-button"
             onClick={handleLogout}

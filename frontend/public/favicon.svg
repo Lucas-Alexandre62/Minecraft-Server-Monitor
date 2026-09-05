@@ -1,13 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#4a9e4a"/>
-  <rect x="4" y="4" width="10" height="10" fill="#6b4226"/>
-  <rect x="18" y="4" width="10" height="10" fill="#6b4226"/>
-  <rect x="4" y="18" width="10" height="10" fill="#6b4226"/>
-  <rect x="18" y="18" width="10" height="10" fill="#6b4226"/>
-  <rect x="4" y="4" width="4" height="4" fill="#8b6914"/>
-  <rect x="18" y="4" width="4" height="4" fill="#8b6914"/>
-  <rect x="12" y="12" width="8" height="8" fill="#5a8f5a"/>
-  <rect x="4" y="24" width="4" height="4" fill="#8b6914"/>
-  <rect x="24" y="24" width="4" height="4" fill="#8b6914"/>
-  <text x="16" y="21" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="white">M</text>
+  <defs>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a9e5a"/>
+      <stop offset="100%" stop-color="#3d7a3d"/>
+    </linearGradient>
+  </defs>
+  <!-- Stone base -->
+  <rect width="32" height="32" rx="3" fill="#6b6b6b"/>
+  <!-- Stone texture pixels -->
+  <rect x="2" y="2" width="4" height="4" fill="#7a7a7a"/>
+  <rect x="10" y="2" width="4" height="4" fill="#5e5e5e"/>
+  <rect x="18" y="2" width="4" height="4" fill="#7a7a7a"/>
+  <rect x="26" y="2" width="4" height="4" fill="#5e5e5e"/>
+  <rect x="2" y="10" width="4" height="4" fill="#5e5e5e"/>
+  <rect x="10" y="10" width="4" height="4" fill="#7a7a7a"/>
+  <rect x="18" y="10" width="4" height="4" fill="#5e5e5e"/>
+  <rect x="26" y="10" width="4" height="4" fill="#7a7a7a"/>
+  <!-- Grass top -->
+  <rect x="0" y="0" width="32" height="6" rx="3" fill="url(#grass)"/>
+  <rect x="0" y="4" width="32" height="2" fill="#3d7a3d"/>
+  <!-- M letter -->
+  <text x="16" y="24" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="16" fill="#e2e5ec">M</text>
 </svg>

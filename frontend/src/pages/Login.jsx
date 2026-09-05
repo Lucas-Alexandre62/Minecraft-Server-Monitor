@@ -48,7 +48,12 @@ function Login() {
       <div className="login-card">
         <div className="login-header">
           <div className="sidebar-logo-icon">
-            M
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="none">
+              <rect x="2" y="1" width="3" height="12" rx="0.5" fill="currentColor" opacity="0.85"/>
+              <rect x="5" y="1" width="3" height="12" rx="0.5" fill="currentColor"/>
+              <rect x="8" y="2" width="6" height="2" rx="0.5" fill="currentColor" opacity="0.7"/>
+              <rect x="11" y="1" width="3" height="6" rx="0.5" fill="currentColor" opacity="0.6"/>
+            </svg>
           </div>
 
           <h1>Minecraft Monitor</h1>
