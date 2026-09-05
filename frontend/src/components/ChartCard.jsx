@@ -26,29 +26,30 @@ function ChartCard({
       ) : (
         <ResponsiveContainer width="100%" height={280}>
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#2a2e3a" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
 
             <XAxis
               dataKey="time"
-              tick={{ fill: '#5c6478', fontSize: 11 }}
-              axisLine={{ stroke: '#2a2e3a' }}
-              tickLine={{ stroke: '#2a2e3a' }}
+              tick={{ fill: 'var(--text-dim)', fontSize: 11 }}
+              axisLine={{ stroke: 'var(--border)' }}
+              tickLine={{ stroke: 'var(--border)' }}
             />
 
             <YAxis
               allowDecimals={allowDecimals}
-              tick={{ fill: '#5c6478', fontSize: 11 }}
-              axisLine={{ stroke: '#2a2e3a' }}
-              tickLine={{ stroke: '#2a2e3a' }}
+              tick={{ fill: 'var(--text-dim)', fontSize: 11 }}
+              axisLine={{ stroke: 'var(--border)' }}
+              tickLine={{ stroke: 'var(--border)' }}
             />
 
             <Tooltip
               contentStyle={{
-                background: '#1e212b',
-                border: '2px solid #2a2e3a',
-                borderRadius: '4px',
+                background: 'var(--bg-elevated)',
+                border: '2px solid var(--border)',
+                borderRadius: '0px',
                 fontSize: '12px',
-                color: '#e2e5ec',
+                color: 'var(--text)',
+                boxShadow: '3px 3px 0 rgba(0,0,0,0.4)',
               }}
             />
 
@@ -58,7 +59,7 @@ function ChartCard({
               name={name}
               strokeWidth={2}
               dot={false}
-              stroke="#6ee7b7"
+              stroke="var(--grass-light)"
             />
           </LineChart>
         </ResponsiveContainer>

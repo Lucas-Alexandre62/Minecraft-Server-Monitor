@@ -1,76 +1,89 @@
 /* ============================================
-   MINECRAFT SERVER MONITOR — THEME
+   MINECRAFT SERVER MONITOR — THEME v2
+   Deeply Minecraft-inspired design system
    ============================================ */
 
 :root {
-  /* === Backgrounds === */
-  --bg-deep: #0b0d11;
-  --bg-base: #12141a;
-  --bg-surface: #181b23;
-  --bg-elevated: #1e212b;
-  --bg-overlay: #252833;
+  /* === Backgrounds (deepslate/obsidian spectrum) === */
+  --bg-deep: #0a0a0c;
+  --bg-base: #141418;
+  --bg-surface: #1c1c22;
+  --bg-elevated: #24242c;
+  --bg-overlay: #2c2c36;
 
-  /* === Borders === */
-  --border: #2a2e3a;
-  --border-light: #363b4a;
-  --border-focus: #555d73;
+  /* === Borders (stone spectrum) === */
+  --border: #3a3a44;
+  --border-light: #4a4a56;
+  --border-focus: #6a6a78;
 
   /* === Text === */
-  --text: #e2e5ec;
-  --text-secondary: #8891a5;
-  --text-muted: #5c6478;
-  --text-dim: #444b5e;
+  --text: #e8e6e3;
+  --text-secondary: #a09d96;
+  --text-muted: #6b6862;
+  --text-dim: #4a4844;
 
-  /* === Accent: Emerald / Grass === */
-  --grass: #6ee7b7;
-  --grass-dim: #34d399;
-  --grass-dark: #0f3d2e;
-  --grass-bg: #12291f;
+  /* === Minecraft Block Colors === */
+  --grass: #5d9e3c;
+  --grass-light: #7ec850;
+  --grass-dark: #3a6b24;
+  --grass-bg: #1a2e14;
 
-  /* === Gold / Warning === */
-  --gold: #fbbf24;
-  --gold-dark: #3d3515;
-  --gold-bg: #2a2410;
+  --stone-gray: #7a7a7a;
+  --stone-dark: #5a5a5a;
 
-  /* === Redstone / Error === */
-  --redstone: #f87171;
-  --redstone-dim: #ef4444;
-  --redstone-dark: #3d1519;
-  --redstone-bg: #2a0f12;
+  --deepslate: #505058;
+  --deepslate-dark: #38383e;
 
-  /* === Sky Blue / Info === */
-  --sky: #60a5fa;
-  --sky-dark: #15253d;
+  --obsidian: #1a0a2e;
+  --obsidian-light: #2d1a4a;
 
-  /* === Dirt / Wood brown === */
-  --dirt: #a0845c;
-  --wood: #8b7355;
-  --wood-dark: #2a2218;
+  --dirt: #8b6914;
+  --dirt-dark: #5c4610;
+  --dirt-bg: #2a200c;
 
-  /* === Stone accent === */
-  --stone: #9ca3af;
+  --wood: #b8860b;
+  --wood-dark: #8b6508;
+
+  --sand: #d4c5a0;
+  --sand-dark: #a89870;
+
+  --water: #3f76e4;
+  --water-dark: #2a5ab8;
+  --water-bg: #0f1a30;
+
+  --redstone: #e03030;
+  --redstone-light: #ff4444;
+  --redstone-dark: #6b1818;
+  --redstone-bg: #2a0e0e;
+
+  --gold: #fcdb05;
+  --gold-dark: #b89e04;
+  --gold-bg: #2a2408;
 
   /* === Fonts === */
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-pixel: 'Press Start 2P', monospace;
 
-  /* === Shadows === */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
-  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.25);
-  --shadow-glow-green: 0 0 12px rgba(110, 231, 183, 0.15);
-  --shadow-glow-red: 0 0 12px rgba(248, 113, 113, 0.15);
+  /* === Shadows (Minecraft-inspired hard shadows) === */
+  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 4px 0 rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-block: 2px 2px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-glow-green: 0 0 8px rgba(93, 158, 60, 0.3);
+  --shadow-glow-red: 0 0 8px rgba(224, 48, 48, 0.3);
+  --shadow-glow-gold: 0 0 8px rgba(252, 219, 5, 0.3);
+  --shadow-glow-blue: 0 0 8px rgba(63, 118, 228, 0.3);
 
   /* === Transitions === */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.2s ease;
-  --transition-slow: 0.3s ease;
+  --transition-fast: 0.1s ease;
+  --transition-base: 0.15s ease;
+  --transition-slow: 0.25s ease;
 
-  /* === Border radius === */
-  --radius-xs: 2px;
-  --radius-sm: 3px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
+  /* === Border radius (always square for Minecraft feel) === */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
 }
 
 
@@ -90,6 +103,22 @@ body {
   background: var(--bg-deep);
   color: var(--text);
   line-height: 1.5;
+  /* Subtle stone texture on body */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.008) 4px,
+      rgba(255, 255, 255, 0.008) 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.04) 4px,
+      rgba(0, 0, 0, 0.04) 5px
+    );
 }
 
 button {
@@ -97,55 +126,94 @@ button {
 }
 
 a {
-  color: var(--grass);
+  color: var(--grass-light);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--grass-dim);
+  color: var(--grass);
 }
 
 
 /* ============================================
-   TEXTURE UTILITIES
+   TEXTURE UTILITIES — Minecraft Block Patterns
    ============================================ */
 
 .texture-stone {
-  background:
+  background-image:
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 2px,
-      rgba(255, 255, 255, 0.008) 2px,
-      rgba(255, 255, 255, 0.008) 4px
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 4px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent,
       transparent 3px,
-      rgba(0, 0, 0, 0.06) 3px,
-      rgba(0, 0, 0, 0.06) 6px
+      rgba(0, 0, 0, 0.08) 3px,
+      rgba(0, 0, 0, 0.08) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.008) 6px,
+      rgba(255, 255, 255, 0.008) 7px
     );
 }
 
 .texture-cobble {
-  background:
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.02) 8px,
+      rgba(255, 255, 255, 0.02) 9px
+    ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 10px,
-      rgba(255, 255, 255, 0.012) 10px,
-      rgba(255, 255, 255, 0.012) 11px
+      transparent 8px,
+      rgba(0, 0, 0, 0.06) 8px,
+      rgba(0, 0, 0, 0.06) 9px
     ),
     repeating-linear-gradient(
-      0deg,
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.012) 6px,
+      rgba(255, 255, 255, 0.012) 7px
+    ),
+    repeating-linear-gradient(
+      -30deg,
       transparent,
       transparent 10px,
       rgba(0, 0, 0, 0.04) 10px,
       rgba(0, 0, 0, 0.04) 11px
+    );
+}
+
+.texture-deepslate {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.012) 3px,
+      rgba(255, 255, 255, 0.012) 4px
     ),
     repeating-linear-gradient(
-      45deg,
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.06) 5px,
+      rgba(0, 0, 0, 0.06) 6px
+    ),
+    repeating-linear-gradient(
+      60deg,
       transparent,
       transparent 8px,
       rgba(255, 255, 255, 0.008) 8px,
@@ -153,82 +221,153 @@ a:hover {
     );
 }
 
+.texture-obsidian {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(80, 40, 120, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(60, 30, 100, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(40, 20, 80, 0.08) 0%, transparent 50%),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.008) 4px,
+      rgba(255, 255, 255, 0.008) 5px
+    );
+}
+
 .texture-wood {
-  background:
+  background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(139, 115, 85, 0.04) 2px,
-      rgba(139, 115, 85, 0.04) 3px
+      rgba(184, 134, 11, 0.04) 2px,
+      rgba(184, 134, 11, 0.04) 3px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 6px,
-      rgba(0, 0, 0, 0.03) 6px,
-      rgba(0, 0, 0, 0.03) 7px
+      rgba(0, 0, 0, 0.04) 6px,
+      rgba(0, 0, 0, 0.04) 7px
     );
 }
 
-.texture-obsidian {
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(60, 50, 80, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(50, 40, 70, 0.1) 0%, transparent 50%),
+.texture-dirt {
+  background-image:
     repeating-linear-gradient(
-      135deg,
+      45deg,
+      transparent,
+      transparent 3px,
+      rgba(139, 105, 20, 0.03) 3px,
+      rgba(139, 105, 20, 0.03) 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
       transparent,
       transparent 4px,
-      rgba(255, 255, 255, 0.006) 4px,
-      rgba(255, 255, 255, 0.006) 5px
+      rgba(0, 0, 0, 0.04) 4px,
+      rgba(0, 0, 0, 0.04) 8px
     );
 }
 
 .texture-bedrock {
-  background:
+  background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px,
-      rgba(0, 0, 0, 0.04) 6px
+      rgba(0, 0, 0, 0.05) 3px,
+      rgba(0, 0, 0, 0.05) 6px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 3px,
-      rgba(0, 0, 0, 0.03) 3px,
-      rgba(0, 0, 0, 0.03) 6px
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 6px
     );
 }
 
 
 /* ============================================
-   BLOCK CARD MIXIN
+   MINECRAFT BUTTON BASE
+   ============================================ */
+
+.mc-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  transition: all var(--transition-fast);
+
+  /* Minecraft 3D button effect */
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.12),
+    0 3px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.mc-button:hover {
+  filter: brightness(1.15);
+}
+
+.mc-button:active {
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.06);
+  transform: translateY(2px);
+}
+
+.mc-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  filter: none !important;
+}
+
+
+/* ============================================
+   BLOCK CARD — Information blocks
    ============================================ */
 
 .block-card {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
   position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-block);
 }
 
 .block-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: inherit;
   pointer-events: none;
   background:
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 3px,
-      rgba(255, 255, 255, 0.006) 3px,
-      rgba(255, 255, 255, 0.006) 6px
+      rgba(255, 255, 255, 0.008) 3px,
+      rgba(255, 255, 255, 0.008) 6px
     );
+}
+
+/* Top highlight for 3D effect */
+.block-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
 }
 
 .block-card > * {
@@ -247,19 +386,29 @@ a:hover {
 
 
 /* ============================================
-   HEADER
+   HEADER — Minecraft-style top bar
    ============================================ */
 
 .header {
-  border-bottom: 2px solid var(--border);
+  border-bottom: 3px solid var(--border);
   background: var(--bg-base);
+  position: relative;
+
+  /* Deepslate texture */
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.005) 2px,
-      rgba(255, 255, 255, 0.005) 3px
+      transparent 3px,
+      rgba(255, 255, 255, 0.006) 3px,
+      rgba(255, 255, 255, 0.006) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 4px
     );
 
   display: flex;
@@ -269,117 +418,170 @@ a:hover {
   padding: 24px 40px;
 }
 
+/* Pixel border bottom */
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border-light) 0px,
+    var(--border-light) 4px,
+    var(--border) 4px,
+    var(--border) 8px
+  );
+}
+
 .header h1 {
   margin: 0;
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   letter-spacing: -0.3px;
+  font-family: var(--font-pixel);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .header p {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--text-muted);
   font-size: 13px;
+  font-family: var(--font-body);
 }
 
 
 /* ============================================
-   BUTTONS
+   BUTTONS — Minecraft menu style
    ============================================ */
 
 .refresh-button {
-  border: 2px solid var(--border-light);
   background: var(--bg-elevated);
   color: var(--text);
-
+  border: 2px solid var(--border);
   padding: 10px 20px;
-  border-radius: var(--radius-md);
-
   cursor: pointer;
-  transition: all var(--transition-base);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
+  transition: all var(--transition-fast);
+  position: relative;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.35),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.08),
+    0 2px 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .refresh-button:hover {
   background: var(--bg-overlay);
-  border-color: var(--border-focus);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--border-light);
+  filter: brightness(1.1);
 }
 
 .refresh-button:active {
-  transform: translateY(1px);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.35),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(2px);
 }
 
 .primary-button {
-  border: 2px solid var(--grass-dark);
-  background: var(--grass-bg);
-  color: var(--grass);
-  border-radius: var(--radius-md);
+  background: var(--grass-dark);
+  color: var(--grass-light);
+  border: 2px solid var(--grass);
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
+    0 3px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.primary-button:hover {
+  background: var(--grass);
+  color: #fff;
+  filter: brightness(1.1);
+}
+
+.primary-button:active {
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(2px);
+}
+
+.secondary-button {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 2px solid var(--border);
   padding: 10px 18px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  transition: all var(--transition-base);
-}
+  transition: all var(--transition-fast);
 
-.primary-button:hover {
-  background: rgba(110, 231, 183, 0.12);
-  border-color: rgba(110, 231, 183, 0.35);
-  box-shadow: var(--shadow-glow-green);
-}
-
-.primary-button:active {
-  transform: translateY(1px);
-}
-
-.secondary-button {
-  border: 2px solid var(--border);
-  background: var(--bg-elevated);
-  color: var(--text);
-  border-radius: var(--radius-md);
-  padding: 10px 18px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all var(--transition-base);
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
+    0 2px 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .secondary-button:hover {
   background: var(--bg-overlay);
+  color: var(--text);
   border-color: var(--border-light);
+  filter: brightness(1.1);
 }
 
 .secondary-button:active {
-  transform: translateY(1px);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.03);
+  transform: translateY(2px);
 }
 
 .danger-button {
-  border: 2px solid var(--redstone-dark);
-  background: var(--redstone-bg);
-  color: var(--redstone);
-  border-radius: var(--radius-md);
+  background: var(--redstone-dark);
+  color: var(--redstone-light);
+  border: 2px solid var(--redstone);
   padding: 10px 18px;
   cursor: pointer;
   font-size: 13px;
-  font-weight: 600;
-  transition: all var(--transition-base);
+  font-weight: 700;
+  transition: all var(--transition-fast);
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0 rgba(255, 68, 68, 0.2),
+    0 3px 0 0 rgba(0, 0, 0, 0.5);
 }
 
 .danger-button:hover {
-  background: rgba(248, 113, 113, 0.12);
-  border-color: rgba(248, 113, 113, 0.35);
-  box-shadow: var(--shadow-glow-red);
+  background: var(--redstone);
+  color: #fff;
+  filter: brightness(1.1);
 }
 
 .danger-button:active {
-  transform: translateY(1px);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(2px);
 }
 
 button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
   transform: none !important;
+  filter: none !important;
 }
 
 
@@ -401,18 +603,33 @@ button:disabled {
 .overview {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 36px;
 }
 
 .overview-card {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 22px;
+  padding: 20px;
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
+
+  /* Block shadow effect */
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
+
+  /* Subtle stone texture */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.008) 3px,
+      rgba(255, 255, 255, 0.008) 6px
+    );
 }
 
 .overview-card::before {
@@ -422,30 +639,37 @@ button:disabled {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--border-light), transparent);
-  opacity: 0.5;
+  background: var(--border-light);
+  opacity: 0.6;
 }
 
 .overview-card:hover {
   border-color: var(--border-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translate(-1px, -1px);
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
+    4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .overview-label {
   display: block;
   color: var(--text-muted);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.2px;
   margin-bottom: 10px;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  line-height: 1.4;
 }
 
 .overview-card strong {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.5px;
+  display: block;
 }
 
 .overview-description {
@@ -456,7 +680,8 @@ button:disabled {
 }
 
 .online-count {
-  color: var(--grass);
+  color: var(--grass-light);
+  text-shadow: 0 0 12px rgba(93, 158, 60, 0.4);
 }
 
 
@@ -477,20 +702,23 @@ button:disabled {
 
 .section-header h2 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .section-header h2::before {
   content: '';
   display: inline-block;
   width: 4px;
-  height: 20px;
+  height: 18px;
   background: var(--grass);
-  border-radius: var(--radius-xs);
+  box-shadow: 2px 0 0 var(--grass-dark);
 }
 
 .section-header span {
@@ -501,36 +729,43 @@ button:disabled {
 .servers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 
 /* ============================================
-   SERVER CARD
+   SERVER CARD — Minecraft block info panel
    ============================================ */
 
 .server-card {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 22px;
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
-}
 
-.server-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
+  /* 3D block effect */
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
+
+  /* Stone texture */
+  background-image:
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 3px,
-      rgba(255, 255, 255, 0.005) 3px,
-      rgba(255, 255, 255, 0.005) 6px
+      rgba(255, 255, 255, 0.008) 3px,
+      rgba(255, 255, 255, 0.008) 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.03) 5px,
+      rgba(0, 0, 0, 0.03) 10px
     );
 }
 
@@ -541,8 +776,11 @@ button:disabled {
 
 .server-card:hover {
   border-color: var(--border-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translate(-1px, -1px);
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
+    4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .server-card-header {
@@ -554,7 +792,7 @@ button:disabled {
 
 .server-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -563,71 +801,101 @@ button:disabled {
   margin-top: 4px;
   color: var(--text-dim);
   font-size: 11px;
-  font-family: monospace;
+  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
   letter-spacing: 0.3px;
 }
 
 .status {
-  padding: 4px 10px;
-  border-radius: var(--radius-xs);
-  font-size: 10px;
+  padding: 4px 12px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 1px;
   font-family: var(--font-pixel);
-  line-height: 1.4;
+  line-height: 1.5;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .status.unknown {
   background: var(--bg-overlay);
   color: var(--text-secondary);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .status.online {
   background: var(--grass-dark);
-  color: var(--grass);
-  border: 1px solid rgba(110, 231, 183, 0.25);
-  box-shadow: var(--shadow-glow-green);
+  color: var(--grass-light);
+  border: 2px solid var(--grass);
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(126, 200, 80, 0.2),
+    0 0 8px rgba(93, 158, 60, 0.3);
+  animation: pulse-green 2s ease-in-out infinite;
 }
 
 .status.offline {
   background: var(--redstone-dark);
-  color: var(--redstone);
-  border: 1px solid rgba(248, 113, 113, 0.25);
-  box-shadow: var(--shadow-glow-red);
+  color: var(--redstone-light);
+  border: 2px solid var(--redstone);
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 68, 68, 0.2),
+    0 0 8px rgba(224, 48, 48, 0.3);
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(126, 200, 80, 0.2), 0 0 8px rgba(93, 158, 60, 0.3); }
+  50% { box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(126, 200, 80, 0.2), 0 0 14px rgba(93, 158, 60, 0.5); }
 }
 
 .server-address {
-  margin: 18px 0;
+  margin: 16px 0;
   display: flex;
   gap: 2px;
-  color: var(--text-secondary);
+  color: var(--sand);
   font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
   font-size: 13px;
   background: var(--bg-deep);
   padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
+
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .server-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
+  gap: 0;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  padding: 0;
+}
+
+.server-info > div {
+  padding: 14px 12px;
+  border-right: 1px solid var(--border);
+}
+
+.server-info > div:last-child {
+  border-right: none;
 }
 
 .server-info span {
   display: block;
   color: var(--text-dim);
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 9px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   margin-bottom: 6px;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  line-height: 1.5;
 }
 
 .server-info strong {
@@ -642,21 +910,29 @@ button:disabled {
   border: 2px solid var(--border);
   color: var(--text);
   padding: 11px;
-  border-radius: var(--radius-md);
   cursor: pointer;
   font-weight: 600;
   font-size: 13px;
-  transition: all var(--transition-base);
+  transition: all var(--transition-fast);
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
+    0 2px 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .details-button:hover {
   background: var(--bg-overlay);
-  border-color: var(--border-light);
-  color: var(--grass);
+  border-color: var(--grass-dark);
+  color: var(--grass-light);
+  filter: brightness(1.1);
 }
 
 .details-button:active {
-  transform: translateY(1px);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.03);
+  transform: translateY(2px);
 }
 
 
@@ -667,11 +943,14 @@ button:disabled {
 .message {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 24px;
   color: var(--text-secondary);
   position: relative;
   overflow: hidden;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03);
 }
 
 .message::before {
@@ -694,8 +973,8 @@ button:disabled {
 }
 
 .message.error {
-  color: var(--redstone);
-  border-color: var(--redstone-dark);
+  color: var(--redstone-light);
+  border-color: var(--redstone);
   background: var(--redstone-bg);
 }
 
@@ -726,6 +1005,15 @@ button:disabled {
   .server-info {
     grid-template-columns: 1fr;
   }
+
+  .server-info > div {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .server-info > div:last-child {
+    border-bottom: none;
+  }
 }
 
 
@@ -746,7 +1034,7 @@ button:disabled {
 }
 
 .back-button:hover {
-  color: var(--grass);
+  color: var(--grass-light);
 }
 
 .details-top {
@@ -756,7 +1044,6 @@ button:disabled {
 .current-status {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 22px;
   margin-bottom: 16px;
   display: flex;
@@ -764,6 +1051,11 @@ button:disabled {
   gap: 18px;
   position: relative;
   overflow: hidden;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 .current-status::before {
@@ -776,8 +1068,8 @@ button:disabled {
       45deg,
       transparent,
       transparent 4px,
-      rgba(255, 255, 255, 0.005) 4px,
-      rgba(255, 255, 255, 0.005) 8px
+      rgba(255, 255, 255, 0.006) 4px,
+      rgba(255, 255, 255, 0.006) 8px
     );
 }
 
@@ -792,32 +1084,41 @@ button:disabled {
 .details-metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 .metric-card {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 18px;
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    2px 2px 0 rgba(0, 0, 0, 0.35);
+
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.02) 4px,
+      rgba(0, 0, 0, 0.02) 8px
+    );
 }
 
 .metric-card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.04);
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.025) 4px,
-      rgba(0, 0, 0, 0.025) 8px
-    );
 }
 
 .metric-card > * {
@@ -826,22 +1127,29 @@ button:disabled {
 
 .metric-card:hover {
   border-color: var(--border-light);
-  box-shadow: var(--shadow-sm);
+  transform: translate(-1px, -1px);
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
 }
 
 .metric-card span {
   display: block;
   color: var(--text-dim);
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 9px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.8px;
   margin-bottom: 8px;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  line-height: 1.5;
 }
 
 .metric-card strong {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.3px;
 }
 
@@ -857,12 +1165,12 @@ button:disabled {
 .statistics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 
 /* ============================================
-   TABLES
+   TABLES — Minecraft inventory style
    ============================================ */
 
 .table-container {
@@ -870,7 +1178,11 @@ button:disabled {
   overflow-x: auto;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 table {
@@ -882,17 +1194,30 @@ th,
 td {
   padding: 14px 18px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
   font-size: 13px;
 }
 
 th {
   color: var(--text-dim);
-  font-weight: 600;
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 9px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   background: var(--bg-elevated);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  line-height: 1.4;
+
+  /* Inventory header texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.01) 2px,
+      rgba(255, 255, 255, 0.01) 3px
+    );
 }
 
 td {
@@ -900,7 +1225,7 @@ td {
 }
 
 tr:hover td {
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 tr:last-child td {
@@ -909,17 +1234,20 @@ tr:last-child td {
 
 .table-status {
   font-weight: 700;
-  font-size: 11px;
+  font-size: 9px;
   font-family: var(--font-pixel);
   letter-spacing: 0.5px;
+  line-height: 1.4;
 }
 
 .online-text {
-  color: var(--grass);
+  color: var(--grass-light);
+  text-shadow: 0 0 6px rgba(93, 158, 60, 0.3);
 }
 
 .offline-text {
-  color: var(--redstone);
+  color: var(--redstone-light);
+  text-shadow: 0 0 6px rgba(224, 48, 48, 0.3);
 }
 
 
@@ -932,8 +1260,12 @@ tr:last-child td {
   flex-direction: column;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   overflow: hidden;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 .events-filter {
@@ -947,12 +1279,16 @@ tr:last-child td {
   background: var(--bg-elevated);
   color: var(--text-muted);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 7px 14px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 500;
-  transition: all var(--transition-base);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .filter-button:hover {
@@ -962,9 +1298,14 @@ tr:last-child td {
 }
 
 .filter-button.active {
-  background: var(--grass-bg);
-  color: var(--grass);
-  border-color: rgba(110, 231, 183, 0.3);
+  background: var(--grass-dark);
+  color: var(--grass-light);
+  border-color: var(--grass);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(126, 200, 80, 0.15),
+    0 0 6px rgba(93, 158, 60, 0.2);
 }
 
 .events-pagination {
@@ -979,21 +1320,26 @@ tr:last-child td {
   background: var(--bg-elevated);
   color: var(--text);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 7px 14px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 500;
-  transition: all var(--transition-base);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .pagination-button:hover:not(:disabled) {
   background: var(--bg-overlay);
   border-color: var(--border-light);
+  filter: brightness(1.1);
 }
 
 .pagination-button:disabled {
-  opacity: 0.35;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -1011,13 +1357,13 @@ tr:last-child td {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--border);
   transition: background var(--transition-fast);
 }
 
 .event-item:hover {
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .event-item:last-child {
@@ -1027,39 +1373,42 @@ tr:last-child td {
 .event-indicator {
   width: 10px;
   height: 10px;
-  border-radius: var(--radius-xs);
   flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .event-indicator.up {
   background: var(--grass);
-  box-shadow: 0 0 6px rgba(110, 231, 183, 0.4);
+  box-shadow: 0 0 6px rgba(93, 158, 60, 0.5);
 }
 
 .event-indicator.down {
   background: var(--redstone);
-  box-shadow: 0 0 6px rgba(248, 113, 113, 0.4);
+  box-shadow: 0 0 6px rgba(224, 48, 48, 0.5);
 }
 
 .event-indicator.latency {
   background: var(--gold);
-  box-shadow: 0 0 6px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 6px rgba(252, 219, 5, 0.5);
 }
 
 .event-indicator.instability {
-  background: var(--redstone-dim);
-  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+  background: var(--redstone-light);
+  box-shadow: 0 0 6px rgba(255, 68, 68, 0.5);
 }
 
 .period-select {
   background: var(--bg-elevated);
   color: var(--text);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 9px 14px;
   cursor: pointer;
   font-size: 13px;
   transition: border-color var(--transition-fast);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .period-select:focus {
@@ -1118,7 +1467,7 @@ tr:last-child td {
   }
 
   .header h1 {
-    font-size: 20px;
+    font-size: 13px;
   }
 }
 
@@ -1130,16 +1479,20 @@ tr:last-child td {
 .charts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 
 .chart-card {
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 22px;
   position: relative;
   overflow: hidden;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 .chart-card::before {
@@ -1152,8 +1505,8 @@ tr:last-child td {
       45deg,
       transparent,
       transparent 5px,
-      rgba(255, 255, 255, 0.004) 5px,
-      rgba(255, 255, 255, 0.004) 10px
+      rgba(255, 255, 255, 0.006) 5px,
+      rgba(255, 255, 255, 0.006) 10px
     );
 }
 
@@ -1163,20 +1516,23 @@ tr:last-child td {
 
 .chart-card h3 {
   margin: 0 0 16px;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  line-height: 1.6;
 }
 
 .chart-card h3::before {
   content: '';
   display: inline-block;
-  width: 3px;
-  height: 16px;
-  background: var(--grass-dim);
-  border-radius: var(--radius-xs);
+  width: 4px;
+  height: 14px;
+  background: var(--grass);
+  box-shadow: 2px 0 0 var(--grass-dark);
 }
 
 @media (max-width: 900px) {
@@ -1197,57 +1553,88 @@ tr:last-child td {
 
 
 /* ============================================
-   SIDEBAR
+   SIDEBAR — Minecraft Inventory/Menu Style
    ============================================ */
 
 .sidebar {
-  width: 250px;
+  width: 260px;
   flex-shrink: 0;
   min-height: 100vh;
 
   background: var(--bg-base);
+  border-right: 3px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+
+  /* Cobblestone-like texture */
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.004) 2px,
-      rgba(255, 255, 255, 0.004) 3px
+      transparent 3px,
+      rgba(255, 255, 255, 0.008) 3px,
+      rgba(255, 255, 255, 0.008) 4px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.03) 2px,
-      rgba(0, 0, 0, 0.03) 3px
+      transparent 3px,
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 4px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.005) 6px,
+      rgba(255, 255, 255, 0.005) 7px
     );
+}
 
-  border-right: 2px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  padding: 24px 14px;
+/* Pixel border right side */
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  width: 3px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--border-light) 0px,
+    var(--border-light) 4px,
+    var(--border) 4px,
+    var(--border) 8px
+  );
 }
 
 .sidebar-logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 4px 8px 28px;
+  padding: 6px 8px 24px;
 }
 
 .sidebar-logo-icon {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
-  background: var(--grass-bg);
-  border: 2px solid rgba(110, 231, 183, 0.2);
+  background: var(--grass-dark);
+  border: 2px solid var(--grass);
+
   font-weight: 800;
   font-size: 16px;
-  color: var(--grass);
+  color: var(--grass-light);
   flex-shrink: 0;
+
+  /* Minecraft button 3D effect */
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
+    0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .sidebar-logo strong,
@@ -1256,9 +1643,12 @@ tr:last-child td {
 }
 
 .sidebar-logo strong {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   letter-spacing: -0.2px;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  line-height: 1.6;
 }
 
 .sidebar-logo span {
@@ -1277,32 +1667,84 @@ tr:last-child td {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 11px 14px;
-  border-radius: var(--radius-md);
+  padding: 12px 14px;
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: all var(--transition-base);
+  transition: all var(--transition-fast);
   border: 2px solid transparent;
+
+  /* Inventory slot appearance */
+  background: transparent;
+  position: relative;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+
+  /* Slot highlight texture */
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
 }
 
 .nav-item:hover {
   background: var(--bg-surface);
   color: var(--text);
   border-color: var(--border);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.2),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.nav-item:hover::before {
+  opacity: 1;
 }
 
 .nav-item.active {
-  background: var(--grass-bg);
-  color: var(--grass);
-  border-color: rgba(110, 231, 183, 0.2);
-  font-weight: 600;
+  background: var(--grass-dark);
+  color: var(--grass-light);
+  border-color: var(--grass);
+  font-weight: 700;
+
+  /* Active slot — strong Minecraft button effect */
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
+    0 0 8px rgba(93, 158, 60, 0.2);
+}
+
+.nav-item.active::before {
+  opacity: 0;
+}
+
+/* Left indicator bar for active item */
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  background: var(--grass-light);
+  box-shadow: 0 0 6px rgba(126, 200, 80, 0.5);
 }
 
 .nav-item .nav-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1310,16 +1752,25 @@ tr:last-child td {
 }
 
 .nav-item .nav-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .sidebar-footer {
   margin-top: auto;
-  padding: 18px 8px 4px;
-  border-top: 1px solid var(--border);
+  padding: 16px 8px 4px;
+  border-top: 2px solid var(--border);
   color: var(--text-dim);
   font-size: 11px;
+
+  /* Pixel separator */
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--border) 0px,
+    var(--border) 4px,
+    transparent 4px,
+    transparent 8px
+  ) 2;
 }
 
 .sidebar-footer span,
@@ -1342,6 +1793,23 @@ tr:last-child td {
   flex: 1;
   min-width: 0;
   background: var(--bg-deep);
+
+  /* Global stone texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.006) 4px,
+      rgba(255, 255, 255, 0.006) 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.03) 4px,
+      rgba(0, 0, 0, 0.03) 5px
+    );
 }
 
 .page {
@@ -1358,26 +1826,30 @@ tr:last-child td {
 
 .page-header h1 {
   margin: 0;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .page-header h1::before {
   content: '';
   display: inline-block;
   width: 4px;
-  height: 22px;
+  height: 20px;
   background: var(--grass);
-  border-radius: var(--radius-xs);
+  box-shadow: 2px 0 0 var(--grass-dark);
 }
 
 .page-header p {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--text-muted);
   font-size: 13px;
+  font-family: var(--font-body);
 }
 
 .action-buttons {
@@ -1409,7 +1881,7 @@ tr:last-child td {
 
   .sidebar-logo {
     justify-content: center;
-    padding-bottom: 24px;
+    padding-bottom: 20px;
   }
 
   .sidebar-logo > div:not(.sidebar-logo-icon),
@@ -1441,14 +1913,14 @@ tr:last-child td {
 
 
 /* ============================================
-   SERVER FORM (Modal)
+   SERVER FORM (Modal) — Crafting Table style
    ============================================ */
 
 .form-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1459,27 +1931,56 @@ tr:last-child td {
 .server-form-container {
   width: min(500px, 100%);
   background: var(--bg-surface);
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 3px solid var(--border);
   padding: 28px;
-  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
+
+  /* Crafting table / chest UI feel */
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 3px rgba(0, 0, 0, 0.5),
+    6px 6px 0 rgba(0, 0, 0, 0.4);
+
+  /* Deepslate texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.01) 3px,
+      rgba(255, 255, 255, 0.01) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 4px
+    );
 }
 
 .server-form-container::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border-light);
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.005) 4px,
-      rgba(255, 255, 255, 0.005) 8px
-    );
+}
+
+.server-form-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
 }
 
 .server-form-container > * {
@@ -1495,8 +1996,11 @@ tr:last-child td {
 
 .form-header h2 {
   margin: 0;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .form-header p {
@@ -1509,19 +2013,22 @@ tr:last-child td {
   width: 32px;
   height: 32px;
   border: 2px solid var(--border);
-  border-radius: var(--radius-sm);
   background: var(--bg-elevated);
   color: var(--text-secondary);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   cursor: pointer;
   transition: all var(--transition-fast);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .close-button:hover {
-  background: var(--bg-overlay);
-  color: var(--text);
-  border-color: var(--border-light);
+  background: var(--redstone-dark);
+  color: var(--redstone-light);
+  border-color: var(--redstone);
 }
 
 .form-field {
@@ -1532,8 +2039,13 @@ tr:last-child td {
   display: block;
   margin-bottom: 7px;
   color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-field input {
@@ -1541,15 +2053,23 @@ tr:last-child td {
   padding: 11px 14px;
   background: var(--bg-deep);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   color: var(--text);
   outline: none;
   font-size: 14px;
   transition: border-color var(--transition-fast);
+
+  /* Recessed input (like chat/command box in Minecraft) */
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .form-field input:focus {
-  border-color: var(--border-focus);
+  border-color: var(--grass);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.03),
+    0 0 6px rgba(93, 158, 60, 0.2);
 }
 
 .form-field input::placeholder {
@@ -1559,11 +2079,14 @@ tr:last-child td {
 .form-error {
   margin-bottom: 18px;
   padding: 12px 14px;
-  border: 2px solid var(--redstone-dark);
-  border-radius: var(--radius-md);
+  border: 2px solid var(--redstone);
   background: var(--redstone-bg);
-  color: var(--redstone);
+  color: var(--redstone-light);
   font-size: 13px;
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 68, 68, 0.1);
 }
 
 .form-actions {
@@ -1587,13 +2110,16 @@ tr:last-child td {
   padding: 16px 18px;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
-  box-shadow: var(--shadow-lg);
   z-index: 2000;
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .toast-content {
@@ -1603,8 +2129,11 @@ tr:last-child td {
 }
 
 .toast-content strong {
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  line-height: 1.5;
 }
 
 .toast-content span {
@@ -1613,26 +2142,28 @@ tr:last-child td {
 }
 
 .toast.success {
+  border-color: var(--grass);
   border-left: 4px solid var(--grass);
 }
 
 .toast.success strong {
-  color: var(--grass);
+  color: var(--grass-light);
 }
 
 .toast.error {
+  border-color: var(--redstone);
   border-left: 4px solid var(--redstone);
 }
 
 .toast.error strong {
-  color: var(--redstone);
+  color: var(--redstone-light);
 }
 
 .toast button {
   border: none;
   background: transparent;
   color: var(--text-dim);
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
   transition: color var(--transition-fast);
 }
@@ -1644,12 +2175,16 @@ tr:last-child td {
 .confirm-dialog {
   width: min(450px, 100%);
   background: var(--bg-surface);
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 3px solid var(--border);
   padding: 28px;
-  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
+
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 3px rgba(0, 0, 0, 0.5),
+    6px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
 .confirm-dialog::before {
@@ -1662,8 +2197,8 @@ tr:last-child td {
       45deg,
       transparent,
       transparent 4px,
-      rgba(255, 255, 255, 0.005) 4px,
-      rgba(255, 255, 255, 0.005) 8px
+      rgba(255, 255, 255, 0.006) 4px,
+      rgba(255, 255, 255, 0.006) 8px
     );
 }
 
@@ -1673,8 +2208,11 @@ tr:last-child td {
 
 .confirm-dialog h2 {
   margin: 0;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .confirm-dialog p {
@@ -1686,7 +2224,7 @@ tr:last-child td {
 
 
 /* ============================================
-   LOGIN PAGE
+   LOGIN PAGE — Minecraft Title Screen style
    ============================================ */
 
 .login-page {
@@ -1696,94 +2234,181 @@ tr:last-child td {
   width: 100%;
   min-height: 100vh;
   padding: 20px;
+  position: relative;
+  overflow: hidden;
+
+  /* Multi-layered Minecraft background */
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(110, 231, 183, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(110, 231, 183, 0.03) 0%, transparent 50%),
+    /* Grass/dirt horizon line */
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 60%,
+      rgba(93, 158, 60, 0.03) 60%,
+      rgba(93, 158, 60, 0.05) 62%,
+      rgba(139, 105, 20, 0.04) 62%,
+      rgba(139, 105, 20, 0.03) 68%,
+      transparent 68%
+    ),
+    /* Stone texture */
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.03) 3px,
-      rgba(0, 0, 0, 0.03) 6px
+      transparent 4px,
+      rgba(255, 255, 255, 0.008) 4px,
+      rgba(255, 255, 255, 0.008) 5px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.025) 3px,
-      rgba(0, 0, 0, 0.025) 6px
+      transparent 4px,
+      rgba(0, 0, 0, 0.04) 4px,
+      rgba(0, 0, 0, 0.04) 5px
     ),
+    /* Cobblestone pattern */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.005) 6px,
+      rgba(255, 255, 255, 0.005) 7px
+    ),
+    repeating-linear-gradient(
+      -30deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.03) 10px,
+      rgba(0, 0, 0, 0.03) 11px
+    ),
+    /* Deep dark base */
+    radial-gradient(ellipse at 50% 0%, rgba(26, 10, 46, 0.15) 0%, transparent 60%),
     var(--bg-deep);
 }
 
-.login-card {
-  width: min(400px, 100%);
-  background: var(--bg-surface);
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  overflow: hidden;
-}
-
-.login-card::before {
+/* Decorative pixel grid on login background */
+.login-page::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
     repeating-linear-gradient(
-      45deg,
+      0deg,
       transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.006) 3px,
-      rgba(255, 255, 255, 0.006) 6px
+      transparent 31px,
+      rgba(255, 255, 255, 0.012) 31px,
+      rgba(255, 255, 255, 0.012) 32px
     ),
     repeating-linear-gradient(
-      -45deg,
+      90deg,
       transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.04) 4px,
-      rgba(0, 0, 0, 0.04) 8px
+      transparent 31px,
+      rgba(255, 255, 255, 0.012) 31px,
+      rgba(255, 255, 255, 0.012) 32px
     );
 }
 
+.login-card {
+  width: min(420px, 100%);
+  background: var(--bg-surface);
+  border: 3px solid var(--border);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+
+  /* Minecraft chest/inventory UI feel */
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 3px rgba(0, 0, 0, 0.5),
+    8px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Stone texture on login card */
+.login-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* Cobblestone-like pattern */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.015) 8px,
+      rgba(255, 255, 255, 0.015) 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.05) 8px,
+      rgba(0, 0, 0, 0.05) 9px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.008) 6px,
+      rgba(255, 255, 255, 0.008) 7px
+    ),
+    repeating-linear-gradient(
+      -30deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.04) 10px,
+      rgba(0, 0, 0, 0.04) 11px
+    );
+}
+
+/* Grass/dirt top accent */
 .login-card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg,
-    transparent,
-    var(--grass-dim) 20%,
-    var(--grass) 50%,
-    var(--grass-dim) 80%,
-    transparent
-  );
-  opacity: 0.6;
+  height: 4px;
+  background:
+    linear-gradient(180deg,
+      var(--grass) 0%,
+      var(--grass-dark) 50%,
+      var(--dirt) 50%,
+      var(--dirt-dark) 100%
+    );
+  pointer-events: none;
+  z-index: 2;
 }
 
 .login-card > * {
   position: relative;
+  z-index: 1;
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 28px;
+  padding: 32px 32px 0;
 }
 
 .login-header .sidebar-logo-icon {
   margin: 0 auto 16px;
+  width: 52px;
+  height: 52px;
+}
+
+.login-header .sidebar-logo-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .login-header h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: -0.3px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .login-header p {
@@ -1792,12 +2417,18 @@ tr:last-child td {
   font-size: 13px;
 }
 
+.login-card form {
+  padding: 24px 32px 32px;
+}
+
 .login-button {
   width: 100%;
   margin-top: 8px;
-  padding: 12px;
+  padding: 13px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 
@@ -1831,9 +2462,13 @@ tr:last-child td {
   justify-content: space-between;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 18px 20px;
   transition: border-color var(--transition-base);
+
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
+    2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .alerts-config-item:hover {
@@ -1848,7 +2483,7 @@ tr:last-child td {
 
 .alerts-config-item strong {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .alerts-config-item span {
@@ -1860,28 +2495,41 @@ tr:last-child td {
   background: var(--bg-elevated);
   color: var(--text-muted);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 8px 16px;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  transition: all var(--transition-base);
+  font-size: 11px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  line-height: 1.5;
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .toggle-button:hover:not(:disabled) {
   background: var(--bg-overlay);
   color: var(--text);
   border-color: var(--border-light);
+  filter: brightness(1.1);
 }
 
 .toggle-button.active {
-  background: var(--grass-bg);
-  color: var(--grass);
-  border-color: rgba(110, 231, 183, 0.3);
+  background: var(--grass-dark);
+  color: var(--grass-light);
+  border-color: var(--grass);
+
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(126, 200, 80, 0.15),
+    0 0 6px rgba(93, 158, 60, 0.2);
 }
 
 .toggle-button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -1903,17 +2551,24 @@ tr:last-child td {
   background: var(--bg-deep);
   color: var(--text);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 8px 12px;
   font-size: 13px;
   flex: 1;
   min-width: 0;
   transition: border-color var(--transition-fast);
+
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .webhook-url-input:focus {
   outline: none;
-  border-color: var(--border-focus);
+  border-color: var(--grass);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.03),
+    0 0 6px rgba(93, 158, 60, 0.2);
 }
 
 .webhook-url-input::placeholder {
@@ -1924,17 +2579,16 @@ tr:last-child td {
   background: transparent;
   color: var(--text-muted);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 6px 14px;
   font-size: 12px;
   cursor: pointer;
-  transition: all var(--transition-base);
-  font-weight: 500;
+  transition: all var(--transition-fast);
+  font-weight: 600;
 }
 
 .logout-button:hover {
-  color: var(--redstone);
-  border-color: var(--redstone-dark);
+  color: var(--redstone-light);
+  border-color: var(--redstone);
   background: var(--redstone-bg);
 }
 
@@ -1997,4 +2651,61 @@ tr:last-child td {
     transparent 3px,
     transparent 6px
   );
+}
+
+
+/* ============================================
+   MINECRAFT HUD / STATUS BAR EFFECTS
+   ============================================ */
+
+/* Pixel dot indicator */
+.pixel-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--grass);
+  box-shadow: 2px 0 0 var(--grass-dark), 0 2px 0 var(--grass-dark);
+}
+
+/* Block divider */
+.block-divider {
+  height: 4px;
+  margin: 20px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border) 0px,
+    var(--border) 8px,
+    transparent 8px,
+    transparent 12px
+  );
+  position: relative;
+}
+
+.block-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Inventory slot highlight */
+.slot-highlight {
+  position: relative;
+}
+
+.slot-highlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.slot-highlight:hover::after {
+  opacity: 1;
 }

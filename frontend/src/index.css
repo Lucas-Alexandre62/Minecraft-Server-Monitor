@@ -11,24 +11,33 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--bg-deep);
+  border-left: 1px solid var(--border);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 2px;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  box-shadow:
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-light);
+  background: var(--bg-overlay);
+  border-color: var(--border-light);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg-deep);
 }
 
 ::selection {
-  background: rgba(110, 231, 183, 0.2);
+  background: rgba(93, 158, 60, 0.25);
   color: var(--text);
 }
