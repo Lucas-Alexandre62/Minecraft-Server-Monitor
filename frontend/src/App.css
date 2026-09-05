@@ -365,7 +365,12 @@ button:disabled {
 }
 
 .overview-card {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/oak_planks.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 20px;
   position: relative;
@@ -497,17 +502,18 @@ button:disabled {
    ============================================ */
 
 .server-card {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 22px;
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
   box-shadow: var(--shadow-block);
-
-  background-image:
-    repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,255,0.01) 3px, rgba(255,255,255,0.01) 6px),
-    repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,0.04) 5px, rgba(0,0,0,0.04) 10px);
 }
 
 .server-card > * {
@@ -753,7 +759,12 @@ button:disabled {
 }
 
 .current-status {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 22px;
   margin-bottom: 16px;
@@ -788,7 +799,12 @@ button:disabled {
 }
 
 .metric-card {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/deepslate.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 18px;
   position: relative;
@@ -873,7 +889,12 @@ button:disabled {
 .table-container {
   width: 100%;
   overflow-x: auto;
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   box-shadow: var(--shadow-block);
 }
@@ -942,7 +963,12 @@ tr:last-child td {
 .events-list {
   display: flex;
   flex-direction: column;
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   overflow: hidden;
   box-shadow: var(--shadow-block);
@@ -1135,7 +1161,12 @@ tr:last-child td {
 }
 
 .chart-card {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 22px;
   position: relative;
@@ -1461,7 +1492,12 @@ tr:last-child td {
 
 .server-form-container {
   width: min(500px, 100%);
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/cobblestone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 3px solid var(--border);
   padding: 28px;
   position: relative;
@@ -1660,7 +1696,12 @@ tr:last-child td {
 
 .confirm-dialog {
   width: min(450px, 100%);
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 3px solid var(--border);
   padding: 28px;
   position: relative;
@@ -1738,7 +1779,12 @@ tr:last-child td {
 
 .login-card {
   width: min(420px, 100%);
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/cobblestone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 3px solid var(--border);
   padding: 0;
   position: relative;
@@ -1751,17 +1797,8 @@ tr:last-child td {
     8px 8px 0 rgba(0,0,0,0.45);
 }
 
-/* Cobblestone texture on card */
 .login-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(255,255,255,0.02) 8px, rgba(255,255,255,0.02) 9px),
-    repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.06) 8px, rgba(0,0,0,0.06) 9px),
-    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.012) 6px, rgba(255,255,255,0.012) 7px),
-    repeating-linear-gradient(-30deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 11px);
+  display: none;
 }
 
 /* Vivid grass/dirt top stripe */
@@ -1863,7 +1900,12 @@ tr:last-child td {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('/textures/stone.png');
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   border: 2px solid var(--border);
   padding: 18px 20px;
   transition: all var(--transition-base);
