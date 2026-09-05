@@ -17,10 +17,10 @@
   --border-focus: #707a94;
 
   /* === Text === */
-  --text: #eef0f4;
-  --text-secondary: #b0b4c0;
-  --text-muted: #707888;
-  --text-dim: #505868;
+  --text: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #c0c0c0;
+  --text-dim: #a0a0a0;
 
   /* === Grass / Emerald (vivid green) === */
   --grass: #4ade80;
