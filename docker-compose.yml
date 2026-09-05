@@ -7,8 +7,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-minecraft}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-minecraft}
       POSTGRES_DB: ${POSTGRES_DB:-minecraft_monitor}
-    ports:
-      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:

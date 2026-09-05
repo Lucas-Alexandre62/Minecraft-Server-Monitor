@@ -7,6 +7,7 @@ import com.lucas.minecraft_monitor.repository.AlertConfigRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompositeAlertService implements AlertService {
@@ -14,13 +15,13 @@ public class CompositeAlertService implements AlertService {
     private final AlertConfigRepository alertConfigRepository;
     private final LogAlertService logAlertService;
     private final WebhookAlertService webhookAlertService;
-    private final EmailAlertService emailAlertService;
+    private final Optional<EmailAlertService> emailAlertService;
 
     public CompositeAlertService(
             AlertConfigRepository alertConfigRepository,
             LogAlertService logAlertService,
             WebhookAlertService webhookAlertService,
-            EmailAlertService emailAlertService
+            Optional<EmailAlertService> emailAlertService
     ) {
         this.alertConfigRepository = alertConfigRepository;
         this.logAlertService = logAlertService;
@@ -37,7 +38,7 @@ public class CompositeAlertService implements AlertService {
             switch (config.getChannel()) {
                 case LOG -> logAlertService.serverDown(server);
                 case WEBHOOK -> webhookAlertService.serverDown(server);
-                case EMAIL -> emailAlertService.serverDown(server);
+                case EMAIL -> emailAlertService.ifPresent(e -> e.serverDown(server));
             }
         }
     }
@@ -51,7 +52,7 @@ public class CompositeAlertService implements AlertService {
             switch (config.getChannel()) {
                 case LOG -> logAlertService.serverUp(server);
                 case WEBHOOK -> webhookAlertService.serverUp(server);
-                case EMAIL -> emailAlertService.serverUp(server);
+                case EMAIL -> emailAlertService.ifPresent(e -> e.serverUp(server));
             }
         }
     }
