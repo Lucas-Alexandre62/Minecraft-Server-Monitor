@@ -111,49 +111,15 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--bg-deep);
+  background-color: #1a1410;
   color: var(--text);
   line-height: 1.5;
 
-  /* Visible Minecraft stone texture — pixel grid pattern */
-  background-image:
-    /* Large stone blocks */
-    repeating-linear-gradient(
-      0deg,
-      rgba(40, 44, 56, 0.8) 0px,
-      rgba(40, 44, 56, 0.8) 15px,
-      rgba(25, 28, 38, 0.9) 15px,
-      rgba(25, 28, 38, 0.9) 16px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(40, 44, 56, 0.6) 0px,
-      rgba(40, 44, 56, 0.6) 15px,
-      rgba(25, 28, 38, 0.7) 15px,
-      rgba(25, 28, 38, 0.7) 16px
-    ),
-    /* Stone grain / pixel noise */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.02) 2px,
-      rgba(255, 255, 255, 0.02) 4px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.06) 3px,
-      rgba(0, 0, 0, 0.06) 5px
-    ),
-    repeating-linear-gradient(
-      135deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(255, 255, 255, 0.015) 4px,
-      rgba(255, 255, 255, 0.015) 5px
-    );
+  /* Dirt block texture — actual Minecraft pixel art */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%23715319'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%23806020'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%236B4E15'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%238A6A24'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%237A5818'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%23856520'/%3E%3Crect x='12' y='0' width='1' height='1' fill='%236E5016'/%3E%3Crect x='14' y='0' width='1' height='1' fill='%23906E28'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23785618'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%23826222'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%236C4E14'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%237E5C1A'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%23886826'/%3E%3Crect x='13' y='1' width='1' height='1' fill='%23705216'/%3E%3Crect x='15' y='1' width='1' height='1' fill='%237C5A1C'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23765416'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%238C6C26'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%236A4C12'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%23745014'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%23866622'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%236E5014'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%23926E28'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%23725014'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23806020'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%237A581A'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23886824'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%237C5A1A'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%236C4C12'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%238A6A26'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23745216'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%2390702A'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23826220'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%23705016'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%23866422'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%237A581A'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%236E4E14'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23745216'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%238E6E28'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%23785618'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%236A4A12'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%23846422'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%237C5C1C'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%237E5E1C'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%23725216'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%238A6824'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%23705014'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%23826020'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%236C4C12'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%23866622'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%23705216'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%237C5A1A'/%3E%3Crect x='10' y='8' width='1' height='1' fill='%23886A26'/%3E%3Crect x='14' y='8' width='1' height='1' fill='%23745418'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%23806020'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%236E4E14'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%238C6C28'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23765618'/%3E%3Crect x='15' y='9' width='1' height='1' fill='%23846424'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23725216'/%3E%3Crect x='1' y='10' width='1' height='1' fill='%238A6A24'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%237A581A'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%236C4E14'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%23826222'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%23785618'/%3E%3Crect x='2' y='11' width='1' height='1' fill='%23745418'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%238E6E2A'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23705014'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23866624'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%236E5016'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23826220'/%3E%3Crect x='3' y='12' width='1' height='1' fill='%237A5A1C'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%236A4C12'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23886826'/%3E%3Crect x='12' y='12' width='1' height='1' fill='%237C5C1E'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%23806022'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23765618'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%238C6C28'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%23725216'/%3E%3Crect x='11' y='13' width='1' height='1' fill='%23846422'/%3E%3Crect x='13' y='13' width='1' height='1' fill='%236E4E14'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%238A6A26'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23745418'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%237E5C1C'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%236C4C12'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%23866624'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%237A581A'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%2378581A'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%236E5016'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23886824'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23725014'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%23806020'/%3E%3Crect x='13' y='15' width='1' height='1' fill='%23765618'/%3E%3Crect x='15' y='15' width='1' height='1' fill='%23846424'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 button {
@@ -203,43 +169,18 @@ a:hover {
 
 .header {
   border-bottom: 3px solid var(--border);
-  background: var(--bg-base);
+  background-color: #1a1c22;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 40px;
   position: relative;
 
-  /* Visible deepslate/stone texture */
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(30, 35, 48, 0.95) 0px,
-      rgba(30, 35, 48, 0.95) 12px,
-      rgba(18, 22, 32, 1) 12px,
-      rgba(18, 22, 32, 1) 13px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(30, 35, 48, 0.8) 0px,
-      rgba(30, 35, 48, 0.8) 12px,
-      rgba(18, 22, 32, 0.9) 12px,
-      rgba(18, 22, 32, 0.9) 13px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.02) 3px,
-      rgba(255, 255, 255, 0.02) 4px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.06) 4px,
-      rgba(0, 0, 0, 0.06) 6px
-    );
+  /* Deepslate block texture — actual Minecraft pixel art */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%233C3F48'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%23404350'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23363840'/%3E%3Crect x='6' y='0' width='1' height='1' fill='%23444858'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%2342465A'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23383B44'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%233E4152'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%2344485C'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23363840'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%23404350'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%2342465A'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23383B44'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%2342465A'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%2344485C'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%23383B44'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23404350'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%23363840'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%233E4152'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23404350'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23383B44'/%3E%3Crect x='9' y='3' width='1' height='1' fill='%2342465A'/%3E%3Crect x='11' y='3' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%2344485C'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%2342465A'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23404350'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23363840'/%3E%3Crect x='10' y='4' width='1' height='1' fill='%233E4152'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%2344485C'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23363840'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%2344485C'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%233E4152'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='11' y='5' width='1' height='1' fill='%23404350'/%3E%3Crect x='13' y='5' width='1' height='1' fill='%2342465A'/%3E%3Crect x='15' y='5' width='1' height='1' fill='%23383B44'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='4' y='6' width='1' height='1' fill='%23404350'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%2342465A'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%2344485C'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%23363840'/%3E%3Crect x='14' y='6' width='1' height='1' fill='%233E4152'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23404350'/%3E%3Crect x='3' y='7' width='1' height='1' fill='%23383B44'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%2342465A'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23363840'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%2344485C'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%233E4152'/%3E%3Crect x='15' y='7' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%2344485C'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%233E4152'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23363840'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23404350'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%2342465A'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23383B44'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%2342465A'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23383B44'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%2344485C'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%233E4152'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23404350'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23363840'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%233E4152'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='4' y='10' width='1' height='1' fill='%23404350'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%2342465A'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23383B44'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%2344485C'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%23363840'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%2342465A'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23363840'/%3E%3Crect x='5' y='11' width='1' height='1' fill='%233E4152'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23404350'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%2344485C'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23383B44'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23363840'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%2344485C'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%233E4152'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%2342465A'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%23383B44'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23404350'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23404350'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%2342465A'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%23363840'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%2344485C'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%233E4152'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='3' y='14' width='1' height='1' fill='%2342465A'/%3E%3Crect x='5' y='14' width='1' height='1' fill='%23383B44'/%3E%3Crect x='7' y='14' width='1' height='1' fill='%23404350'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23363840'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%2344485C'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%233E4152'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23383B44'/%3E%3Crect x='4' y='15' width='1' height='1' fill='%233C3F48'/%3E%3Crect x='6' y='15' width='1' height='1' fill='%2344485C'/%3E%3Crect x='8' y='15' width='1' height='1' fill='%233A3D46'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%2342465A'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%23363840'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23404350'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .header::after {
@@ -1261,60 +1202,18 @@ tr:last-child td {
   width: 260px;
   flex-shrink: 0;
   min-height: 100vh;
-  background: var(--bg-base);
+  background-color: #1a1c22;
   border-right: 3px solid var(--border);
   display: flex;
   flex-direction: column;
   padding: 20px 12px;
   position: relative;
 
-  /* Visible cobblestone texture */
-  background-image:
-    /* Cobblestone block grid */
-    repeating-linear-gradient(
-      0deg,
-      rgba(30, 35, 48, 0.95) 0px,
-      rgba(30, 35, 48, 0.95) 12px,
-      rgba(18, 22, 32, 1) 12px,
-      rgba(18, 22, 32, 1) 13px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(30, 35, 48, 0.8) 0px,
-      rgba(30, 35, 48, 0.8) 12px,
-      rgba(18, 22, 32, 0.9) 12px,
-      rgba(18, 22, 32, 0.9) 13px
-    ),
-    /* Cobblestone crack lines — diagonal */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(0, 0, 0, 0.12) 5px,
-      rgba(0, 0, 0, 0.12) 6px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(0, 0, 0, 0.1) 5px,
-      rgba(0, 0, 0, 0.1) 6px
-    ),
-    /* Cobblestone surface texture */
-    repeating-linear-gradient(
-      135deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.025) 3px,
-      rgba(255, 255, 255, 0.025) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.015) 2px,
-      rgba(255, 255, 255, 0.015) 3px
-    );
+  /* Cobblestone block texture — actual Minecraft pixel art */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%236B6B6B'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%237A7268'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23606060'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%23807870'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%23686868'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%23787068'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23706860'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23747474'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23726A60'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%237E7668'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23626262'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%237C7468'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23787068'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23646464'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%237E766C'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23606060'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%237A7268'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%236C6C6C'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23686868'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%237C746A'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23706860'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23767676'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23626262'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%237E766C'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%23726A60'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23746C62'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%237A7268'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23666666'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23807870'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23746C62'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%23787068'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%237C746A'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23787068'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%23726A60'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%237A7268'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%23646464'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23767676'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23706860'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237E766C'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%23666666'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%237A7268'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%237A7268'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%23686868'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%23766E64'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23706860'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%237C746A'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23626262'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%237E766C'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%237A7268'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%23666666'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%23746C62'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%23706860'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23787068'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%237A7268'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23726A60'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23767676'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%237C746A'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%23686868'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%237E766C'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%23746C62'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23646464'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23787068'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23706860'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%237A7268'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%23746C62'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%23626262'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%237C746A'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%23666666'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%23787068'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%237A7268'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23766E64'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%23706860'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23686868'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23746C62'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%237C746A'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23646464'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%237A7268'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%23706860'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%23767676'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23726A60'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237E766C'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23706860'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%23766E64'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23626262'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23746C62'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%237A7268'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%23787068'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23686868'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%237C746A'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%23706860'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%237A7268'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%23666666'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23766E64'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%23746C62'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%237A7268'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23626262'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23766E64'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23686868'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%23706860'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%237A7268'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%237E766C'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .sidebar::after {
@@ -1465,55 +1364,13 @@ tr:last-child td {
 .main-content {
   flex: 1;
   min-width: 0;
-  background: var(--bg-deep);
+  background-color: #1a1c22;
 
-  /* Visible stone block texture */
-  background-image:
-    /* Block grid — 16x16 pixel stone blocks */
-    repeating-linear-gradient(
-      0deg,
-      rgba(35, 40, 52, 0.9) 0px,
-      rgba(35, 40, 52, 0.9) 15px,
-      rgba(20, 24, 32, 1) 15px,
-      rgba(20, 24, 32, 1) 16px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(35, 40, 52, 0.7) 0px,
-      rgba(35, 40, 52, 0.7) 15px,
-      rgba(20, 24, 32, 0.8) 15px,
-      rgba(20, 24, 32, 0.8) 16px
-    ),
-    /* Inner stone variation — pixel noise inside blocks */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.018) 2px,
-      rgba(255, 255, 255, 0.018) 3px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.05) 3px,
-      rgba(0, 0, 0, 0.05) 5px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(255, 255, 255, 0.01) 4px,
-      rgba(255, 255, 255, 0.01) 6px
-    ),
-    /* Subtle color variation per block */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 7px,
-      rgba(96, 165, 250, 0.008) 7px,
-      rgba(96, 165, 250, 0.008) 8px
-    );
+  /* Stone block texture — actual Minecraft pixel art */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%237A7A7A'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%23808080'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23757575'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23707070'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23858585'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23787878'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23828282'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23727272'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23868686'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%238E8E8E'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%23747474'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%23808080'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23767676'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23848484'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23707070'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23767676'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23727272'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23787878'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23828282'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23808080'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23747474'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%23868686'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23767676'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23727272'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%23868686'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23707070'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%23848484'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23808080'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%23767676'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%23828282'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23727272'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23747474'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%23868686'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%23707070'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%23808080'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23787878'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23727272'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%23848484'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23767676'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%238E8E8E'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23747474'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23828282'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%23707070'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23727272'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23808080'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23767676'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23747474'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%23868686'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23828282'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23707070'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%23848484'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23808080'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23747474'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23868686'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%23727272'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%23767676'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23707070'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%23808080'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23747474'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23787878'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%23828282'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23868686'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%23727272'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%23808080'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23767676'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%23848484'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23707070'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23787878'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23747474'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%23828282'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%23767676'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23727272'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23828282'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%23868686'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23707070'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%23747474'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23848484'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23767676'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23808080'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23727272'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23828282'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .page {
@@ -1866,59 +1723,12 @@ tr:last-child td {
   position: relative;
   overflow: hidden;
 
-  background:
-    /* Visible stone block grid */
-    repeating-linear-gradient(
-      0deg,
-      rgba(35, 40, 52, 0.9) 0px,
-      rgba(35, 40, 52, 0.9) 15px,
-      rgba(18, 22, 32, 1) 15px,
-      rgba(18, 22, 32, 1) 16px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(35, 40, 52, 0.7) 0px,
-      rgba(35, 40, 52, 0.7) 15px,
-      rgba(18, 22, 32, 0.8) 15px,
-      rgba(18, 22, 32, 0.8) 16px
-    ),
-    /* Stone pixel noise */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.02) 2px,
-      rgba(255, 255, 255, 0.02) 4px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.06) 3px,
-      rgba(0, 0, 0, 0.06) 5px
-    ),
-    repeating-linear-gradient(
-      135deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(255, 255, 255, 0.015) 4px,
-      rgba(255, 255, 255, 0.015) 5px
-    ),
-    /* Grass/dirt horizon stripe — visible */
-    linear-gradient(180deg,
-      transparent 0%,
-      transparent 52%,
-      rgba(74, 222, 128, 0.08) 52%,
-      rgba(34, 197, 94, 0.12) 55%,
-      rgba(161, 98, 7, 0.1) 55%,
-      rgba(133, 77, 14, 0.08) 62%,
-      transparent 62%
-    ),
-    /* Color glows */
-    radial-gradient(ellipse at 50% 20%, rgba(96, 165, 250, 0.08) 0%, transparent 45%),
-    radial-gradient(ellipse at 80% 80%, rgba(192, 132, 252, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse at 20% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 45%),
-    var(--bg-deep);
+  /* Stone block texture background */
+  background-color: #1a1c22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%237A7A7A'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%23808080'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23757575'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23707070'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23858585'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23787878'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23828282'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23727272'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23868686'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%238E8E8E'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%23747474'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%23808080'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23767676'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23848484'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23707070'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23767676'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23727272'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23787878'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23828282'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23808080'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23747474'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%23868686'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23767676'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23727272'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%23868686'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23707070'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%23848484'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23808080'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%23767676'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%23828282'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23727272'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23747474'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%23868686'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%23707070'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%23808080'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23787878'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23727272'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%23848484'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23767676'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%238E8E8E'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23747474'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23828282'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%23707070'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23727272'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23808080'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23767676'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23747474'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%23868686'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23828282'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23707070'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%23848484'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23808080'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23747474'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23868686'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%23727272'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%23767676'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23707070'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%23808080'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23747474'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23787878'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%23828282'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23868686'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%23727272'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%23808080'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23767676'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%23848484'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23707070'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23787878'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%238A8A8A'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23747474'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%237C7C7C'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%23828282'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%23767676'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23727272'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23828282'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%23868686'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23707070'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%237E7E7E'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%238C8C8C'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%23747474'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23848484'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23767676'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23808080'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23727272'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%237A7A7A'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23828282'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .login-page::before {
@@ -1952,52 +1762,14 @@ tr:last-child td {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    /* Cobblestone blocks */
-    repeating-linear-gradient(
-      0deg,
-      rgba(45, 50, 65, 0.9) 0px,
-      rgba(45, 50, 65, 0.9) 10px,
-      rgba(28, 32, 44, 0.95) 10px,
-      rgba(28, 32, 44, 0.95) 11px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(45, 50, 65, 0.7) 0px,
-      rgba(45, 50, 65, 0.7) 10px,
-      rgba(28, 32, 44, 0.8) 10px,
-      rgba(28, 32, 44, 0.8) 11px
-    ),
-    /* Cobblestone cracks */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.12) 4px,
-      rgba(0, 0, 0, 0.12) 5px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.1) 4px,
-      rgba(0, 0, 0, 0.1) 5px
-    ),
-    /* Surface grain */
-    repeating-linear-gradient(
-      135deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.02) 2px,
-      rgba(255, 255, 255, 0.02) 3px
-    );
+
+  /* Cobblestone block texture — actual Minecraft pixel art */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='16' height='16' fill='%236B6B6B'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%237A7268'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23606060'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%23807870'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%23686868'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%23787068'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23706860'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23747474'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23726A60'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%237E7668'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23626262'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%237C7468'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23787068'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23646464'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%237E766C'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23606060'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%237A7268'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%236C6C6C'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23686868'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%237C746A'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23706860'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23767676'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23626262'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%237E766C'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%23726A60'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23746C62'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%237A7268'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23666666'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23807870'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23746C62'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%23787068'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%237C746A'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23787068'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%23726A60'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%237A7268'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%23646464'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23767676'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23706860'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237E766C'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%23666666'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%237A7268'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%237A7268'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%23686868'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%23766E64'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23706860'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%237C746A'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23626262'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%237E766C'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%237A7268'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%23666666'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%23746C62'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%23706860'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23787068'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%237A7268'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23726A60'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23767676'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%237C746A'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%23686868'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%237E766C'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%23746C62'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23646464'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23766E64'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23787068'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23706860'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%237A7268'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%23746C62'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%23626262'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%237C746A'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%23666666'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%23787068'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%237A7268'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23766E64'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%23706860'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23686868'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23746C62'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%236A6A6A'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%237C746A'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23646464'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%237A7268'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%23706860'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%23767676'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23726A60'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237E766C'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23706860'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%23766E64'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23626262'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23746C62'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%237A7268'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%236E6E6E'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%23787068'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23686868'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%237C746A'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%23706860'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%237A7268'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%23666666'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23766E64'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%23746C62'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%23726A60'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%237A7268'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23626262'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23766E64'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23686868'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%23706860'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%237A7268'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%237E766C'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  opacity: 0.15;
+  border-radius: inherit;
 }
 
 /* Vivid grass/dirt top stripe */
