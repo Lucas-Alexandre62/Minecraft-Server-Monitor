@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Minecraft Server Monitor
 
 Aplicação de monitoramento de servidores Minecraft com dashboard em tempo real.
@@ -508,4 +507,3 @@ Integração entre sistemas
 **Lucas Alexandre**
 
 Projeto desenvolvido para estudo e evolução prática em desenvolvimento backend e frontend.
->>>>>>> 4324f8c99f54ab506c608e6e0fa73f03c823d0ed
