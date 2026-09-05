@@ -393,6 +393,8 @@ Critérios de aceite:
 * Backend em container
 * PostgreSQL em container
 * Frontend preparado para produção
+* Healthcheck do backend via Spring Boot Actuator (`/actuator/health`)
+* Healthcheck do PostgreSQL via `pg_isready`
 
 ---
 
@@ -413,6 +415,13 @@ Critérios de aceite:
 
 Status: DONE
 Dependências: T033
+
+Critérios de aceite:
+
+* `deploy.sh` usa `/actuator/health` para verificar backend (sem depender de JWT)
+* Script retorna código de erro quando serviço falha
+* README atualizado e sem conflitos de merge
+* Variáveis de ambiente documentadas
 
 ---
 

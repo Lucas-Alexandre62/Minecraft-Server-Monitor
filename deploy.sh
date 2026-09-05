@@ -25,7 +25,7 @@ docker compose ps
 
 echo ""
 echo "4. Verificando saude dos containers..."
-sleep 10
+sleep 15
 
 BACKEND_HEALTH=$(docker inspect --format='{{.State.Health.Status}}' minecraft-monitor-backend-1 2>/dev/null || echo "unknown")
 POSTGRES_HEALTH=$(docker inspect --format='{{.State.Health.Status}}' minecraft-monitor-postgres-1 2>/dev/null || echo "unknown")
@@ -35,17 +35,36 @@ echo "   Postgres: $POSTGRES_HEALTH"
 
 echo ""
 echo "5. Testando conectividade..."
-if curl -sf http://localhost:8080/api/servers > /dev/null 2>&1; then
-    echo "   Backend: OK"
+
+ERRORS=0
+
+if [ "$BACKEND_HEALTH" = "healthy" ]; then
+    echo "   Backend: OK (healthy)"
+elif curl -sf http://localhost:8080/actuator/health > /dev/null 2>&1; then
+    echo "   Backend: OK (actuator responding)"
 else
     echo "   Backend: FALHOU"
+    ERRORS=$((ERRORS + 1))
+fi
+
+if [ "$POSTGRES_HEALTH" = "healthy" ]; then
+    echo "   Postgres: OK (healthy)"
+else
+    echo "   Postgres: FALHOU"
+    ERRORS=$((ERRORS + 1))
 fi
 
 if curl -sf http://localhost:3000 > /dev/null 2>&1; then
     echo "   Frontend: OK"
 else
     echo "   Frontend: FALHOU"
+    ERRORS=$((ERRORS + 1))
 fi
 
 echo ""
-echo "=== Deploy concluido ==="
+if [ "$ERRORS" -gt 0 ]; then
+    echo "=== Deploy concluido com erros ($ERRORS servicos falharam) ==="
+    exit 1
+fi
+
+echo "=== Deploy concluido com sucesso ==="
