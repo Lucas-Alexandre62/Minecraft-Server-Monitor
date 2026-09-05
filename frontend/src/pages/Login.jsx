@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { apiFetch, setToken } from "../api";
+import { API_URL, setToken } from "../api";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -18,7 +18,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await apiFetch("/auth/login", {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -28,7 +28,7 @@ function Login() {
 
       if (!response.ok) {
         throw new Error(
-          data.message || "Não foi possível realizar o login."
+          "Usuário ou senha inválidos."
         );
       }
 

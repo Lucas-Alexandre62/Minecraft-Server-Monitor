@@ -48,7 +48,7 @@ describe('api.js', () => {
       await apiFetch('/servers');
 
       expect(mockFetch).toHaveBeenCalledWith(
-        'http://localhost:8080/api/servers',
+        '/api/servers',
         expect.objectContaining({
           headers: expect.objectContaining({
             Authorization: 'Bearer my-token',
@@ -69,7 +69,7 @@ describe('api.js', () => {
       await apiFetch('/servers');
 
       expect(mockFetch).toHaveBeenCalledWith(
-        'http://localhost:8080/api/servers',
+        '/api/servers',
         expect.objectContaining({
           headers: expect.not.objectContaining({
             Authorization: expect.any(String),

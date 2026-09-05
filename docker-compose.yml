@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   postgres:
     image: postgres:17-alpine
@@ -23,6 +21,8 @@ services:
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-minecraft}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-minecraft}
       JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      APP_BOOTSTRAP_USERNAME: ${APP_BOOTSTRAP_USERNAME:-admin}
+      APP_BOOTSTRAP_PASSWORD: ${APP_BOOTSTRAP_PASSWORD:-admin}
       RCON_PASSWORD: ${RCON_PASSWORD:-}
       ALERT_WEBHOOK_URL: ${ALERT_WEBHOOK_URL:-}
       ALERT_EMAIL_HOST: ${ALERT_EMAIL_HOST:-}
