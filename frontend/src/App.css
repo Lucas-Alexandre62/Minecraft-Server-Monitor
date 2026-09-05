@@ -1,85 +1,96 @@
 /* ============================================
-   MINECRAFT SERVER MONITOR — THEME v2
-   Deeply Minecraft-inspired design system
+   MINECRAFT SERVER MONITOR — THEME v3
+   Vibrant Minecraft-inspired design system
    ============================================ */
 
 :root {
-  /* === Backgrounds (deepslate/obsidian spectrum) === */
-  --bg-deep: #0a0a0c;
-  --bg-base: #141418;
-  --bg-surface: #1c1c22;
-  --bg-elevated: #24242c;
-  --bg-overlay: #2c2c36;
+  /* === Backgrounds === */
+  --bg-deep: #0c0e12;
+  --bg-base: #151820;
+  --bg-surface: #1e222c;
+  --bg-elevated: #272c38;
+  --bg-overlay: #303644;
 
-  /* === Borders (stone spectrum) === */
-  --border: #3a3a44;
-  --border-light: #4a4a56;
-  --border-focus: #6a6a78;
+  /* === Borders === */
+  --border: #3e4454;
+  --border-light: #505870;
+  --border-focus: #707a94;
 
   /* === Text === */
-  --text: #e8e6e3;
-  --text-secondary: #a09d96;
-  --text-muted: #6b6862;
-  --text-dim: #4a4844;
+  --text: #eef0f4;
+  --text-secondary: #b0b4c0;
+  --text-muted: #707888;
+  --text-dim: #505868;
 
-  /* === Minecraft Block Colors === */
-  --grass: #5d9e3c;
-  --grass-light: #7ec850;
-  --grass-dark: #3a6b24;
-  --grass-bg: #1a2e14;
+  /* === Grass / Emerald (vivid green) === */
+  --grass: #4ade80;
+  --grass-light: #86efac;
+  --grass-dark: #166534;
+  --grass-bg: #052e16;
+  --grass-glow: rgba(74, 222, 128, 0.4);
 
-  --stone-gray: #7a7a7a;
-  --stone-dark: #5a5a5a;
+  /* === Lapis / Water (vivid blue) === */
+  --water: #60a5fa;
+  --water-light: #93c5fd;
+  --water-dark: #1e3a5f;
+  --water-bg: #0c1929;
+  --water-glow: rgba(96, 165, 250, 0.4);
 
-  --deepslate: #505058;
-  --deepslate-dark: #38383e;
+  /* === Redstone (vivid red) === */
+  --redstone: #f87171;
+  --redstone-light: #fca5a5;
+  --redstone-dark: #7f1d1d;
+  --redstone-bg: #2a0f0f;
+  --redstone-glow: rgba(248, 113, 113, 0.4);
 
-  --obsidian: #1a0a2e;
-  --obsidian-light: #2d1a4a;
+  /* === Gold / XP (vivid yellow) === */
+  --gold: #facc15;
+  --gold-light: #fde68a;
+  --gold-dark: #713f12;
+  --gold-bg: #1c1507;
+  --gold-glow: rgba(250, 204, 21, 0.4);
 
-  --dirt: #8b6914;
-  --dirt-dark: #5c4610;
-  --dirt-bg: #2a200c;
+  /* === Dirt / Wood (warm brown) === */
+  --dirt: #a16207;
+  --dirt-dark: #451a03;
+  --wood: #ca8a04;
+  --wood-dark: #713f12;
 
-  --wood: #b8860b;
-  --wood-dark: #8b6508;
+  /* === Sand / Beige === */
+  --sand: #e2d5a0;
+  --sand-dark: #a89860;
 
-  --sand: #d4c5a0;
-  --sand-dark: #a89870;
+  /* === Stone / Deepslate === */
+  --stone: #94a3b8;
+  --deepslate: #475569;
 
-  --water: #3f76e4;
-  --water-dark: #2a5ab8;
-  --water-bg: #0f1a30;
+  /* === Amethyst (purple accent) === */
+  --amethyst: #c084fc;
+  --amethyst-dark: #3b0764;
+  --amethyst-bg: #1a0533;
+  --amethyst-glow: rgba(192, 132, 252, 0.35);
 
-  --redstone: #e03030;
-  --redstone-light: #ff4444;
-  --redstone-dark: #6b1818;
-  --redstone-bg: #2a0e0e;
-
-  --gold: #fcdb05;
-  --gold-dark: #b89e04;
-  --gold-bg: #2a2408;
+  /* === Copper (orange accent) === */
+  --copper: #fb923c;
+  --copper-dark: #7c2d12;
+  --copper-bg: #1c0f05;
+  --copper-glow: rgba(251, 146, 60, 0.35);
 
   /* === Fonts === */
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-pixel: 'Press Start 2P', monospace;
 
-  /* === Shadows (Minecraft-inspired hard shadows) === */
-  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 4px 0 rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-block: 2px 2px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(255, 255, 255, 0.04);
-  --shadow-glow-green: 0 0 8px rgba(93, 158, 60, 0.3);
-  --shadow-glow-red: 0 0 8px rgba(224, 48, 48, 0.3);
-  --shadow-glow-gold: 0 0 8px rgba(252, 219, 5, 0.3);
-  --shadow-glow-blue: 0 0 8px rgba(63, 118, 228, 0.3);
+  /* === Shadows === */
+  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 0 rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-block: 3px 3px 0 rgba(0, 0, 0, 0.55), -1px -1px 0 rgba(255, 255, 255, 0.04);
 
   /* === Transitions === */
   --transition-fast: 0.1s ease;
   --transition-base: 0.15s ease;
-  --transition-slow: 0.25s ease;
 
-  /* === Border radius (always square for Minecraft feel) === */
+  /* === Border radius === */
   --radius-xs: 0px;
   --radius-sm: 0px;
   --radius-md: 0px;
@@ -103,22 +114,6 @@ body {
   background: var(--bg-deep);
   color: var(--text);
   line-height: 1.5;
-  /* Subtle stone texture on body */
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.008) 4px,
-      rgba(255, 255, 255, 0.008) 5px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.04) 4px,
-      rgba(0, 0, 0, 0.04) 5px
-    );
 }
 
 button {
@@ -126,253 +121,30 @@ button {
 }
 
 a {
-  color: var(--grass-light);
+  color: var(--water);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--grass);
+  color: var(--water-light);
 }
 
 
 /* ============================================
-   TEXTURE UTILITIES — Minecraft Block Patterns
+   TEXTURE UTILITIES
    ============================================ */
 
 .texture-stone {
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.015) 2px,
-      rgba(255, 255, 255, 0.015) 4px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.08) 3px,
-      rgba(0, 0, 0, 0.08) 6px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 6px,
-      rgba(255, 255, 255, 0.008) 6px,
-      rgba(255, 255, 255, 0.008) 7px
-    );
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px),
+    repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 6px);
 }
 
 .texture-cobble {
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 8px,
-      rgba(255, 255, 255, 0.02) 8px,
-      rgba(255, 255, 255, 0.02) 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.06) 8px,
-      rgba(0, 0, 0, 0.06) 9px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 6px,
-      rgba(255, 255, 255, 0.012) 6px,
-      rgba(255, 255, 255, 0.012) 7px
-    ),
-    repeating-linear-gradient(
-      -30deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 0, 0, 0.04) 10px,
-      rgba(0, 0, 0, 0.04) 11px
-    );
-}
-
-.texture-deepslate {
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.012) 3px,
-      rgba(255, 255, 255, 0.012) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 5px,
-      rgba(0, 0, 0, 0.06) 5px,
-      rgba(0, 0, 0, 0.06) 6px
-    ),
-    repeating-linear-gradient(
-      60deg,
-      transparent,
-      transparent 8px,
-      rgba(255, 255, 255, 0.008) 8px,
-      rgba(255, 255, 255, 0.008) 9px
-    );
-}
-
-.texture-obsidian {
-  background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(80, 40, 120, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(60, 30, 100, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(40, 20, 80, 0.08) 0%, transparent 50%),
-    repeating-linear-gradient(
-      135deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.008) 4px,
-      rgba(255, 255, 255, 0.008) 5px
-    );
-}
-
-.texture-wood {
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(184, 134, 11, 0.04) 2px,
-      rgba(184, 134, 11, 0.04) 3px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 6px,
-      rgba(0, 0, 0, 0.04) 6px,
-      rgba(0, 0, 0, 0.04) 7px
-    );
-}
-
-.texture-dirt {
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 3px,
-      rgba(139, 105, 20, 0.03) 3px,
-      rgba(139, 105, 20, 0.03) 6px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.04) 4px,
-      rgba(0, 0, 0, 0.04) 8px
-    );
-}
-
-.texture-bedrock {
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.05) 3px,
-      rgba(0, 0, 0, 0.05) 6px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px,
-      rgba(0, 0, 0, 0.04) 6px
-    );
-}
-
-
-/* ============================================
-   MINECRAFT BUTTON BASE
-   ============================================ */
-
-.mc-button {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 13px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  text-align: center;
-  transition: all var(--transition-fast);
-
-  /* Minecraft 3D button effect */
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.12),
-    0 3px 0 0 rgba(0, 0, 0, 0.5);
-}
-
-.mc-button:hover {
-  filter: brightness(1.15);
-}
-
-.mc-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.06);
-  transform: translateY(2px);
-}
-
-.mc-button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  transform: none !important;
-  filter: none !important;
-}
-
-
-/* ============================================
-   BLOCK CARD — Information blocks
-   ============================================ */
-
-.block-card {
-  background: var(--bg-surface);
-  border: 2px solid var(--border);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-block);
-}
-
-.block-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.008) 3px,
-      rgba(255, 255, 255, 0.008) 6px
-    );
-}
-
-/* Top highlight for 3D effect */
-.block-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-}
-
-.block-card > * {
-  position: relative;
-  z-index: 1;
+    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(255,255,255,0.025) 8px, rgba(255,255,255,0.025) 9px),
+    repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.07) 8px, rgba(0,0,0,0.07) 9px),
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.015) 6px, rgba(255,255,255,0.015) 7px);
 }
 
 
@@ -386,39 +158,23 @@ a:hover {
 
 
 /* ============================================
-   HEADER — Minecraft-style top bar
+   HEADER
    ============================================ */
 
 .header {
   border-bottom: 3px solid var(--border);
   background: var(--bg-base);
-  position: relative;
-
-  /* Deepslate texture */
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.006) 3px,
-      rgba(255, 255, 255, 0.006) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px,
-      rgba(0, 0, 0, 0.04) 4px
-    );
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 24px 40px;
+  position: relative;
+
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(96,165,250,0.015) 3px, rgba(96,165,250,0.015) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 4px);
 }
 
-/* Pixel border bottom */
 .header::after {
   content: '';
   position: absolute;
@@ -426,35 +182,28 @@ a:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--border-light) 0px,
-    var(--border-light) 4px,
-    var(--border) 4px,
-    var(--border) 8px
-  );
+  background: repeating-linear-gradient(90deg, var(--water) 0px, var(--water) 6px, var(--border) 6px, var(--border) 12px);
 }
 
 .header h1 {
   margin: 0;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
   font-family: var(--font-pixel);
   font-size: 16px;
+  font-weight: 800;
   line-height: 1.6;
+  color: var(--water-light);
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
 }
 
 .header p {
   margin: 6px 0 0;
   color: var(--text-muted);
   font-size: 13px;
-  font-family: var(--font-body);
 }
 
 
 /* ============================================
-   BUTTONS — Minecraft menu style
+   BUTTONS — Minecraft menu style (vivid)
    ============================================ */
 
 .refresh-button {
@@ -466,24 +215,25 @@ a:hover {
   font-weight: 600;
   font-size: 13px;
   transition: all var(--transition-fast);
-  position: relative;
-
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.35),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.08),
-    0 2px 0 0 rgba(0, 0, 0, 0.4);
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(255,255,255,0.08),
+    0 3px 0 rgba(0,0,0,0.5);
 }
 
 .refresh-button:hover {
   background: var(--bg-overlay);
-  border-color: var(--border-light);
-  filter: brightness(1.1);
+  border-color: var(--water);
+  color: var(--water-light);
+  box-shadow:
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(96,165,250,0.12),
+    0 3px 0 rgba(0,0,0,0.5),
+    0 0 12px rgba(96,165,250,0.15);
 }
 
 .refresh-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.35),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.4), inset -2px -2px 0 rgba(255,255,255,0.04);
   transform: translateY(2px);
 }
 
@@ -498,23 +248,25 @@ a:hover {
   transition: all var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
-    0 3px 0 0 rgba(0, 0, 0, 0.5);
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(134,239,172,0.2),
+    0 3px 0 rgba(0,0,0,0.5);
 }
 
 .primary-button:hover {
-  background: var(--grass);
+  background: #15803d;
   color: #fff;
-  filter: brightness(1.1);
+  border-color: var(--grass-light);
+  box-shadow:
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(134,239,172,0.25),
+    0 3px 0 rgba(0,0,0,0.5),
+    0 0 16px var(--grass-glow);
 }
 
 .primary-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.4), inset -2px -2px 0 rgba(255,255,255,0.1);
   transform: translateY(2px);
 }
 
@@ -527,24 +279,21 @@ a:hover {
   font-size: 13px;
   font-weight: 600;
   transition: all var(--transition-fast);
-
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
-    0 2px 0 0 rgba(0, 0, 0, 0.4);
+    inset -2px -2px 0 rgba(0,0,0,0.35),
+    inset 2px 2px 0 rgba(255,255,255,0.06),
+    0 2px 0 rgba(0,0,0,0.45);
 }
 
 .secondary-button:hover {
   background: var(--bg-overlay);
   color: var(--text);
-  border-color: var(--border-light);
+  border-color: var(--stone);
   filter: brightness(1.1);
 }
 
 .secondary-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -2px -2px 0 rgba(255,255,255,0.03);
   transform: translateY(2px);
 }
 
@@ -557,23 +306,25 @@ a:hover {
   font-size: 13px;
   font-weight: 700;
   transition: all var(--transition-fast);
-
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-    inset 2px 2px 0 rgba(255, 68, 68, 0.2),
-    0 3px 0 0 rgba(0, 0, 0, 0.5);
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(252,165,165,0.2),
+    0 3px 0 rgba(0,0,0,0.5);
 }
 
 .danger-button:hover {
-  background: var(--redstone);
+  background: #dc2626;
   color: #fff;
-  filter: brightness(1.1);
+  border-color: var(--redstone-light);
+  box-shadow:
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(252,165,165,0.25),
+    0 3px 0 rgba(0,0,0,0.5),
+    0 0 16px var(--redstone-glow);
 }
 
 .danger-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.4),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.4), inset -2px -2px 0 rgba(255,255,255,0.1);
   transform: translateY(2px);
 }
 
@@ -597,7 +348,7 @@ button:disabled {
 
 
 /* ============================================
-   OVERVIEW CARDS (Dashboard top metrics)
+   OVERVIEW CARDS — Each with unique color accent
    ============================================ */
 
 .overview {
@@ -614,22 +365,7 @@ button:disabled {
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
-
-  /* Block shadow effect */
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
-    3px 3px 0 rgba(0, 0, 0, 0.4);
-
-  /* Subtle stone texture */
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.008) 3px,
-      rgba(255, 255, 255, 0.008) 6px
-    );
+  box-shadow: var(--shadow-block);
 }
 
 .overview-card::before {
@@ -639,29 +375,50 @@ button:disabled {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--border-light);
-  opacity: 0.6;
 }
 
+/* Card 1: Servers — Stone/Deepslate */
+.overview-card:nth-child(1)::before { background: var(--stone); }
+.overview-card:nth-child(1) .overview-label { color: var(--stone); }
+.overview-card:nth-child(1) strong { color: var(--stone); text-shadow: 0 0 16px rgba(148,163,184,0.3); }
+.overview-card:nth-child(1):hover { border-color: var(--stone); box-shadow: var(--shadow-block), 0 0 16px rgba(148,163,184,0.12); }
+
+/* Card 2: Online — Emerald Green */
+.overview-card:nth-child(2)::before { background: var(--grass); }
+.overview-card:nth-child(2) .overview-label { color: var(--grass); }
+.overview-card:nth-child(2) strong { color: var(--grass-light); text-shadow: 0 0 16px var(--grass-glow); }
+.overview-card:nth-child(2):hover { border-color: var(--grass); box-shadow: var(--shadow-block), 0 0 16px rgba(74,222,128,0.15); }
+
+/* Card 3: Players — Gold */
+.overview-card:nth-child(3)::before { background: var(--gold); }
+.overview-card:nth-child(3) .overview-label { color: var(--gold); }
+.overview-card:nth-child(3) strong { color: var(--gold-light); text-shadow: 0 0 16px var(--gold-glow); }
+.overview-card:nth-child(3):hover { border-color: var(--gold); box-shadow: var(--shadow-block), 0 0 16px rgba(250,204,21,0.15); }
+
+/* Card 4: Latency — Lapis Blue */
+.overview-card:nth-child(4)::before { background: var(--water); }
+.overview-card:nth-child(4) .overview-label { color: var(--water); }
+.overview-card:nth-child(4) strong { color: var(--water-light); text-shadow: 0 0 16px var(--water-glow); }
+.overview-card:nth-child(4):hover { border-color: var(--water); box-shadow: var(--shadow-block), 0 0 16px rgba(96,165,250,0.15); }
+
+/* Card 5: Availability — Amethyst Purple */
+.overview-card:nth-child(5)::before { background: var(--amethyst); }
+.overview-card:nth-child(5) .overview-label { color: var(--amethyst); }
+.overview-card:nth-child(5) strong { color: var(--amethyst); text-shadow: 0 0 16px var(--amethyst-glow); }
+.overview-card:nth-child(5):hover { border-color: var(--amethyst); box-shadow: var(--shadow-block), 0 0 16px rgba(192,132,252,0.15); }
+
 .overview-card:hover {
-  border-color: var(--border-light);
   transform: translate(-1px, -1px);
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
-    4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .overview-label {
   display: block;
-  color: var(--text-muted);
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin-bottom: 10px;
   font-family: var(--font-pixel);
-  font-size: 8px;
   line-height: 1.4;
 }
 
@@ -679,14 +436,9 @@ button:disabled {
   font-size: 12px;
 }
 
-.online-count {
-  color: var(--grass-light);
-  text-shadow: 0 0 12px rgba(93, 158, 60, 0.4);
-}
-
 
 /* ============================================
-   SERVERS SECTION
+   SECTION HEADER
    ============================================ */
 
 .servers-section {
@@ -702,7 +454,6 @@ button:disabled {
 
 .section-header h2 {
   margin: 0;
-  font-size: 18px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -710,6 +461,8 @@ button:disabled {
   font-family: var(--font-pixel);
   font-size: 13px;
   line-height: 1.6;
+  color: var(--water-light);
+  text-shadow: 0 0 12px rgba(96,165,250,0.2);
 }
 
 .section-header h2::before {
@@ -717,8 +470,8 @@ button:disabled {
   display: inline-block;
   width: 4px;
   height: 18px;
-  background: var(--grass);
-  box-shadow: 2px 0 0 var(--grass-dark);
+  background: var(--water);
+  box-shadow: 2px 0 0 var(--water-dark);
 }
 
 .section-header span {
@@ -734,7 +487,7 @@ button:disabled {
 
 
 /* ============================================
-   SERVER CARD — Minecraft block info panel
+   SERVER CARD
    ============================================ */
 
 .server-card {
@@ -744,29 +497,11 @@ button:disabled {
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
+  box-shadow: var(--shadow-block);
 
-  /* 3D block effect */
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
-    3px 3px 0 rgba(0, 0, 0, 0.4);
-
-  /* Stone texture */
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.008) 3px,
-      rgba(255, 255, 255, 0.008) 6px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 5px,
-      rgba(0, 0, 0, 0.03) 5px,
-      rgba(0, 0, 0, 0.03) 10px
-    );
+    repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,255,0.01) 3px, rgba(255,255,255,0.01) 6px),
+    repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,0.04) 5px, rgba(0,0,0,0.04) 10px);
 }
 
 .server-card > * {
@@ -775,12 +510,9 @@ button:disabled {
 }
 
 .server-card:hover {
-  border-color: var(--border-light);
+  border-color: var(--copper);
   transform: translate(-1px, -1px);
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.25),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.04),
-    4px 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-block), 0 0 16px rgba(251,146,60,0.12);
 }
 
 .server-card-header {
@@ -794,6 +526,7 @@ button:disabled {
   margin: 0;
   font-size: 16px;
   font-weight: 700;
+  color: var(--text);
 }
 
 .server-id {
@@ -820,51 +553,46 @@ button:disabled {
   background: var(--bg-overlay);
   color: var(--text-secondary);
   border: 2px solid var(--border);
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.06);
 }
 
 .status.online {
-  background: var(--grass-dark);
-  color: var(--grass-light);
-  border: 2px solid var(--grass);
+  background: #064e3b;
+  color: #6ee7b7;
+  border: 2px solid #10b981;
   box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(126, 200, 80, 0.2),
-    0 0 8px rgba(93, 158, 60, 0.3);
+    inset -1px -1px 0 rgba(0,0,0,0.3),
+    inset 1px 1px 0 rgba(16,185,129,0.25),
+    0 0 10px rgba(16,185,129,0.35);
   animation: pulse-green 2s ease-in-out infinite;
 }
 
 .status.offline {
-  background: var(--redstone-dark);
-  color: var(--redstone-light);
-  border: 2px solid var(--redstone);
+  background: #7f1d1d;
+  color: #fca5a5;
+  border: 2px solid #ef4444;
   box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 68, 68, 0.2),
-    0 0 8px rgba(224, 48, 48, 0.3);
+    inset -1px -1px 0 rgba(0,0,0,0.3),
+    inset 1px 1px 0 rgba(239,68,68,0.25),
+    0 0 10px rgba(239,68,68,0.35);
 }
 
 @keyframes pulse-green {
-  0%, 100% { box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(126, 200, 80, 0.2), 0 0 8px rgba(93, 158, 60, 0.3); }
-  50% { box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(126, 200, 80, 0.2), 0 0 14px rgba(93, 158, 60, 0.5); }
+  0%, 100% { box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(16,185,129,0.25), 0 0 10px rgba(16,185,129,0.35); }
+  50% { box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(16,185,129,0.25), 0 0 20px rgba(16,185,129,0.5); }
 }
 
 .server-address {
   margin: 16px 0;
   display: flex;
   gap: 2px;
-  color: var(--sand);
+  color: var(--gold-light);
   font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
   font-size: 13px;
   background: var(--bg-deep);
   padding: 8px 12px;
   border: 2px solid var(--border);
-
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -1px -1px 0 rgba(255,255,255,0.03);
 }
 
 .server-info {
@@ -887,16 +615,20 @@ button:disabled {
 
 .server-info span {
   display: block;
-  color: var(--text-dim);
-  font-size: 9px;
+  font-size: 7px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 6px;
   font-family: var(--font-pixel);
-  font-size: 7px;
   line-height: 1.5;
+  color: var(--text-dim);
 }
+
+/* Color-coded info labels */
+.server-info > div:nth-child(1) span { color: var(--gold); }
+.server-info > div:nth-child(2) span { color: var(--water); }
+.server-info > div:nth-child(3) span { color: var(--copper); }
 
 .server-info strong {
   font-size: 15px;
@@ -914,24 +646,25 @@ button:disabled {
   font-weight: 600;
   font-size: 13px;
   transition: all var(--transition-fast);
-
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
-    0 2px 0 0 rgba(0, 0, 0, 0.4);
+    inset -2px -2px 0 rgba(0,0,0,0.35),
+    inset 2px 2px 0 rgba(255,255,255,0.06),
+    0 2px 0 rgba(0,0,0,0.45);
 }
 
 .details-button:hover {
-  background: var(--bg-overlay);
-  border-color: var(--grass-dark);
-  color: var(--grass-light);
-  filter: brightness(1.1);
+  background: var(--copper-dark);
+  border-color: var(--copper);
+  color: var(--copper);
+  box-shadow:
+    inset -2px -2px 0 rgba(0,0,0,0.35),
+    inset 2px 2px 0 rgba(251,146,60,0.12),
+    0 2px 0 rgba(0,0,0,0.45),
+    0 0 12px rgba(251,146,60,0.15);
 }
 
 .details-button:active {
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -2px -2px 0 rgba(255,255,255,0.03);
   transform: translateY(2px);
 }
 
@@ -947,10 +680,7 @@ button:disabled {
   color: var(--text-secondary);
   position: relative;
   overflow: hidden;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,0.25), inset 2px 2px 0 rgba(255,255,255,0.03);
 }
 
 .message::before {
@@ -958,14 +688,7 @@ button:disabled {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.03) 4px,
-      rgba(0, 0, 0, 0.03) 8px
-    );
+  background: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(0,0,0,0.035) 4px, rgba(0,0,0,0.035) 8px);
 }
 
 .message > * {
@@ -976,6 +699,7 @@ button:disabled {
   color: var(--redstone-light);
   border-color: var(--redstone);
   background: var(--redstone-bg);
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,0.25), inset 2px 2px 0 rgba(255,68,68,0.08), 0 0 12px rgba(248,113,113,0.1);
 }
 
 
@@ -984,36 +708,16 @@ button:disabled {
    ============================================ */
 
 @media (max-width: 1100px) {
-  .overview {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .overview { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 800px) {
-  .header {
-    padding: 20px;
-  }
-
-  .container {
-    padding: 24px 20px;
-  }
-
-  .overview {
-    grid-template-columns: 1fr;
-  }
-
-  .server-info {
-    grid-template-columns: 1fr;
-  }
-
-  .server-info > div {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .server-info > div:last-child {
-    border-bottom: none;
-  }
+  .header { padding: 20px; }
+  .container { padding: 24px 20px; }
+  .overview { grid-template-columns: 1fr; }
+  .server-info { grid-template-columns: 1fr; }
+  .server-info > div { border-right: none; border-bottom: 1px solid var(--border); }
+  .server-info > div:last-child { border-bottom: none; }
 }
 
 
@@ -1024,7 +728,7 @@ button:disabled {
 .back-button {
   border: none;
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--water);
   padding: 0;
   margin-bottom: 8px;
   cursor: pointer;
@@ -1034,7 +738,8 @@ button:disabled {
 }
 
 .back-button:hover {
-  color: var(--grass-light);
+  color: var(--water-light);
+  text-shadow: 0 0 8px var(--water-glow);
 }
 
 .details-top {
@@ -1051,11 +756,7 @@ button:disabled {
   gap: 18px;
   position: relative;
   overflow: hidden;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    3px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-block);
 }
 
 .current-status::before {
@@ -1063,14 +764,7 @@ button:disabled {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.006) 4px,
-      rgba(255, 255, 255, 0.006) 8px
-    );
+  background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.008) 4px, rgba(255,255,255,0.008) 8px);
 }
 
 .current-status > * {
@@ -1094,20 +788,7 @@ button:disabled {
   position: relative;
   transition: all var(--transition-base);
   overflow: hidden;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    2px 2px 0 rgba(0, 0, 0, 0.35);
-
-  background-image:
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.02) 4px,
-      rgba(0, 0, 0, 0.02) 8px
-    );
+  box-shadow: var(--shadow-block);
 }
 
 .metric-card::before {
@@ -1116,10 +797,25 @@ button:disabled {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.04);
-  pointer-events: none;
+  height: 3px;
 }
+
+/* Color-coded metric cards */
+.metric-card:nth-child(1)::before { background: var(--gold); }
+.metric-card:nth-child(1) span { color: var(--gold); }
+.metric-card:nth-child(1) strong { color: var(--gold-light); text-shadow: 0 0 10px rgba(250,204,21,0.2); }
+
+.metric-card:nth-child(2)::before { background: var(--water); }
+.metric-card:nth-child(2) span { color: var(--water); }
+.metric-card:nth-child(2) strong { color: var(--water-light); text-shadow: 0 0 10px rgba(96,165,250,0.2); }
+
+.metric-card:nth-child(3)::before { background: var(--amethyst); }
+.metric-card:nth-child(3) span { color: var(--amethyst); }
+.metric-card:nth-child(3) strong { color: var(--amethyst); text-shadow: 0 0 10px rgba(192,132,252,0.2); }
+
+.metric-card:nth-child(4)::before { background: var(--grass); }
+.metric-card:nth-child(4) span { color: var(--grass); }
+.metric-card:nth-child(4) strong { color: var(--grass-light); text-shadow: 0 0 10px rgba(74,222,128,0.2); }
 
 .metric-card > * {
   position: relative;
@@ -1128,22 +824,17 @@ button:disabled {
 .metric-card:hover {
   border-color: var(--border-light);
   transform: translate(-1px, -1px);
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    3px 3px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-block), 0 0 12px rgba(255,255,255,0.04);
 }
 
 .metric-card span {
   display: block;
-  color: var(--text-dim);
-  font-size: 9px;
+  font-size: 7px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 8px;
   font-family: var(--font-pixel);
-  font-size: 7px;
   line-height: 1.5;
 }
 
@@ -1170,7 +861,7 @@ button:disabled {
 
 
 /* ============================================
-   TABLES — Minecraft inventory style
+   TABLES
    ============================================ */
 
 .table-container {
@@ -1178,11 +869,7 @@ button:disabled {
   overflow-x: auto;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    3px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-block);
 }
 
 table {
@@ -1190,8 +877,7 @@ table {
   border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
   padding: 14px 18px;
   text-align: left;
   border-bottom: 2px solid var(--border);
@@ -1199,9 +885,8 @@ td {
 }
 
 th {
-  color: var(--text-dim);
+  color: var(--water);
   font-weight: 700;
-  font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   background: var(--bg-elevated);
@@ -1209,15 +894,8 @@ th {
   font-size: 8px;
   line-height: 1.4;
 
-  /* Inventory header texture */
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.01) 2px,
-      rgba(255, 255, 255, 0.01) 3px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(96,165,250,0.02) 2px, rgba(96,165,250,0.02) 3px);
 }
 
 td {
@@ -1225,7 +903,7 @@ td {
 }
 
 tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(96,165,250,0.03);
 }
 
 tr:last-child td {
@@ -1241,13 +919,13 @@ tr:last-child td {
 }
 
 .online-text {
-  color: var(--grass-light);
-  text-shadow: 0 0 6px rgba(93, 158, 60, 0.3);
+  color: #34d399;
+  text-shadow: 0 0 8px rgba(52,211,153,0.4);
 }
 
 .offline-text {
-  color: var(--redstone-light);
-  text-shadow: 0 0 6px rgba(224, 48, 48, 0.3);
+  color: #f87171;
+  text-shadow: 0 0 8px rgba(248,113,113,0.4);
 }
 
 
@@ -1261,11 +939,7 @@ tr:last-child td {
   background: var(--bg-surface);
   border: 2px solid var(--border);
   overflow: hidden;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    3px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-block);
 }
 
 .events-filter {
@@ -1284,11 +958,7 @@ tr:last-child td {
   font-size: 12px;
   font-weight: 600;
   transition: all var(--transition-fast);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 0 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.05), 0 1px 0 rgba(0,0,0,0.35);
 }
 
 .filter-button:hover {
@@ -1298,14 +968,10 @@ tr:last-child td {
 }
 
 .filter-button.active {
-  background: var(--grass-dark);
-  color: var(--grass-light);
-  border-color: var(--grass);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(126, 200, 80, 0.15),
-    0 0 6px rgba(93, 158, 60, 0.2);
+  background: var(--water-dark);
+  color: var(--water-light);
+  border-color: var(--water);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(96,165,250,0.2), 0 0 8px rgba(96,165,250,0.2);
 }
 
 .events-pagination {
@@ -1325,16 +991,13 @@ tr:last-child td {
   font-size: 12px;
   font-weight: 600;
   transition: all var(--transition-fast);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 0 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.05), 0 1px 0 rgba(0,0,0,0.35);
 }
 
 .pagination-button:hover:not(:disabled) {
   background: var(--bg-overlay);
-  border-color: var(--border-light);
+  border-color: var(--water);
+  color: var(--water-light);
   filter: brightness(1.1);
 }
 
@@ -1363,7 +1026,7 @@ tr:last-child td {
 }
 
 .event-item:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(96,165,250,0.03);
 }
 
 .event-item:last-child {
@@ -1374,27 +1037,27 @@ tr:last-child td {
   width: 10px;
   height: 10px;
   flex-shrink: 0;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0,0,0,0.3);
 }
 
 .event-indicator.up {
-  background: var(--grass);
-  box-shadow: 0 0 6px rgba(93, 158, 60, 0.5);
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
 }
 
 .event-indicator.down {
-  background: var(--redstone);
-  box-shadow: 0 0 6px rgba(224, 48, 48, 0.5);
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239,68,68,0.6);
 }
 
 .event-indicator.latency {
-  background: var(--gold);
-  box-shadow: 0 0 6px rgba(252, 219, 5, 0.5);
+  background: #eab308;
+  box-shadow: 0 0 8px rgba(234,179,8,0.6);
 }
 
 .event-indicator.instability {
-  background: var(--redstone-light);
-  box-shadow: 0 0 6px rgba(255, 68, 68, 0.5);
+  background: #f97316;
+  box-shadow: 0 0 8px rgba(249,115,22,0.6);
 }
 
 .period-select {
@@ -1405,15 +1068,13 @@ tr:last-child td {
   cursor: pointer;
   font-size: 13px;
   transition: border-color var(--transition-fast);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.05);
 }
 
 .period-select:focus {
   outline: none;
-  border-color: var(--border-focus);
+  border-color: var(--water);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.05), 0 0 8px rgba(96,165,250,0.2);
 }
 
 .chart-empty {
@@ -1446,29 +1107,14 @@ tr:last-child td {
    ============================================ */
 
 @media (max-width: 1000px) {
-  .details-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .statistics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .details-metrics { grid-template-columns: repeat(2, 1fr); }
+  .statistics-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
-  .details-metrics,
-  .statistics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .current-status {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .header h1 {
-    font-size: 13px;
-  }
+  .details-metrics, .statistics-grid { grid-template-columns: 1fr; }
+  .current-status { align-items: flex-start; flex-direction: column; }
+  .header h1 { font-size: 13px; }
 }
 
 
@@ -1488,11 +1134,7 @@ tr:last-child td {
   padding: 22px;
   position: relative;
   overflow: hidden;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    3px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-block);
 }
 
 .chart-card::before {
@@ -1500,14 +1142,7 @@ tr:last-child td {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 5px,
-      rgba(255, 255, 255, 0.006) 5px,
-      rgba(255, 255, 255, 0.006) 10px
-    );
+  background: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255,255,255,0.008) 5px, rgba(255,255,255,0.008) 10px);
 }
 
 .chart-card > * {
@@ -1516,7 +1151,6 @@ tr:last-child td {
 
 .chart-card h3 {
   margin: 0 0 16px;
-  font-size: 13px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1524,6 +1158,8 @@ tr:last-child td {
   font-family: var(--font-pixel);
   font-size: 10px;
   line-height: 1.6;
+  color: var(--amethyst);
+  text-shadow: 0 0 10px rgba(192,132,252,0.2);
 }
 
 .chart-card h3::before {
@@ -1531,14 +1167,12 @@ tr:last-child td {
   display: inline-block;
   width: 4px;
   height: 14px;
-  background: var(--grass);
-  box-shadow: 2px 0 0 var(--grass-dark);
+  background: var(--amethyst);
+  box-shadow: 2px 0 0 var(--amethyst-dark);
 }
 
 @media (max-width: 900px) {
-  .charts-grid {
-    grid-template-columns: 1fr;
-  }
+  .charts-grid { grid-template-columns: 1fr; }
 }
 
 
@@ -1553,46 +1187,27 @@ tr:last-child td {
 
 
 /* ============================================
-   SIDEBAR — Minecraft Inventory/Menu Style
+   SIDEBAR — Vivid Minecraft Menu
    ============================================ */
 
 .sidebar {
   width: 260px;
   flex-shrink: 0;
   min-height: 100vh;
-
   background: var(--bg-base);
   border-right: 3px solid var(--border);
   display: flex;
   flex-direction: column;
   padding: 20px 12px;
+  position: relative;
 
-  /* Cobblestone-like texture */
+  /* Cobblestone texture with blue tint */
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.008) 3px,
-      rgba(255, 255, 255, 0.008) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px,
-      rgba(0, 0, 0, 0.04) 4px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 6px,
-      rgba(255, 255, 255, 0.005) 6px,
-      rgba(255, 255, 255, 0.005) 7px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(96,165,250,0.012) 3px, rgba(96,165,250,0.012) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 4px),
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.006) 6px, rgba(255,255,255,0.006) 7px);
 }
 
-/* Pixel border right side */
 .sidebar::after {
   content: '';
   position: absolute;
@@ -1600,13 +1215,7 @@ tr:last-child td {
   right: -3px;
   bottom: 0;
   width: 3px;
-  background: repeating-linear-gradient(
-    180deg,
-    var(--border-light) 0px,
-    var(--border-light) 4px,
-    var(--border) 4px,
-    var(--border) 8px
-  );
+  background: repeating-linear-gradient(180deg, var(--water) 0px, var(--water) 4px, var(--border) 4px, var(--border) 8px);
 }
 
 .sidebar-logo {
@@ -1622,19 +1231,17 @@ tr:last-child td {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--grass-dark);
+  background: linear-gradient(135deg, var(--grass-dark), #0d9488);
   border: 2px solid var(--grass);
-
   font-weight: 800;
   font-size: 16px;
   color: var(--grass-light);
   flex-shrink: 0;
-
-  /* Minecraft button 3D effect */
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
-    0 2px 0 rgba(0, 0, 0, 0.4);
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(134,239,172,0.2),
+    0 0 10px var(--grass-glow),
+    0 2px 0 rgba(0,0,0,0.4);
 }
 
 .sidebar-logo strong,
@@ -1643,16 +1250,16 @@ tr:last-child td {
 }
 
 .sidebar-logo strong {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -0.2px;
-  font-family: var(--font-pixel);
   font-size: 10px;
+  font-weight: 800;
+  font-family: var(--font-pixel);
   line-height: 1.6;
+  color: var(--grass-light);
+  text-shadow: 0 0 8px rgba(74,222,128,0.3);
 }
 
 .sidebar-logo span {
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 11px;
   font-weight: 500;
 }
@@ -1674,63 +1281,28 @@ tr:last-child td {
   font-weight: 500;
   transition: all var(--transition-fast);
   border: 2px solid transparent;
-
-  /* Inventory slot appearance */
   background: transparent;
   position: relative;
-}
-
-.nav-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-
-  /* Slot highlight texture */
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.02) 2px,
-      rgba(255, 255, 255, 0.02) 4px
-    );
 }
 
 .nav-item:hover {
   background: var(--bg-surface);
   color: var(--text);
   border-color: var(--border);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.2),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-.nav-item:hover::before {
-  opacity: 1;
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.04);
 }
 
 .nav-item.active {
-  background: var(--grass-dark);
-  color: var(--grass-light);
-  border-color: var(--grass);
+  background: var(--water-dark);
+  color: var(--water-light);
+  border-color: var(--water);
   font-weight: 700;
-
-  /* Active slot — strong Minecraft button effect */
   box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
-    inset 2px 2px 0 rgba(126, 200, 80, 0.2),
-    0 0 8px rgba(93, 158, 60, 0.2);
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(96,165,250,0.2),
+    0 0 10px rgba(96,165,250,0.2);
 }
 
-.nav-item.active::before {
-  opacity: 0;
-}
-
-/* Left indicator bar for active item */
 .nav-item.active::after {
   content: '';
   position: absolute;
@@ -1738,8 +1310,8 @@ tr:last-child td {
   top: 4px;
   bottom: 4px;
   width: 3px;
-  background: var(--grass-light);
-  box-shadow: 0 0 6px rgba(126, 200, 80, 0.5);
+  background: var(--water-light);
+  box-shadow: 0 0 8px var(--water-glow);
 }
 
 .nav-item .nav-icon {
@@ -1762,15 +1334,7 @@ tr:last-child td {
   border-top: 2px solid var(--border);
   color: var(--text-dim);
   font-size: 11px;
-
-  /* Pixel separator */
-  border-image: repeating-linear-gradient(
-    90deg,
-    var(--border) 0px,
-    var(--border) 4px,
-    transparent 4px,
-    transparent 8px
-  ) 2;
+  border-image: repeating-linear-gradient(90deg, var(--border) 0px, var(--border) 4px, transparent 4px, transparent 8px) 2;
 }
 
 .sidebar-footer span,
@@ -1793,23 +1357,9 @@ tr:last-child td {
   flex: 1;
   min-width: 0;
   background: var(--bg-deep);
-
-  /* Global stone texture */
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.006) 4px,
-      rgba(255, 255, 255, 0.006) 5px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.03) 4px,
-      rgba(0, 0, 0, 0.03) 5px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(96,165,250,0.008) 4px, rgba(96,165,250,0.008) 5px),
+    repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0,0,0,0.03) 4px, rgba(0,0,0,0.03) 5px);
 }
 
 .page {
@@ -1826,7 +1376,6 @@ tr:last-child td {
 
 .page-header h1 {
   margin: 0;
-  font-size: 22px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1834,6 +1383,8 @@ tr:last-child td {
   font-family: var(--font-pixel);
   font-size: 14px;
   line-height: 1.6;
+  color: var(--water-light);
+  text-shadow: 0 0 12px rgba(96,165,250,0.2);
 }
 
 .page-header h1::before {
@@ -1841,15 +1392,14 @@ tr:last-child td {
   display: inline-block;
   width: 4px;
   height: 20px;
-  background: var(--grass);
-  box-shadow: 2px 0 0 var(--grass-dark);
+  background: var(--water);
+  box-shadow: 2px 0 0 var(--water-dark);
 }
 
 .page-header p {
   margin: 6px 0 0;
   color: var(--text-muted);
   font-size: 13px;
-  font-family: var(--font-body);
 }
 
 .action-buttons {
@@ -1874,52 +1424,26 @@ tr:last-child td {
    ============================================ */
 
 @media (max-width: 800px) {
-  .sidebar {
-    width: 66px;
-    padding: 20px 8px;
-  }
-
-  .sidebar-logo {
-    justify-content: center;
-    padding-bottom: 20px;
-  }
-
+  .sidebar { width: 66px; padding: 20px 8px; }
+  .sidebar-logo { justify-content: center; padding-bottom: 20px; }
   .sidebar-logo > div:not(.sidebar-logo-icon),
   .sidebar-footer,
-  .nav-item {
-    font-size: 0;
-  }
-
-  .nav-item {
-    justify-content: center;
-    padding: 12px;
-  }
-
-  .nav-item .nav-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .page {
-    padding: 24px 20px;
-  }
-
-  .page-header {
-    align-items: flex-start;
-    gap: 15px;
-    flex-direction: column;
-  }
+  .nav-item { font-size: 0; }
+  .nav-item { justify-content: center; padding: 12px; }
+  .nav-item .nav-icon svg { width: 18px; height: 18px; }
+  .page { padding: 24px 20px; }
+  .page-header { align-items: flex-start; gap: 15px; flex-direction: column; }
 }
 
 
 /* ============================================
-   SERVER FORM (Modal) — Crafting Table style
+   SERVER FORM (Modal) — Crafting Table
    ============================================ */
 
 .form-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(2px);
   display: flex;
   justify-content: center;
@@ -1935,30 +1459,11 @@ tr:last-child td {
   padding: 28px;
   position: relative;
   overflow: hidden;
-
-  /* Crafting table / chest UI feel */
   box-shadow:
-    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
-    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
-    0 0 0 3px rgba(0, 0, 0, 0.5),
-    6px 6px 0 rgba(0, 0, 0, 0.4);
-
-  /* Deepslate texture */
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(255, 255, 255, 0.01) 3px,
-      rgba(255, 255, 255, 0.01) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px,
-      rgba(0, 0, 0, 0.04) 4px
-    );
+    inset -3px -3px 0 rgba(0,0,0,0.35),
+    inset 3px 3px 0 rgba(255,255,255,0.04),
+    0 0 0 3px rgba(0,0,0,0.6),
+    8px 8px 0 rgba(0,0,0,0.45);
 }
 
 .server-form-container::before {
@@ -1968,19 +1473,9 @@ tr:last-child td {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--border-light);
+  background: var(--water);
   pointer-events: none;
-}
-
-.server-form-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
+  box-shadow: 0 0 8px var(--water-glow);
 }
 
 .server-form-container > * {
@@ -1996,11 +1491,11 @@ tr:last-child td {
 
 .form-header h2 {
   margin: 0;
-  font-size: 16px;
   font-weight: 800;
   font-family: var(--font-pixel);
   font-size: 12px;
   line-height: 1.6;
+  color: var(--water-light);
 }
 
 .form-header p {
@@ -2019,16 +1514,14 @@ tr:last-child td {
   line-height: 1;
   cursor: pointer;
   transition: all var(--transition-fast);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.06);
 }
 
 .close-button:hover {
   background: var(--redstone-dark);
   color: var(--redstone-light);
   border-color: var(--redstone);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(252,165,165,0.15), 0 0 8px rgba(248,113,113,0.2);
 }
 
 .form-field {
@@ -2039,10 +1532,9 @@ tr:last-child td {
   display: block;
   margin-bottom: 7px;
   color: var(--text-secondary);
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font-pixel);
   font-size: 8px;
+  font-weight: 700;
+  font-family: var(--font-pixel);
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -2056,20 +1548,13 @@ tr:last-child td {
   color: var(--text);
   outline: none;
   font-size: 14px;
-  transition: border-color var(--transition-fast);
-
-  /* Recessed input (like chat/command box in Minecraft) */
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-fast);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -1px -1px 0 rgba(255,255,255,0.03);
 }
 
 .form-field input:focus {
-  border-color: var(--grass);
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.03),
-    0 0 6px rgba(93, 158, 60, 0.2);
+  border-color: var(--water);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -1px -1px 0 rgba(255,255,255,0.03), 0 0 10px rgba(96,165,250,0.2);
 }
 
 .form-field input::placeholder {
@@ -2083,10 +1568,7 @@ tr:last-child td {
   background: var(--redstone-bg);
   color: var(--redstone-light);
   font-size: 13px;
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 68, 68, 0.1);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(252,165,165,0.1), 0 0 8px rgba(248,113,113,0.1);
 }
 
 .form-actions {
@@ -2115,11 +1597,7 @@ tr:last-child td {
   justify-content: space-between;
   gap: 20px;
   z-index: 2000;
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    4px 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-block), 0 0 20px rgba(0,0,0,0.3);
 }
 
 .toast-content {
@@ -2129,7 +1607,6 @@ tr:last-child td {
 }
 
 .toast-content strong {
-  font-size: 12px;
   font-weight: 800;
   font-family: var(--font-pixel);
   font-size: 9px;
@@ -2144,6 +1621,7 @@ tr:last-child td {
 .toast.success {
   border-color: var(--grass);
   border-left: 4px solid var(--grass);
+  box-shadow: var(--shadow-block), 0 0 16px rgba(74,222,128,0.15);
 }
 
 .toast.success strong {
@@ -2153,6 +1631,7 @@ tr:last-child td {
 .toast.error {
   border-color: var(--redstone);
   border-left: 4px solid var(--redstone);
+  box-shadow: var(--shadow-block), 0 0 16px rgba(248,113,113,0.15);
 }
 
 .toast.error strong {
@@ -2179,27 +1658,23 @@ tr:last-child td {
   padding: 28px;
   position: relative;
   overflow: hidden;
-
   box-shadow:
-    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
-    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
-    0 0 0 3px rgba(0, 0, 0, 0.5),
-    6px 6px 0 rgba(0, 0, 0, 0.4);
+    inset -3px -3px 0 rgba(0,0,0,0.35),
+    inset 3px 3px 0 rgba(255,255,255,0.04),
+    0 0 0 3px rgba(0,0,0,0.6),
+    8px 8px 0 rgba(0,0,0,0.45);
 }
 
 .confirm-dialog::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--redstone);
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.006) 4px,
-      rgba(255, 255, 255, 0.006) 8px
-    );
+  box-shadow: 0 0 8px rgba(248,113,113,0.3);
 }
 
 .confirm-dialog > * {
@@ -2208,11 +1683,11 @@ tr:last-child td {
 
 .confirm-dialog h2 {
   margin: 0;
-  font-size: 16px;
   font-weight: 800;
   font-family: var(--font-pixel);
   font-size: 12px;
   line-height: 1.6;
+  color: var(--redstone-light);
 }
 
 .confirm-dialog p {
@@ -2224,7 +1699,7 @@ tr:last-child td {
 
 
 /* ============================================
-   LOGIN PAGE — Minecraft Title Screen style
+   LOGIN PAGE — Vibrant Minecraft Title Screen
    ============================================ */
 
 .login-page {
@@ -2237,75 +1712,38 @@ tr:last-child td {
   position: relative;
   overflow: hidden;
 
-  /* Multi-layered Minecraft background */
   background:
-    /* Grass/dirt horizon line */
-    linear-gradient(
-      180deg,
+    /* Vivid grass/dirt horizon */
+    linear-gradient(180deg,
       transparent 0%,
-      transparent 60%,
-      rgba(93, 158, 60, 0.03) 60%,
-      rgba(93, 158, 60, 0.05) 62%,
-      rgba(139, 105, 20, 0.04) 62%,
-      rgba(139, 105, 20, 0.03) 68%,
-      transparent 68%
+      transparent 55%,
+      rgba(74,222,128,0.06) 55%,
+      rgba(74,222,128,0.1) 58%,
+      rgba(161,98,7,0.08) 58%,
+      rgba(161,98,7,0.06) 65%,
+      transparent 65%
     ),
+    /* Lapis blue glow */
+    radial-gradient(ellipse at 50% 20%, rgba(96,165,250,0.08) 0%, transparent 50%),
+    /* Amethyst glow */
+    radial-gradient(ellipse at 80% 80%, rgba(192,132,252,0.06) 0%, transparent 50%),
+    /* Gold glow */
+    radial-gradient(ellipse at 20% 70%, rgba(250,204,21,0.04) 0%, transparent 50%),
     /* Stone texture */
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgba(255, 255, 255, 0.008) 4px,
-      rgba(255, 255, 255, 0.008) 5px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.04) 4px,
-      rgba(0, 0, 0, 0.04) 5px
-    ),
-    /* Cobblestone pattern */
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 6px,
-      rgba(255, 255, 255, 0.005) 6px,
-      rgba(255, 255, 255, 0.005) 7px
-    ),
-    repeating-linear-gradient(
-      -30deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 0, 0, 0.03) 10px,
-      rgba(0, 0, 0, 0.03) 11px
-    ),
-    /* Deep dark base */
-    radial-gradient(ellipse at 50% 0%, rgba(26, 10, 46, 0.15) 0%, transparent 60%),
+    repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255,255,255,0.01) 4px, rgba(255,255,255,0.01) 5px),
+    repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0,0,0,0.05) 4px, rgba(0,0,0,0.05) 5px),
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.006) 6px, rgba(255,255,255,0.006) 7px),
     var(--bg-deep);
 }
 
-/* Decorative pixel grid on login background */
 .login-page::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 31px,
-      rgba(255, 255, 255, 0.012) 31px,
-      rgba(255, 255, 255, 0.012) 32px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 31px,
-      rgba(255, 255, 255, 0.012) 31px,
-      rgba(255, 255, 255, 0.012) 32px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(96,165,250,0.02) 31px, rgba(96,165,250,0.02) 32px),
+    repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(96,165,250,0.02) 31px, rgba(96,165,250,0.02) 32px);
 }
 
 .login-card {
@@ -2315,70 +1753,44 @@ tr:last-child td {
   padding: 0;
   position: relative;
   overflow: hidden;
-
-  /* Minecraft chest/inventory UI feel */
   box-shadow:
-    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
-    inset 3px 3px 0 rgba(255, 255, 255, 0.04),
-    0 0 0 3px rgba(0, 0, 0, 0.5),
-    8px 8px 0 rgba(0, 0, 0, 0.4);
+    inset -3px -3px 0 rgba(0,0,0,0.35),
+    inset 3px 3px 0 rgba(255,255,255,0.04),
+    0 0 0 3px rgba(0,0,0,0.6),
+    0 0 40px rgba(96,165,250,0.08),
+    8px 8px 0 rgba(0,0,0,0.45);
 }
 
-/* Stone texture on login card */
+/* Cobblestone texture on card */
 .login-card::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    /* Cobblestone-like pattern */
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 8px,
-      rgba(255, 255, 255, 0.015) 8px,
-      rgba(255, 255, 255, 0.015) 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.05) 8px,
-      rgba(0, 0, 0, 0.05) 9px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 6px,
-      rgba(255, 255, 255, 0.008) 6px,
-      rgba(255, 255, 255, 0.008) 7px
-    ),
-    repeating-linear-gradient(
-      -30deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 0, 0, 0.04) 10px,
-      rgba(0, 0, 0, 0.04) 11px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(255,255,255,0.02) 8px, rgba(255,255,255,0.02) 9px),
+    repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.06) 8px, rgba(0,0,0,0.06) 9px),
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.012) 6px, rgba(255,255,255,0.012) 7px),
+    repeating-linear-gradient(-30deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 11px);
 }
 
-/* Grass/dirt top accent */
+/* Vivid grass/dirt top stripe */
 .login-card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background:
-    linear-gradient(180deg,
-      var(--grass) 0%,
-      var(--grass-dark) 50%,
-      var(--dirt) 50%,
-      var(--dirt-dark) 100%
-    );
+  height: 5px;
+  background: linear-gradient(180deg,
+    #22c55e 0%,
+    #16a34a 40%,
+    #a16207 40%,
+    #854d0e 100%
+  );
   pointer-events: none;
   z-index: 2;
+  box-shadow: 0 0 12px rgba(34,197,94,0.3);
 }
 
 .login-card > * {
@@ -2393,8 +1805,8 @@ tr:last-child td {
 
 .login-header .sidebar-logo-icon {
   margin: 0 auto 16px;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
 }
 
 .login-header .sidebar-logo-icon svg {
@@ -2404,16 +1816,17 @@ tr:last-child td {
 
 .login-header h1 {
   margin: 0;
-  font-size: 20px;
   font-weight: 800;
   font-family: var(--font-pixel);
   font-size: 14px;
   line-height: 1.6;
+  color: var(--water-light);
+  text-shadow: 0 0 16px rgba(96,165,250,0.3);
 }
 
 .login-header p {
   margin: 8px 0 0;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 13px;
 }
 
@@ -2463,12 +1876,8 @@ tr:last-child td {
   background: var(--bg-surface);
   border: 2px solid var(--border);
   padding: 18px 20px;
-  transition: border-color var(--transition-base);
-
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.2),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.03),
-    2px 2px 0 rgba(0, 0, 0, 0.35);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-block);
 }
 
 .alerts-config-item:hover {
@@ -2497,17 +1906,12 @@ tr:last-child td {
   border: 2px solid var(--border);
   padding: 8px 16px;
   cursor: pointer;
-  font-size: 11px;
   font-weight: 700;
   transition: all var(--transition-fast);
   font-family: var(--font-pixel);
   font-size: 8px;
   line-height: 1.5;
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 0 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(255,255,255,0.05), 0 1px 0 rgba(0,0,0,0.35);
 }
 
 .toggle-button:hover:not(:disabled) {
@@ -2521,11 +1925,7 @@ tr:last-child td {
   background: var(--grass-dark);
   color: var(--grass-light);
   border-color: var(--grass);
-
-  box-shadow:
-    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
-    inset 1px 1px 0 rgba(126, 200, 80, 0.15),
-    0 0 6px rgba(93, 158, 60, 0.2);
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.3), inset 1px 1px 0 rgba(134,239,172,0.2), 0 0 10px var(--grass-glow);
 }
 
 .toggle-button:disabled {
@@ -2555,20 +1955,14 @@ tr:last-child td {
   font-size: 13px;
   flex: 1;
   min-width: 0;
-  transition: border-color var(--transition-fast);
-
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-fast);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -1px -1px 0 rgba(255,255,255,0.03);
 }
 
 .webhook-url-input:focus {
   outline: none;
-  border-color: var(--grass);
-  box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.03),
-    0 0 6px rgba(93, 158, 60, 0.2);
+  border-color: var(--water);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.35), inset -1px -1px 0 rgba(255,255,255,0.03), 0 0 10px rgba(96,165,250,0.2);
 }
 
 .webhook-url-input::placeholder {
@@ -2590,6 +1984,7 @@ tr:last-child td {
   color: var(--redstone-light);
   border-color: var(--redstone);
   background: var(--redstone-bg);
+  box-shadow: 0 0 8px rgba(248,113,113,0.15);
 }
 
 .login-layout {
@@ -2632,33 +2027,15 @@ tr:last-child td {
   left: 0;
   right: 0;
   height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--border-light) 0px,
-    var(--border-light) 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(90deg, var(--water) 0px, var(--water) 4px, transparent 4px, transparent 8px);
 }
 
 .sidebar .pixel-separator {
   height: 2px;
   margin: 12px 8px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--border) 0px,
-    var(--border) 3px,
-    transparent 3px,
-    transparent 6px
-  );
+  background: repeating-linear-gradient(90deg, var(--water) 0px, var(--water) 3px, transparent 3px, transparent 6px);
 }
 
-
-/* ============================================
-   MINECRAFT HUD / STATUS BAR EFFECTS
-   ============================================ */
-
-/* Pixel dot indicator */
 .pixel-dot {
   display: inline-block;
   width: 6px;
@@ -2667,17 +2044,10 @@ tr:last-child td {
   box-shadow: 2px 0 0 var(--grass-dark), 0 2px 0 var(--grass-dark);
 }
 
-/* Block divider */
 .block-divider {
   height: 4px;
   margin: 20px 0;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--border) 0px,
-    var(--border) 8px,
-    transparent 8px,
-    transparent 12px
-  );
+  background: repeating-linear-gradient(90deg, var(--water) 0px, var(--water) 8px, transparent 8px, transparent 12px);
   position: relative;
 }
 
@@ -2688,24 +2058,5 @@ tr:last-child td {
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-/* Inventory slot highlight */
-.slot-highlight {
-  position: relative;
-}
-
-.slot-highlight::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-
-.slot-highlight:hover::after {
-  opacity: 1;
+  background: rgba(96,165,250,0.1);
 }
