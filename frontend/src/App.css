@@ -168,7 +168,7 @@ a:hover {
 
 .header {
   border-bottom: 3px solid var(--border);
-  background-color: var(--bg-base);
+  background-color: rgba(21, 24, 32, 0.88);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -365,7 +365,7 @@ button:disabled {
 }
 
 .overview-card {
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.85);
   background-image: url('/textures/oak_planks.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -502,7 +502,7 @@ button:disabled {
    ============================================ */
 
 .server-card {
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -759,7 +759,7 @@ button:disabled {
 }
 
 .current-status {
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -799,7 +799,7 @@ button:disabled {
 }
 
 .metric-card {
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/deepslate.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -889,7 +889,7 @@ button:disabled {
 .table-container {
   width: 100%;
   overflow-x: auto;
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -963,7 +963,7 @@ tr:last-child td {
 .events-list {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1161,7 +1161,7 @@ tr:last-child td {
 }
 
 .chart-card {
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1231,7 +1231,7 @@ tr:last-child td {
   width: 260px;
   flex-shrink: 0;
   min-height: 100vh;
-  background-color: var(--bg-base);
+  background-color: rgba(21, 24, 32, 0.88);
   border-right: 3px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -1392,7 +1392,7 @@ tr:last-child td {
 .main-content {
   flex: 1;
   min-width: 0;
-  background-color: var(--bg-deep);
+  background-color: rgba(12, 14, 18, 0.82);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1492,7 +1492,7 @@ tr:last-child td {
 
 .server-form-container {
   width: min(500px, 100%);
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.9);
   background-image: url('/textures/cobblestone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1696,7 +1696,7 @@ tr:last-child td {
 
 .confirm-dialog {
   width: min(450px, 100%);
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.9);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1779,7 +1779,7 @@ tr:last-child td {
 
 .login-card {
   width: min(420px, 100%);
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.9);
   background-image: url('/textures/cobblestone.png');
   background-size: 128px;
   background-repeat: repeat;
@@ -1900,7 +1900,7 @@ tr:last-child td {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-surface);
+  background-color: rgba(21, 24, 32, 0.88);
   background-image: url('/textures/stone.png');
   background-size: 128px;
   background-repeat: repeat;
