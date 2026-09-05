@@ -14,13 +14,9 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">
-          <svg viewBox="0 0 16 16" width="18" height="18" fill="none">
-            <rect x="2" y="1" width="3" height="12" rx="0.5" fill="currentColor" opacity="0.85"/>
-            <rect x="5" y="1" width="3" height="12" rx="0.5" fill="currentColor"/>
-            <rect x="8" y="2" width="6" height="2" rx="0.5" fill="currentColor" opacity="0.7"/>
-            <rect x="11" y="1" width="3" height="6" rx="0.5" fill="currentColor" opacity="0.6"/>
-          </svg>
+        <div className="sidebar-logo-icon pixel-art-icon">
+          <div className="px-grass-top"></div>
+          <div className="px-dirt"></div>
         </div>
 
         <div>
@@ -84,9 +80,11 @@ function Sidebar() {
       </nav>
 
       <div className="sidebar-footer">
-        <span>Monitoramento</span>
-        <small>v0.1.0</small>
-        <div style={{ marginTop: 12 }}>
+        <div className="sidebar-system-info">
+          <span>SISTEMA</span>
+          <small>v0.1.0 &middot; Spring Boot</small>
+        </div>
+        <div className="sidebar-footer-actions">
           <button
             className="logout-button"
             onClick={handleLogout}

@@ -215,6 +215,8 @@ function Dashboard() {
           </div>
         </section>
 
+        <div className="section-divider" />
+
         <section className="servers-section">
           <div className="section-header">
             <h2>Servidores</h2>

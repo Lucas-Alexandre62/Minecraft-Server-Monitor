@@ -240,42 +240,61 @@ function ServerDetails() {
             className="back-button"
             onClick={() => navigate("/servers")}
           >
-            ← Voltar
+            <span className="back-arrow">&larr;</span> Servidores
           </button>
 
           <h1>{server.name}</h1>
 
-          <p>
-            {server.host}:{server.port}
-          </p>
+          <div className="header-address">
+            <span>{server.host}</span>
+            <span className="header-port">:{server.port}</span>
+          </div>
         </div>
 
-        <button
-          className="refresh-button"
-          onClick={loadDetails}
-        >
-          Atualizar
-        </button>
+        <div className="header-actions">
+          <span
+            className={
+              status?.online
+                ? "status online"
+                : "status offline"
+            }
+          >
+            {status?.online ? "ONLINE" : "OFFLINE"}
+          </span>
+
+          <button
+            className="refresh-button"
+            onClick={loadDetails}
+          >
+            Atualizar
+          </button>
+        </div>
       </header>
 
       <main className="container">
         <section className="details-top">
           <div className="current-status">
-            <span
-              className={
-                status?.online
-                  ? "status online"
-                  : "status offline"
-              }
-            >
-              {status?.online ? "ONLINE" : "OFFLINE"}
-            </span>
+            <div className="current-status-identity">
+              <span
+                className={
+                  status?.online
+                    ? "status-dot online"
+                    : "status-dot offline"
+                }
+              />
+              <strong>
+                {status?.online
+                  ? "Servidor funcionando normalmente"
+                  : "Servidor indisponível"}
+              </strong>
+            </div>
 
-            <strong>
-              {status?.online
-                ? "Servidor funcionando normalmente"
-                : "Servidor indisponível"}
-            </strong>
+            {status?.version && (
+              <div className="current-status-version">
+                <span className="version-label">VERSÃO</span>
+                <span className="version-value">{status.version}</span>
+              </div>
+            )}
           </div>
 
           <div className="details-metrics">
@@ -312,6 +331,8 @@ function ServerDetails() {
             />
           </div>
         </section>
+
+        <div className="section-divider" />
 
         {statistics && (
           <section className="dashboard-section">
@@ -353,12 +374,14 @@ function ServerDetails() {
           </section>
         )}
 
+        {statistics && <div className="section-divider" />}
+
         <section className="dashboard-section">
           <div className="section-header">
             <div>
               <h2>Monitoramento</h2>
 
-              <span>
+              <span className="section-subtitle">
                 {metrics?.data?.length ?? 0} pontos coletados
               </span>
             </div>
@@ -405,6 +428,8 @@ function ServerDetails() {
             />
           </div>
         </section>
+
+        <div className="section-divider" />
 
         <section className="dashboard-section">
           <div className="section-header">
@@ -503,6 +528,8 @@ function ServerDetails() {
             </div>
           )}
         </section>
+
+        <div className="section-divider" />
 
         <section className="dashboard-section">
           <div className="section-header">
