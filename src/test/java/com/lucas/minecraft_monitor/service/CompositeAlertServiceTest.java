@@ -4,14 +4,15 @@ import com.lucas.minecraft_monitor.model.AlertChannel;
 import com.lucas.minecraft_monitor.model.AlertConfig;
 import com.lucas.minecraft_monitor.model.MinecraftServer;
 import com.lucas.minecraft_monitor.repository.AlertConfigRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -27,8 +28,20 @@ class CompositeAlertServiceTest {
     @Mock
     private WebhookAlertService webhookAlertService;
 
-    @InjectMocks
+    @Mock
+    private EmailAlertService emailAlertService;
+
     private CompositeAlertService compositeAlertService;
+
+    @BeforeEach
+    void setUp() {
+        compositeAlertService = new CompositeAlertService(
+                alertConfigRepository,
+                logAlertService,
+                webhookAlertService,
+                Optional.of(emailAlertService)
+        );
+    }
 
     private MinecraftServer createServer() {
         MinecraftServer server = new MinecraftServer();
@@ -101,5 +114,73 @@ class CompositeAlertServiceTest {
 
         verifyNoInteractions(logAlertService);
         verifyNoInteractions(webhookAlertService);
+    }
+
+    @Test
+    void serverDownDelegatesToEmail() {
+        MinecraftServer server = createServer();
+
+        AlertConfig emailConfig = new AlertConfig(
+                server, AlertChannel.EMAIL, true);
+
+        when(alertConfigRepository
+                .findByServerAndEnabledTrue(server))
+                .thenReturn(List.of(emailConfig));
+
+        compositeAlertService.serverDown(server);
+
+        verify(emailAlertService).serverDown(server);
+    }
+
+    @Test
+    void serverUpDelegatesToEmail() {
+        MinecraftServer server = createServer();
+
+        AlertConfig emailConfig = new AlertConfig(
+                server, AlertChannel.EMAIL, true);
+
+        when(alertConfigRepository
+                .findByServerAndEnabledTrue(server))
+                .thenReturn(List.of(emailConfig));
+
+        compositeAlertService.serverUp(server);
+
+        verify(emailAlertService).serverUp(server);
+    }
+
+    @Test
+    void disabledEmailConfigDoesNotDelegate() {
+        MinecraftServer server = createServer();
+
+        when(alertConfigRepository
+                .findByServerAndEnabledTrue(server))
+                .thenReturn(List.of());
+
+        compositeAlertService.serverDown(server);
+
+        verifyNoInteractions(emailAlertService);
+    }
+
+    @Test
+    void allChannelsDelegatedOnStateChange() {
+        MinecraftServer server = createServer();
+
+        AlertConfig logConfig = new AlertConfig(
+                server, AlertChannel.LOG, true);
+        AlertConfig webhookConfig = new AlertConfig(
+                server, AlertChannel.WEBHOOK, true);
+        AlertConfig emailConfig = new AlertConfig(
+                server, AlertChannel.EMAIL, true);
+
+        when(alertConfigRepository
+                .findByServerAndEnabledTrue(server))
+                .thenReturn(List.of(
+                        logConfig, webhookConfig, emailConfig));
+
+        compositeAlertService.serverDown(server);
+
+        verify(logAlertService).serverDown(server);
+        verify(webhookAlertService).serverDown(server);
+        verify(emailAlertService).serverDown(server);
     }
 }

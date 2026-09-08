@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://minecraft-monitor.onrender.com/api/:path*"
+    }
+  ]
+}

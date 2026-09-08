@@ -117,9 +117,13 @@ Backend: `http://localhost:8080`
 | `POSTGRES_DB` | Não | Nome do banco (padrão: minecraft_monitor) |
 | `JWT_SECRET` | Sim | Chave para assinar tokens JWT |
 | `RCON_PASSWORD` | Não | Senha RCON do servidor Minecraft |
+| `MAIL_HOST` | Não | Host do servidor SMTP (ex: `smtp.gmail.com`) |
+| `MAIL_PORT` | Não | Porta SMTP (padrão: 587) |
+| `MAIL_USERNAME` | Não | Usuário do SMTP |
+| `MAIL_PASSWORD` | Não | Senha do SMTP (app password para Gmail) |
+| `MAIL_SMTP_AUTH` | Não | Autenticação SMTP (padrão: true) |
+| `MAIL_SMTP_STARTTLS` | Não | STARTTLS (padrão: true) |
 | `ALERT_WEBHOOK_URL` | Não | URL do webhook para alertas |
-| `ALERT_EMAIL_HOST` | Não | Host do servidor SMTP |
-| `ALERT_EMAIL_PORT` | Não | Porta SMTP (padrão: 587) |
 | `ALERT_EMAIL_FROM` | Não | E-mail remetente |
 | `ALERT_EMAIL_TO` | Não | E-mail destinatário |
 | `ALERT_LATENCY_THRESHOLD` | Não | Limite de latência em ms (padrão: 500) |
@@ -210,3 +214,53 @@ O scheduler do Spring realiza verificações periódicas dos servidores a cada 3
 * Versão do servidor
 
 Mudanças de estado geram eventos `SERVER_UP` e `SERVER_DOWN`.
+
+## Configuração de alertas por e-mail
+
+O sistema envia e-mails automaticamente quando um servidor Minecraft fica offline (`SERVER_DOWN`) ou volta ao online (`SERVER_UP`).
+
+### Como configurar
+
+1. Adicione as variáveis SMTP no seu arquivo `.env`:
+
+```bash
+# Servidor SMTP (exemplo para Gmail)
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=seu-email@gmail.com
+MAIL_PASSWORD=sua-app-password
+MAIL_SMTP_AUTH=true
+MAIL_SMTP_STARTTLS=true
+
+# Endereços de e-mail
+ALERT_EMAIL_FROM=seu-email@gmail.com
+ALERT_EMAIL_TO=destinatario@example.com
+```
+
+2. Para Gmail, gere uma **App Password** em https://myaccount.google.com/apppasswords (não use sua senha normal).
+
+3. Para outros provedores, ajuste `MAIL_HOST` e `MAIL_PORT` conforme a documentação do provedor.
+
+### Provedores comuns
+
+| Provedor | MAIL_HOST | MAIL_PORT |
+| --- | --- | --- |
+| Gmail | `smtp.gmail.com` | `587` |
+| Outlook/365 | `smtp.office365.com` | `587` |
+| Yahoo | `smtp.mail.yahoo.com` | `587` |
+| AWS SES | `email-smtp.us-east-1.amazonaws.com` | `587` |
+| Mailgun | `smtp.mailgun.org` | `587` |
+
+### Ativar por servidor
+
+Para ativar os alertas de e-mail para um servidor específico, crie uma configuração via API:
+
+```bash
+# Criar/atualizar configuração de alerta EMAIL para o servidor 1
+curl -X PUT http://localhost:8080/api/servers/1/alerts \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"channel": "EMAIL", "enabled": true}'
+```
+
+> **Nota:** O canal EMAIL está habilitado por padrão para todos os servidores quando o `AlertConfigService.initializeDefaults()` é chamado. A configuração por servidor permite ativar/desativar o canal individualmente via API, mas o e-mail remetente/destinatário é global (configurado por variáveis de ambiente).
