@@ -28,11 +28,7 @@ services:
         generateValue: true
       - key: CORS_ALLOWED_ORIGINS
         value: https://minecraft-monitor.vercel.app
-<<<<<<< HEAD
-
     name: minecraft-monitor-db
     databaseName: minecraft_monitor
     user: minecraft
     plan: free
-=======
->>>>>>> 0bfc68d (fix: remove postgres type, keep database references)
