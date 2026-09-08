@@ -33,7 +33,7 @@ git push
 4. O Render vai detectar o `render.yaml` e criar automaticamente:
    * Um PostgreSQL (`minecraft-monitor-db`)
    * Um Web Service (`minecraft-monitor`)
-   * Todas as variáveis de ambiente (incluindo `JWT_SECRET` e `APP_BOOTSTRAP_PASSWORD` gerados automaticamente)
+   * Todas as variáveis de ambiente (incluindo `JWT_SECRET` e `APP_PASSWORD` gerados automaticamente)
 
 ### Passo 3 — Ajustar CORS
 
@@ -86,13 +86,13 @@ Anote essa URL para usar no Vercel.
 | Variável | Valor |
 | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | `prod` |
-| `PORT` | `8080` |
+| `PORT` | `10000` |
 | `DB_URL` | `jdbc:postgresql://<host>:5432/<dbname>` |
 | `DB_USERNAME` | `<user do Render>` |
 | `DB_PASSWORD` | `<password do Render>` |
 | `JWT_SECRET` | `<string aleatória forte, mínimo 32 caracteres>` |
-| `APP_BOOTSTRAP_USERNAME` | `admin` |
-| `APP_BOOTSTRAP_PASSWORD` | `<senha forte para o admin>` |
+| `APP_USERNAME` | `admin` |
+| `APP_PASSWORD` | `<senha forte para o admin>` |
 | `CORS_ALLOWED_ORIGINS` | `https://<seu-app>.vercel.app` |
 
 5. Variáveis opcionais (email, webhook, RCON):
@@ -131,27 +131,13 @@ Anote essa URL para usar no Vercel.
    * **Root Directory:** `./frontend` (importante: aponte para a pasta do frontend)
    * **Build Command:** `npm run build`
    * **Output Directory:** `dist`
-4. Na seção **Environment Variables**, não é necessário adicionar variáveis secrets.
+4. Na seção **Environment Variables**, adicione:
+
+| Variável | Valor |
+| --- | --- |
+| `VITE_API_URL` | `https://<seu-backend>.onrender.com/api` |
+
 5. Clique em **Deploy**.
-
-### Configurar rewrite da API
-
-O arquivo `frontend/vercel.json` já está configurado com rewrites:
-
-```json
-{
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://minecraft-monitor.onrender.com/api/:path*"
-    }
-  ]
-}
-```
-
-**IMPORTANTE:** Atualize o destino do rewrite com a URL real do seu backend no Render.
-
-Após o primeiro deploy, edite o `vercel.json` com a URL correta e faça push novamente.
 
 ---
 
@@ -220,13 +206,13 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 | Variável | Obrigatória | Descrição |
 | --- | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | Sim | `prod` |
-| `PORT` | Sim | `8080` |
+| `PORT` | Sim | `10000` |
 | `DB_URL` | Sim | JDBC URL do Render Postgres |
 | `DB_USERNAME` | Sim | Usuário do banco |
 | `DB_PASSWORD` | Sim | Senha do banco |
 | `JWT_SECRET` | Sim | Chave secreta JWT (mín. 32 chars) |
-| `APP_BOOTSTRAP_USERNAME` | Sim | Usuário admin inicial |
-| `APP_BOOTSTRAP_PASSWORD` | Sim | Senha admin inicial |
+| `APP_USERNAME` | Sim | Usuário admin inicial |
+| `APP_PASSWORD` | Sim | Senha admin inicial |
 | `CORS_ALLOWED_ORIGINS` | Sim | URL do frontend Vercel |
 | `MAIL_HOST` | Não | Host SMTP |
 | `MAIL_PORT` | Não | Porta SMTP |
@@ -240,7 +226,9 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 
 ### Frontend (Vercel)
 
-Nenhuma variável de ambiente com segredos necessária. O frontend usa caminhos relativos `/api` que são redirecionados pelo `vercel.json`.
+| Variável | Obrigatória | Descrição |
+| --- | --- | --- |
+| `VITE_API_URL` | Sim | URL completa da API (ex: `https://<backend>.onrender.com/api`) |
 
 ---
 
@@ -254,12 +242,12 @@ Nenhuma variável de ambiente com segredos necessária. O frontend usa caminhos 
 
 ### Health check falha
 
-* Verifique se `PORT` está definida como `8080`
+* Verifique se `PORT` está definida como `10000`
 * Verifique os logs do container
 
 ### Frontend não conecta à API
 
-* Verifique se o `vercel.json` aponta para a URL correta do backend
+* Verifique se `VITE_API_URL` está configurada no Vercel com a URL correta do backend
 * Verifique se `CORS_ALLOWED_ORIGINS` inclui a URL do Vercel
 * Verifique o Network no navegador (F12)
 
@@ -267,3 +255,7 @@ Nenhuma variável de ambiente com segredos necessária. O frontend usa caminhos 
 
 * Confirme que a URL exata do Vercel está em `CORS_ALLOWED_ORIGINS`
 * URL deve incluir `https://` e não ter barra no final
+
+### E-mail não funciona no Render Free
+
+Serviços Free do Render não conseguem fazer conexões SMTP de saída nas portas 25, 465 e 587. Para alertas por e-mail funcionarem, use um plano pago ou alternativas como webhook/Discord.

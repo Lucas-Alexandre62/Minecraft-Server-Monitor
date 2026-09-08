@@ -30,8 +30,8 @@ if [ ! -f .env ]; then
     echo "   - DB_URL: jdbc:postgresql://localhost:5432/minecraft_monitor"
     echo "   - DB_USERNAME: postgres"
     echo "   - DB_PASSWORD: (sua senha local)"
-    echo "   - APP_BOOTSTRAP_USERNAME: admin"
-    echo "   - APP_BOOTSTRAP_PASSWORD: (uma senha forte)"
+    echo "   - APP_USERNAME: admin"
+    echo "   - APP_PASSWORD: (uma senha forte)"
     echo ""
     echo "   Depois execute este script novamente."
     exit 0
@@ -57,7 +57,7 @@ check_var() {
 
 ERRORS=0
 check_var "JWT_SECRET" || ERRORS=$((ERRORS + 1))
-check_var "APP_BOOTSTRAP_PASSWORD" || ERRORS=$((ERRORS + 1))
+check_var "APP_PASSWORD" || ERRORS=$((ERRORS + 1))
 
 if [ "$ERRORS" -gt 0 ]; then
     echo ""

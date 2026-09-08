@@ -2,33 +2,46 @@ services:
   - type: web
     name: minecraft-monitor
     runtime: docker
+    plan: free
     dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health
+
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
+
       - key: PORT
-        value: 8080
+        value: "10000"
+
       - key: DB_URL
         fromDatabase:
           name: minecraft-monitor-db
           property: connectionString
+
       - key: DB_USERNAME
         fromDatabase:
           name: minecraft-monitor-db
           property: user
+
       - key: DB_PASSWORD
         fromDatabase:
           name: minecraft-monitor-db
           property: password
+
       - key: JWT_SECRET
         generateValue: true
-      - key: APP_BOOTSTRAP_USERNAME
-        value: admin
-      - key: APP_BOOTSTRAP_PASSWORD
-        generateValue: true
-      - key: CORS_ALLOWED_ORIGINS
-        value: https://minecraft-monitor.vercel.app
 
-databaseName: minecraft_monitor
-user: minecraft
-plan: free
+      - key: APP_USERNAME
+        value: admin
+
+      - key: APP_PASSWORD
+        generateValue: true
+
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://SEU-PROJETO.vercel.app
+
+databases:
+  - name: minecraft-monitor-db
+    plan: free
+    databaseName: minecraft_monitor
+    user: minecraft
