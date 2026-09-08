@@ -28,3 +28,7 @@ services:
         generateValue: true
       - key: CORS_ALLOWED_ORIGINS
         value: https://minecraft-monitor.vercel.app
+
+databaseName: minecraft_monitor
+user: minecraft
+plan: free
