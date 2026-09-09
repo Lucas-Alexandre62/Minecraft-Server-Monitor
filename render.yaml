@@ -13,10 +13,30 @@ services:
       - key: PORT
         value: "10000"
 
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: minecraft-monitor-db
-          property: connectionString
+          property: host
+
+      - key: DB_PORT
+        fromDatabase:
+          name: minecraft-monitor-db
+          property: port
+
+      - key: DB_NAME
+        fromDatabase:
+          name: minecraft-monitor-db
+          property: database
+
+      - key: DB_USERNAME
+        fromDatabase:
+          name: minecraft-monitor-db
+          property: user
+
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: minecraft-monitor-db
+          property: password
 
       - key: JWT_SECRET
         generateValue: true
