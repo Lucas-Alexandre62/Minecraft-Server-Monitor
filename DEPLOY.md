@@ -86,7 +86,11 @@ Anote essa URL para usar no Vercel.
 | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | `prod` |
 | `PORT` | `10000` |
-| `DATABASE_URL` | `postgresql://user:password@host:5432/dbname` |
+| `DB_HOST` | Host do PostgreSQL |
+| `DB_PORT` | Porta do PostgreSQL (ex: `5432`) |
+| `DB_NAME` | Nome do banco |
+| `DB_USERNAME` | Usuário do banco |
+| `DB_PASSWORD` | Senha do banco |
 | `JWT_SECRET` | `<string aleatória forte, mínimo 32 caracteres>` |
 | `APP_USERNAME` | `admin` |
 | `APP_PASSWORD` | `<senha forte para o admin>` |
@@ -204,7 +208,11 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 | --- | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | Sim | `prod` |
 | `PORT` | Sim | `10000` |
-| `DATABASE_URL` | Sim | Connection string interna do Render Postgres |
+| `DB_HOST` | Sim | Host do PostgreSQL |
+| `DB_PORT` | Sim | Porta do PostgreSQL |
+| `DB_NAME` | Sim | Nome do banco |
+| `DB_USERNAME` | Sim | Usuário do banco |
+| `DB_PASSWORD` | Sim | Senha do banco |
 | `JWT_SECRET` | Sim | Chave secreta JWT (mín. 32 chars) |
 | `APP_USERNAME` | Sim | Usuário admin inicial |
 | `APP_PASSWORD` | Sim | Senha admin inicial |
@@ -233,7 +241,8 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 
 * Verifique os logs no Render Dashboard
 * Confirme que todas as variáveis obrigatórias estão configuradas
-* Verifique se o `DATABASE_URL` está no formato correto: `postgresql://user:password@host:5432/dbname`
+* Confirme que `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USERNAME` e `DB_PASSWORD` correspondem ao banco
+* Erro `Driver ... claims to not accept jdbcUrl, jdbc:postgresql://user:pass@host/db` indica URL sem porta explícita — o driver pgjdbc 42.7.x não aceita `user:pass@host` sem porta; use `host:port` ou variáveis separadas
 
 ### Health check falha
 
