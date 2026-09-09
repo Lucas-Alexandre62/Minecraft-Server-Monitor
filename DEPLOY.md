@@ -67,8 +67,7 @@ Anote essa URL para usar no Vercel.
    * **Region:** escolha a mais próxima
    * **Plan:** Free (ou superior conforme necessidade)
 4. Clique em **Create Database**.
-5. Após criar, copie o **Internal Database URL** (formato: `postgres://user:password@host:5432/dbname`).
-6. Anote também as credenciais individuais (hostname, user, password, dbname).
+5. Após criar, copie o **Internal Database URL** (formato: `postgresql://user:password@host:5432/dbname`).
 
 ### 2. Backend no Render (Web Service)
 
@@ -87,9 +86,7 @@ Anote essa URL para usar no Vercel.
 | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | `prod` |
 | `PORT` | `10000` |
-| `DB_URL` | `jdbc:postgresql://<host>:5432/<dbname>` |
-| `DB_USERNAME` | `<user do Render>` |
-| `DB_PASSWORD` | `<password do Render>` |
+| `DATABASE_URL` | `postgresql://user:password@host:5432/dbname` |
 | `JWT_SECRET` | `<string aleatória forte, mínimo 32 caracteres>` |
 | `APP_USERNAME` | `admin` |
 | `APP_PASSWORD` | `<senha forte para o admin>` |
@@ -207,9 +204,7 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 | --- | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | Sim | `prod` |
 | `PORT` | Sim | `10000` |
-| `DB_URL` | Sim | JDBC URL do Render Postgres |
-| `DB_USERNAME` | Sim | Usuário do banco |
-| `DB_PASSWORD` | Sim | Senha do banco |
+| `DATABASE_URL` | Sim | Connection string interna do Render Postgres |
 | `JWT_SECRET` | Sim | Chave secreta JWT (mín. 32 chars) |
 | `APP_USERNAME` | Sim | Usuário admin inicial |
 | `APP_PASSWORD` | Sim | Senha admin inicial |
@@ -238,7 +233,7 @@ NUNCA use o valor padrão `minha-chave-secreta-local` em produção.
 
 * Verifique os logs no Render Dashboard
 * Confirme que todas as variáveis obrigatórias estão configuradas
-* Verifique se o `DB_URL` está no formato correto: `jdbc:postgresql://<host>:5432/<dbname>`
+* Verifique se o `DATABASE_URL` está no formato correto: `postgresql://user:password@host:5432/dbname`
 
 ### Health check falha
 
