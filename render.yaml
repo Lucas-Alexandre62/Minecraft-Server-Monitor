@@ -28,7 +28,7 @@ services:
         generateValue: true
 
       - key: CORS_ALLOWED_ORIGINS
-        value: https://SEU-PROJETO.vercel.app
+        value: https://minecraft-server-monitor-ruddy.vercel.app
 
 databases:
   - name: minecraft-monitor-db
